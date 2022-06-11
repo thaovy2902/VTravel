@@ -71,7 +71,7 @@ class UpdateTourRequest extends FormRequest
             'price_children.numeric' => 'Giá trẻ em phải là một số',
             'price_baby.required' => 'Giá em bé không được trống',
             'price_baby.numeric' => 'Giá em bé phải là một số',
-            'category_id.required' => 'Loại tour không được trống',
+            'category_id.required' => 'Category không được trống',
         ];
     }
 

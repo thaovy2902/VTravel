@@ -113,8 +113,8 @@ const actions = {
   async fetchStatistic({ commit }) {
     try {
       commit("setLoadingStatistic", true);
-      const { data, status } = await callerApi(`dashboard/statistic`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`dashboard/statistic`);
+      if (data && Status === 200) {
         commit("fetchStatistic", data);
       }
     } catch ({ response }) {
@@ -131,7 +131,7 @@ const actions = {
       commit("setLoadingNewOrder", true);
       callerApi(url)
         .then(resp => {
-          if (resp && resp.status === 200) {
+          if (resp && resp.Status === 200) {
             commit("fetchNewOrder", resp.data.data);
             reslove(resp.data.meta);
           }
@@ -146,8 +146,8 @@ const actions = {
   },
   async updateStatusOrder({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`dashboard/update-status-order/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`dashboard/update-Status-order/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         commit("updateStatusOrder", data);
       }
     } catch ({ response }) {
@@ -157,8 +157,8 @@ const actions = {
   async fetchRatioOrder({ commit }) {
     try {
       commit("setLoadingRatioOrder", true);
-      const { data, status } = await callerApi("dashboard/ratio-order");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("dashboard/ratio-order");
+      if (data && Status === 200) {
         commit("fetchRatioOrder", data);
       }
     } catch ({ response }) {
@@ -170,8 +170,8 @@ const actions = {
   async fetchPopularTour({ commit }) {
     try {
       commit("setLoadingPopularTour", true);
-      const { data, status } = await callerApi("dashboard/popular-tour");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("dashboard/popular-tour");
+      if (data && Status === 200) {
         commit("fetchPopularTour", data);
       }
     } catch ({ response }) {
@@ -189,8 +189,8 @@ const actions = {
       if (payload.year) url += `&year=${payload.year}`;
 
       commit("setLoadingRevenue", true);
-      const { data, status } = await callerApi(url);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(url);
+      if (data && Status === 200) {
         commit("fetchRevenue", data);
       }
     } catch ({ response }) {

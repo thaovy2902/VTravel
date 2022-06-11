@@ -8,9 +8,8 @@
             'email',
             {
               rules: [
-                { type: 'email', message: 'Email không hợp lệ' },
-                { required: true, message: 'Vui lòng nhập email' },
-                { max: 255, message: 'Tối đa 255 ký tự' },
+                { type: 'email', message: 'The email address you have entered is not valid.' },
+                { required: true, message: 'This filed is required.' },
               ],
             },
           ]"
@@ -26,15 +25,14 @@
             'password',
             {
               rules: [
-                { required: true, message: 'Vui lòng nhập mật khẩu' },
-                { min: 6, message: 'Tối thiểu 6 ký tự' },
-                { max: 255, message: 'Tối đa 255 ký tự' },
+                { required: true, message: 'This filed is required.' },
+                { min: 6, message: 'Passwords must be at least 6 characters long.' },
                 { validator: validateToNextPassword },
               ],
             },
           ]"
           type="password"
-          placeholder="Mật khẩu mới"
+          placeholder="New Password"
         >
           <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
         </a-input>
@@ -46,7 +44,7 @@
             'confirmPassword',
             {
               rules: [
-                { required: true, message: 'Không được trống' },
+                { required: true, message: 'This filed is required.' },
                 {
                   validator: compareToFirstPassword,
                 },
@@ -54,7 +52,7 @@
             },
           ]"
           type="password"
-          placeholder="Xác nhận mật khẩu mới"
+          placeholder="Confirm New Password"
           @blur="handleConfirmBlur"
         >
           <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
@@ -65,7 +63,7 @@
       </a-form-item>
       <a-form-item>
         <a-button size="large" type="primary" html-type="submit" :loading="loading" block>
-          Khôi phục
+          Change
         </a-button>
       </a-form-item>
     </a-form>
@@ -78,7 +76,7 @@
   export default {
     components: { AuthForm },
     metaInfo: {
-      title: "Đặt lại mật khẩu",
+      title: "Reset Password",
     },
     data() {
       return {

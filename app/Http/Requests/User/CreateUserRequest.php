@@ -50,9 +50,9 @@ class CreateUserRequest extends FormRequest
             'email.max' => 'Email tối đa :max ký tự',
             'password.required' => 'Mật khẩu không được trống',
             'password.between' => 'Mật khẩu từ :min - :max ký tự',
-            'phone_number.between' => 'Số điện thoại từ :min - :max ký tự',
-            'address.string' => 'Địa chỉ phải là một chuỗi',
-            'address.max' => 'Địa chỉ tối đa :max ký tự',
+            'phone_number.between' => 'Phone Number từ :min - :max ký tự',
+            'address.string' => 'Address phải là một chuỗi',
+            'address.max' => 'Address tối đa :max ký tự',
         ];
     }
 

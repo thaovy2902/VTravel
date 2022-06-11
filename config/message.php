@@ -3,13 +3,13 @@
 return [
   'send_success' => 'Gửi thành công',
   'fetch_success' => 'Lấy dữ liệu thành công',
-  'create_success' => 'Thêm mới thành công',
+  'create_success' => 'Add New thành công',
   'update_success' => 'Cập nhật thành công',
   'delete_success' => 'Xóa thành công',
 
   //auth
   'login_error' => 'Email hoặc mật khẩu không đúng',
-  'email_notfound' => 'Email không được tìm thấy trong hệ thống của chúng tôi',
+  'email_notfound' => 'Email is not correct.',
   'forgotpassword_success' => 'Link reset mật khẩu được gửi thành công, vui lòng kiểm tra hộp thư đến của bạn',
   'changeprofile_success' => 'Thay đổi thông tin thành công',
   'changepassword_success' => 'Thay đổi mật khẩu thành công',

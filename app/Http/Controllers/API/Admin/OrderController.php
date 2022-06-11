@@ -16,7 +16,7 @@ class OrderController extends BaseController
   {
     $query = array(
       'perPage' => request()->perPage ? (int) request()->perPage : 5,
-      'status' => (int) request()->status ?? 0,
+      'Status' => (int) request()->Status ?? 0,
       'from_date' => request()->from_date,
       'to_date' => request()->to_date,
       'q' => request()->q,
@@ -28,13 +28,13 @@ class OrderController extends BaseController
 
   public function update(Request $request, Order $order)
   {
-    if ((int) $request->status === 3) {
+    if ((int) $request->Status === 3) {
       $request['is_paid'] = true;
-      $order->update($request->only(['status', 'is_paid']));
+      $order->update($request->only(['Status', 'is_paid']));
     }
-    if ((int) $request->status === 4) {
+    if ((int) $request->Status === 4) {
       $request['is_paid'] = false;
-      $order->update($request->only(['status', 'reason_cancel', 'is_paid']));
+      $order->update($request->only(['Status', 'reason_cancel', 'is_paid']));
     }
 
     $this->sendMail($order);
@@ -52,7 +52,7 @@ class OrderController extends BaseController
   private function getQueryData($query)
   {
     $results = Order::with(['payment', 'tour', 'user'])
-      ->where('status', $query['status']);
+      ->where('Status', $query['Status']);
     if ($query['from_date'] && $query['to_date']) {
       $results = $results->whereBetween('date_depart', [$query['from_date'], $query['to_date']]);
     }

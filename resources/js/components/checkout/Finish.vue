@@ -2,7 +2,7 @@
   <div style="max-width: 500px; margin: 40px auto">
     <result :is-success="true" :title="title" :description="description">
       <div slot="action">
-        <a-button type="primary" @click="$router.push({ name: 'home' })">Về trang chủ</a-button>
+        <a-button type="primary" @click="$router.push({ name: 'home' })">Về Home</a-button>
       </div>
     </result>
   </div>

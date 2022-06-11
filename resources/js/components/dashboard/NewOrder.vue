@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-table placeholder="Tìm kiếm theo mã đặt tour" :title="title" @reset="reset" @search="search">
+    <card-table placeholder="Tìm kiếm theo Tour ID" :title="title" @reset="reset" @search="search">
       <a-table
         size="middle"
         :columns="columns"
@@ -18,8 +18,8 @@
         </a-tooltip>
         <span slot="tour_code" slot-scope="text">#{{ text }}</span>
         <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
-        <a-tag slot="status" slot-scope="record" :color="getColorStatusOrder(record)">{{ record | statusOrder }}</a-tag>
-        <template v-if="record.status === 1 || record.status === 2" slot="update" slot-scope="record">
+        <a-tag slot="Status" slot-scope="record" :color="getColorStatusOrder(record)">{{ record | StatusOrder }}</a-tag>
+        <template v-if="record.Status === 1 || record.Status === 2" slot="update" slot-scope="record">
           <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Chấp nhận</a-button>
           <a-button ref="cancelButton" size="small" type="dashed" @click="onCancel(record.id)">Hủy bỏ</a-button>
         </template>
@@ -79,7 +79,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "#Mã đặt tour",
+            title: "#Tour ID",
             scopedSlots: { customRender: "code" }
           },
           {
@@ -87,7 +87,7 @@
             dataIndex: "customer_name"
           },
           {
-            title: "Mã tour",
+            title: "Tour ID",
             dataIndex: "tour.code",
             scopedSlots: { customRender: "tour_code" }
           },
@@ -101,12 +101,12 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "Trạng thái",
-            dataIndex: "status",
-            scopedSlots: { customRender: "status" }
+            title: "Status",
+            dataIndex: "Status",
+            scopedSlots: { customRender: "Status" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             align: "center",
             scopedSlots: { customRender: "update" }
           }
@@ -158,7 +158,7 @@
       onAccept(orderId) {
         const order = {
           id: orderId,
-          values: { status: 3 }
+          values: { Status: 3 }
         };
         this.updateStatusOrder(order);
       },
@@ -175,7 +175,7 @@
               id: this.orderId,
               values: {
                 reason_cancel: values.reason_cancel,
-                status: 4
+                Status: 4
               }
             };
             await this.updateStatusOrder(order);

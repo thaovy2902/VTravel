@@ -31,7 +31,6 @@ class LoginRequest extends FormRequest
         return [
             'email' => config('validation.email'),
             'password' => config('validation.password'),
-            'recaptcha' => ['required', new ReCaptcha]
         ];
     }
 
@@ -44,7 +43,6 @@ class LoginRequest extends FormRequest
             'email.max' => 'Email tối đa :max ký tự',
             'password.required' => 'Mật khẩu không được trống',
             'password.between' => 'Mật khẩu từ :min - :max ký tự',
-            'recaptcha.required' => 'Bạn chưa chọn Recaptcha',
         ];
     }
 

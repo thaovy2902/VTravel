@@ -12,10 +12,10 @@
             <a-col :xs="0" :sm="0" :md="19" :lg="19">
               <a-menu mode="horizontal" :selectedKeys="[$route.name]" :style="{ lineHeight: '62px' }">
                 <a-menu-item key="home">
-                  <router-link :to="{ name: 'home' }">Trang chủ</router-link>
+                  <router-link :to="{ name: 'home' }">Home</router-link>
                 </a-menu-item>
                 <a-menu-item key="tours">
-                  <router-link :to="{ name: 'tours' }">Tour du lịch</router-link>
+                  <router-link :to="{ name: 'tours' }">Tours</router-link>
                 </a-menu-item>
               </a-menu>
             </a-col>
@@ -36,7 +36,7 @@
             </div>
             <div v-else :style="{ display: 'flex', flexDirection: 'row', alignItems: 'center' }">
               <a-button style="marginRight:24px" v-if="$auth.isOwner || $auth.isAdmin" @click="$router.push({ name: pageManager })">
-                Quản trị
+                Dashboard
               </a-button>
 
               <a class="color-link-icon" @click="openModalFeedback">

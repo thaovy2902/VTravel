@@ -17,7 +17,7 @@
     </a-tooltip>
     <span slot="date_depart" slot-scope="text">{{ text | date }}</span>
     <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
-    <a-tag slot="status" slot-scope="record" color="green">{{ record | statusOrder }}</a-tag>
+    <a-tag slot="Status" slot-scope="record" color="green">{{ record | StatusOrder }}</a-tag>
   </a-table>
 </template>
 
@@ -42,7 +42,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Mã đặt",
+            title: "ID",
             dataIndex: "code",
             scopedSlots: { customRender: "code" }
           },
@@ -69,9 +69,9 @@
             dataIndex: "payment_method"
           },
           {
-            title: "Trạng thái",
-            dataIndex: "status",
-            scopedSlots: { customRender: "status" }
+            title: "Status",
+            dataIndex: "Status",
+            scopedSlots: { customRender: "Status" }
           }
         ];
 

@@ -22,7 +22,7 @@ class Order extends Model
 		'discount',
 		'total_amount',
 		'note',
-		'status',
+		'Status',
 		'reason_cancel',
 		'is_paid',
 		'payment_id',
@@ -63,7 +63,7 @@ class Order extends Model
 	{
 		$currentYear = date('Y');
 
-		return $q->where('status', 3)
+		return $q->where('Status', 3)
 			->whereMonth('created_at', $month)
 			->whereYear('created_at', $currentYear)
 			->sum('total_amount');
@@ -71,7 +71,7 @@ class Order extends Model
 
 	public function scopeTotalRevenue($q)
 	{
-		return $q->where('status', 3)->sum('total_amount');
+		return $q->where('Status', 3)->sum('total_amount');
 	}
 
 	public function scopeTotalOrderByCategory($q, $categoryId)

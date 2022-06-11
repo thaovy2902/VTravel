@@ -4,17 +4,17 @@
       <a-form-item v-if="disabledButton" :wrapperCol="{ span: 18, offset: 6 }">
         <a-alert message="Bạn cần điền đầy đủ thông tin" />
       </a-form-item>
-      <a-form-item label="Họ tên" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập họ tên" v-model="customer.name" />
+      <a-form-item label="Full Name" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
+        <a-input placeholder="Nhập Full Name" v-model="customer.name" />
       </a-form-item>
       <a-form-item label="Email" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
         <a-input placeholder="Nhập email" v-model="customer.email" />
       </a-form-item>
-      <a-form-item label="Số điện thoại" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập số điện thoại" v-model="customer.phone_number" />
+      <a-form-item label="Phone Number" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
+        <a-input placeholder="Nhập Phone Number" v-model="customer.phone_number" />
       </a-form-item>
-      <a-form-item label="Địa chỉ" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập địa chỉ" v-model="customer.address" />
+      <a-form-item label="Address" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
+        <a-input placeholder="Nhập Address" v-model="customer.address" />
       </a-form-item>
       <a-form-item
         v-if="!verified"

@@ -13,8 +13,8 @@ const getters = {
 const actions = {
   async fetchCities({ commit }) {
     try {
-      const { data, status } = await callerApi(`cities`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`cities`);
+      if (data && Status === 200) {
         commit("fetchCities", data);
       }
     } catch ({ response }) {

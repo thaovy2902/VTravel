@@ -22,7 +22,7 @@
       <a-menu-item key="admin.users">
         <router-link :to="{ name: 'admin.users' }">
           <a-icon type="team" />
-          <span>Khách hàng</span>
+          <span>Users</span>
         </router-link>
       </a-menu-item>
       <a-menu-item key="admin.tours">
@@ -31,10 +31,10 @@
           <span>Tour</span>
         </router-link>
       </a-menu-item>
-      <a-menu-item key="admin.orders">
+      <a-menu-item key="admin.orderss">
         <router-link :to="{ name: 'admin.orders' }">
           <a-icon type="shopping-cart" />
-          <span>Đặt tour</span>
+          <span>Orders</span>
         </router-link>
       </a-menu-item>
       <a-menu-item key="admin.ratings">
@@ -54,7 +54,7 @@
       <a-menu-item key="admin.discountcodes">
         <router-link :to="{ name: 'admin.discountcodes' }">
           <a-icon type="gift" />
-          <span>Mã giảm giá</span>
+          <span>Discounts</span>
         </router-link>
       </a-menu-item>
     </a-menu>
@@ -74,7 +74,7 @@
       <a-menu-item key="owner.feedbacks">
         <router-link :to="{ name: 'owner.feedbacks' }">
           <a-icon type="message" />
-          <span>Phản hồi</span>
+          <span>Feedbacks</span>
         </router-link>
       </a-menu-item>
     </a-menu>

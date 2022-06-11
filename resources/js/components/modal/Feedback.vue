@@ -27,7 +27,7 @@
       <a-form layout="vertical" :form="form" hideRequiredMark>
         <a-row :gutter="16">
           <a-col :span="12">
-            <a-form-item label="Họ tên">
+            <a-form-item label="Full Name">
               <a-input
                 v-decorator="[
                   'name',
@@ -38,7 +38,7 @@
                     ]
                   }
                 ]"
-                placeholder="Nhập họ tên"
+                placeholder="Nhập Full Name"
               />
             </a-form-item>
           </a-col>
@@ -68,8 +68,8 @@
             </a-form-item>
           </a-col>
           <a-col :span="12">
-            <a-form-item label="Số điện thoại">
-              <a-input v-decorator="['phone_number']" placeholder="Nhập số điện thoại" />
+            <a-form-item label="Phone Number">
+              <a-input v-decorator="['phone_number']" placeholder="Nhập Phone Number" />
             </a-form-item>
           </a-col>
         </a-row>
@@ -111,14 +111,14 @@
           if (!err) {
             try {
               this.confirmLoading = true;
-              const { data, status } = await axios.post("send-feedback", values);
-              if (data && status === 201) {
+              const { data, Status } = await axios.post("send-feedback", values);
+              if (data && Status === 201) {
                 this.$message.success(data.message);
                 form.resetFields();
                 this.handleCancel();
               }
             } catch ({ response }) {
-              if (response && response.status === 422) {
+              if (response && response.Status === 422) {
                 const message = Object.values(response.data.message)[0];
                 this.$message.error(message);
               }

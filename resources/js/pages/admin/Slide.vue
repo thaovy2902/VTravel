@@ -78,7 +78,7 @@
             <a-button type="danger" icon="delete" block @click="onClickClearImage">Xóa</a-button>
           </div>
         </a-form-item>
-        <a-form-item label="Ẩn/hiện">
+        <a-form-item label="Hide/Show">
           <a-switch v-decorator="['is_active']" v-model="checked"> </a-switch>
         </a-form-item>
       </a-form>
@@ -147,14 +147,14 @@
             scopedSlots: { customRender: "link" }
           },
           {
-            title: "Ẩn/hiện",
+            title: "Hide/Show",
             key: "active",
             align: "center",
             width: "5%",
             scopedSlots: { customRender: "active" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             align: "center",
             width: "13%",
             scopedSlots: { customRender: "action" }

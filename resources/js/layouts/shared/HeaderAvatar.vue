@@ -14,7 +14,7 @@
       </a-menu-item>
       <a-menu-divider />
       <a-menu-item>
-        <a @click="logout"> <a-icon type="logout" :style="{ marginRight: '5px' }" />Đăng xuất </a>
+        <a @click="logout"> <a-icon type="logout" :style="{ marginRight: '5px' }" />Log Out </a>
       </a-menu-item>
     </a-menu>
   </a-dropdown>

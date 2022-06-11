@@ -22,8 +22,8 @@ const getters = {
 const actions = {
   async fetchNotification({ commit }) {
     try {
-      const { data, status } = await callerApi(`notifications`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`notifications`);
+      if (data && Status === 200) {
         commit("fetchNotification", data);
       }
     } catch (error) {
@@ -32,8 +32,8 @@ const actions = {
   },
   async readNotification({ commit }, payload) {
     try {
-      const { status } = await callerApi("markAsRead", "POST", payload);
-      if (status === 200) {
+      const { Status } = await callerApi("markAsRead", "POST", payload);
+      if (Status === 200) {
         commit("readNotification", payload.id);
         router.push({ name: "admin.orders" });
       }
@@ -43,8 +43,8 @@ const actions = {
   },
   async markAsReadAll({ commit, dispatch }) {
     try {
-      const { status } = await callerApi("markAsReadAll", "POST");
-      if (status === 200) {
+      const { Status } = await callerApi("markAsReadAll", "POST");
+      if (Status === 200) {
         dispatch("fetchNotification");
       }
     } catch (error) {
@@ -53,8 +53,8 @@ const actions = {
   },
   async deleteNotification({ commit, dispatch }) {
     try {
-      const { status } = await callerApi("deleteNotification", "POST");
-      if (status === 200) {
+      const { Status } = await callerApi("deleteNotification", "POST");
+      if (Status === 200) {
         dispatch("fetchNotification");
       }
     } catch (error) {

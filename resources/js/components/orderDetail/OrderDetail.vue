@@ -2,9 +2,9 @@
   <a-drawer :width="width" :visible="visiblePreview" @close="$emit('close')">
     <div class="preview-title">
       Order #{{ data.code }}
-      <a-tag :color="getColor(data.status)">{{ data.status | statusOrder }}</a-tag>
+      <a-tag :color="getColor(data.Status)">{{ data.Status | StatusOrder }}</a-tag>
     </div>
-    <div v-if="data.status === 4">
+    <div v-if="data.Status === 4">
       <p :style="pStyle">Lý do hủy</p>
       <a-row>
         <a-col :span="24">
@@ -17,12 +17,12 @@
     <p :style="pStyle">Thông tin liên hệ</p>
     <a-row>
       <a-col :span="12">
-        <description-item title="Họ tên" :content="data.customer_name" />
-        <description-item title="Số điện thoại" :content="data.customer_phone_number" />
+        <description-item title="Full Name" :content="data.customer_name" />
+        <description-item title="Phone Number" :content="data.customer_phone_number" />
       </a-col>
       <a-col :span="12">
         <description-item title="Email" :content="data.customer_email" />
-        <description-item title="Địa chỉ" :content="data.customer_address" />
+        <description-item title="Address" :content="data.customer_address" />
       </a-col>
     </a-row>
 
@@ -31,7 +31,7 @@
     <p :style="pStyle">Thông tin tour</p>
     <a-row v-if="data.tour">
       <a-col :span="12">
-        <description-item title="Mã tour" :content="`#${data.tour.code}`" />
+        <description-item title="Tour ID" :content="`#${data.tour.code}`" />
         <description-item title="Tên tour" :content="data.tour.name" />
         <description-item title="Nơi đi" :content="data.tour.from_place_name" />
         <description-item title="Số ngày" :content="data.tour.number_days | numberDay" />
@@ -39,9 +39,9 @@
         <description-item title="Giá trẻ em" :content="data.tour.price_children | currencyVN" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Loại tour" :content="data.tour.category_name" />
+        <description-item title="Category" :content="data.tour.category_name" />
         <description-item title="Khởi hành" :content="data.tour.depart" />
-        <description-item title="Nơi đến" :content="data.tour.to_place_name" />
+        <description-item title="Destination" :content="data.tour.to_place_name" />
         <description-item title="Số người" :content="data.tour.number_persons | numberPerson" />
         <description-item title="Giá người lớn" :content="data.tour.price_default | currencyVN" />
         <description-item title="Giá em bé" :content="data.tour.price_baby | currencyVN" />

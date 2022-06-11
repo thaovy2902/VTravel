@@ -31,7 +31,7 @@ class CreateOrdersSeeder extends Migration
             $table->double('discount', 10, 2);
             $table->double('total_amount', 10, 2);
             $table->text('note')->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('Status')->default(1);
             $table->boolean('is_paid')->default(false);
             $table->string('reason_cancel')->nullable();
             $table->integer('payment_id')->unsigned()->nullable();

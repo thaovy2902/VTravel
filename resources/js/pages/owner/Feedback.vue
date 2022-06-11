@@ -76,7 +76,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Họ tên",
+            title: "Full Name",
             dataIndex: "name",
             width: "15%",
             sorter: true
@@ -109,7 +109,7 @@
             scopedSlots: { customRender: "seen" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             key: "action",
             width: "10%",
             align: "center",

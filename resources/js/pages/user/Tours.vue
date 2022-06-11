@@ -4,7 +4,7 @@
 
     <section class="tours-banner">
       <img src="/img/tours-banner.jpg" alt="tours-banner" />
-      <span>Travel Bot</span>
+      <span>VTravel</span>
     </section>
 
     <section style="margin-top:16px">
@@ -37,8 +37,8 @@
   export default {
     components: { CardFilterTour, NavSearchTour, ListTour },
     metaInfo: {
-      title: "Tour du lịch",
-      meta: [{ vmid: "description", name: "description", content: "Travel Bot - Tour du lịch" }],
+      title: "Tours",
+      meta: [{ vmid: "description", name: "description", content: "VTravel - Tours" }],
     },
     data() {
       return {

@@ -4,10 +4,10 @@
       <a-row type="flex" justify="center" align="top">
         <a-col :xs="24" :sm="24" :md="8" :lg="8">
           <div class="footer-item">
-            <div class="footer-item-title">Travel bot</div>
+            <div class="footer-item-title">VTravel</div>
             <div>
               <div class="logo-footer">
-                <img src="/img/logo-footer.png" alt="logo-footer" />
+                <img src="/img/logo.svg" alt="logo-footer" />
               </div>
               <div style="fontSize:16px">
                 Hệ thống đặt tour trực tuyến hàng đầu Việt Nam
@@ -17,12 +17,12 @@
         </a-col>
         <a-col :xs="24" :sm="24" :md="8" :lg="8">
           <div class="footer-item">
-            <div class="footer-item-title">Liên hệ</div>
+            <div class="footer-item-title">Contact</div>
             <div style="fontSize:16px">
               <div class="mb-1"><a-icon type="home" style="marginRight:8px" />Đà Nẵng, Việt Nam</div>
-              <div class="mb-1"><a-icon type="phone" style="marginRight:8px" />+84 0101 2345</div>
-              <div class="mb-1"><a-icon type="contacts" style="marginRight:8px" />+84 0101 6789</div>
-              <div class="mb-1"><a-icon type="mail" style="marginRight:8px" />info@travelbot.com</div>
+              <div class="mb-1"><a-icon type="phone" style="marginRight:8px" />+84 853 753 422</div>
+              <div class="mb-1"><a-icon type="contacts" style="marginRight:8px" />+84 853 753 422</div>
+              <div class="mb-1"><a-icon type="mail" style="marginRight:8px" />info@vtravel.com</div>
             </div>
           </div>
         </a-col>
@@ -46,7 +46,7 @@
     </div>
     <div class="global-footer-bottom">
       Made with
-      <a-icon type="heart" theme="filled" style="color:#bf0b2c" /> by TRAVEL BOT TEAM ©{{ getCurrentYear() }}
+      <a-icon type="heart" theme="filled" style="color:#bf0b2c" /> by VTravel TEAM ©{{ getCurrentYear() }}
     </div>
   </a-layout-footer>
 </template>

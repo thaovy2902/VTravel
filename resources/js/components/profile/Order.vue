@@ -1,9 +1,9 @@
 <template>
   <div>
     <a-card class="shadow-sm" :bordered="false" :bodyStyle="{ padding: '16px' }">
-      <a-tabs :defaultActiveKey="$route.query.status" @change="onChangeTab">
+      <a-tabs :defaultActiveKey="$route.query.Status" @change="onChangeTab">
         <div slot="tabBarExtraContent">
-          <a-input-search placeholder="Tìm kiếm theo mã đặt tour" allowClear @search="onSearch" style="width:220px" />
+          <a-input-search placeholder="Tìm kiếm theo Tour ID" allowClear @search="onSearch" style="width:220px" />
         </div>
         <a-tab-pane tab="Đang xử lý" key="1">
           <order-pending :orders="orders" :loading="loading" @view="viewDetail" />
@@ -47,7 +47,7 @@
   export default {
     components: { OrderPending, OrderUnpaid, OrderSuccessful, OrderCanceled, OrderDetail },
     metaInfo: {
-      title: "Lịch sử giao dịch",
+      title: "Payment History",
     },
     data() {
       return {
@@ -59,7 +59,7 @@
         query: {
           page: 1,
           q: "",
-          status: 0,
+          Status: 0,
         },
         //
         order: {},
@@ -75,7 +75,7 @@
             customRender: (text, record, index) => ++index,
           },
           {
-            title: "Mã đặt",
+            title: "ID",
             dataIndex: "code",
           },
           {
@@ -128,7 +128,7 @@
         this.hanldeChangeRoute();
       },
       onChangeTab(activeKey) {
-        this.query.status = +activeKey;
+        this.query.Status = +activeKey;
         this.hanldeChangeRoute();
       },
       hanldeChangeRoute() {
@@ -136,7 +136,7 @@
         let sendQuery = {};
         if (query.page) sendQuery.page = query.page;
         if (query.q) sendQuery.q = query.q;
-        if (query.status) sendQuery.status = query.status;
+        if (query.Status) sendQuery.Status = query.Status;
 
         this.$router.push({ query: { ...sendQuery } });
         this.query = sendQuery;

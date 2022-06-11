@@ -7,13 +7,13 @@
           {{ !isSearch ? "Lọc" : "Đóng" }}
         </a-button>
         <a-range-picker v-if="isSearch" style="margin:0 8px" @change="onChangeRangePicker" />
-        <a-input-search v-if="isSearch" placeholder="Tìm kiếm theo mã đặt" allowClear @search="search" :style="{ width: '200px' }" />
+        <a-input-search v-if="isSearch" placeholder="Tìm kiếm theo ID" allowClear @search="search" :style="{ width: '200px' }" />
       </div>
       <a-tab-pane tab="Đang xử lý" key="1">
-        <pending status="1" :orders="orders" :loading="loading" @retrieveOrder="retrieveOrder" @view="viewDetail" />
+        <pending Status="1" :orders="orders" :loading="loading" @retrieveOrder="retrieveOrder" @view="viewDetail" />
       </a-tab-pane>
       <a-tab-pane tab="Chưa thanh toán" key="2">
-        <pending status="2" :orders="orders" :loading="loading" @retrieveOrder="retrieveOrder" @view="viewDetail" />
+        <pending Status="2" :orders="orders" :loading="loading" @retrieveOrder="retrieveOrder" @view="viewDetail" />
       </a-tab-pane>
       <a-tab-pane tab="Thành công" key="3">
         <successful :orders="orders" :loading="loading" @view="viewDetail" />
@@ -76,7 +76,7 @@
     },
     methods: {
       ...mapActions("order", ["fetchOrders"]),
-      async fetchData(params = { status: this.ordersStatus }) {
+      async fetchData(params = { Status: this.ordersStatus }) {
         const pagination = { ...this.pagination };
         const { data } = await this.fetchOrders(params);
         pagination.total = data.meta.total;
@@ -87,17 +87,17 @@
       onShowSizeChange({ current, pageSize }) {
         const page = current;
         const perPage = pageSize;
-        const status = this.ordersStatus;
+        const Status = this.ordersStatus;
         const from_date = this.date.from;
         const to_date = this.date.to;
-        this.fetchData({ page, perPage, status, from_date, to_date });
+        this.fetchData({ page, perPage, Status, from_date, to_date });
       },
       onChange({ page, pageSize }) {
         const perPage = pageSize;
-        const status = this.ordersStatus;
+        const Status = this.ordersStatus;
         const from_date = this.date.from;
         const to_date = this.date.to;
-        this.fetchData({ page, perPage, status, from_date, to_date });
+        this.fetchData({ page, perPage, Status, from_date, to_date });
       },
       onChangeRangePicker(dates, dateStrings) {
         const from_date = dateStrings[0];
@@ -105,8 +105,8 @@
         const pager = { ...this.pagination };
         const page = pager.current;
         const perPage = pager.perPage;
-        const status = this.ordersStatus;
-        this.fetchData({ page, perPage, status, from_date, to_date });
+        const Status = this.ordersStatus;
+        this.fetchData({ page, perPage, Status, from_date, to_date });
         this.date.from = from_date;
         this.date.to = to_date;
       },
@@ -115,11 +115,11 @@
           const pager = { ...this.pagination };
           const page = pager.current;
           const perPage = pager.perPage;
-          const status = this.ordersStatus;
+          const Status = this.ordersStatus;
           const from_date = this.date.from;
           const to_date = this.date.to;
           const q = cleanAccents(value);
-          this.fetchData({ page, perPage, status, from_date, to_date, q });
+          this.fetchData({ page, perPage, Status, from_date, to_date, q });
           this.q = q;
         }
       },
@@ -130,16 +130,16 @@
         this.q = "";
       },
       onChangeTab(activeKey) {
-        const status = +activeKey;
+        const Status = +activeKey;
         const { current, perPage } = this.pagination;
         const page = current;
         const from_date = this.date.from;
         const to_date = this.date.to;
-        this.fetchData({ page, perPage, status, from_date, to_date });
-        this.ordersStatus = status;
+        this.fetchData({ page, perPage, Status, from_date, to_date });
+        this.ordersStatus = Status;
       },
-      retrieveOrder(status) {
-        this.onChangeTab(status);
+      retrieveOrder(Status) {
+        this.onChangeTab(Status);
       },
       //
       viewDetail(orderId) {

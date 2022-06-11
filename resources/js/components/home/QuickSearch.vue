@@ -7,19 +7,30 @@
 
     <a-row :gutter="8" style="margin-bottom:16px">
       <a-col :span="12">
-        <a-select placeholder="Loại tour" style="width:100%" @change="onChangeCategory">
-          <a-select-option value="0">Tất cả</a-select-option>
+        <a-select placeholder="Category" style="width:100%" @change="onChangeCategory">
+          <a-select-option value="0">All</a-select-option>
           <a-select-option value="1">Trong nước</a-select-option>
           <a-select-option value="2">Ngoài nước</a-select-option>
         </a-select>
+        <a-form-item placeholder="Category" style="width:100%" @change="onChangeCategory">
+          <a-select
+            v-decorator="[
+              'category_id'
+            ]"
+          >
+            <a-select-option v-for="cate in categories" :key="cate.id" :value="cate.id">
+              {{ cate.name }}
+            </a-select-option>
+          </a-select>
+        </a-form-item>
       </a-col>
       <a-col :span="12">
-        <a-select placeholder="Chọn nơi đến" style="width:100%" v-model="toPlaceSelected" @change="onChangeDepart">
+        <a-select placeholder="Choose destination" style="width:100%" v-model="toPlaceSelected" @change="onChangeDepart">
           <a-select-option v-for="city in cities" :key="city.code" :value="city.code">{{ city.name }}</a-select-option>
         </a-select>
       </a-col>
     </a-row>
-    <a-button type="primary" icon="search" @click="search" block>Tìm kiếm</a-button>
+    <a-button type="primary" icon="search" @click="search" block>Search</a-button>
   </a-card>
 </template>
 
@@ -48,7 +59,13 @@
         }
       },
     },
+    // created() {
+    //   this.initForm();
+    // },
     methods: {
+      // initForm() {
+      //   this.form.getFieldDecorator("category_id", { initialValue: undefined });
+      // },
       onChangeCategory(value) {
         this.query.categoryId = +value;
         this.toPlaceSelected = undefined;

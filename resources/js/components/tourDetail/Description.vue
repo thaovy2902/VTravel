@@ -10,10 +10,10 @@
     </div>
     <a-row style="margin-bottom:8px">
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="barcode" title="Mã tour" :content="tour.code" />
+        <description-item icon="barcode" title="Tour ID" :content="tour.code" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="info-circle" title="Loại tour" :content="tour.category_name" />
+        <description-item icon="info-circle" title="Category" :content="tour.category_name" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
         <description-item icon="info-circle" title="Khởi hành" :content="tour.depart | depart" />
@@ -24,7 +24,7 @@
         <description-item icon="environment" title="Nơi đi" :content="tour.from_place_name" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="environment" title="Nơi đến" :content="tour.to_place_name" />
+        <description-item icon="environment" title="Destination" :content="tour.to_place_name" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
         <description-item icon="car" title="Phương tiện" :content="tour.transport" />
@@ -38,7 +38,7 @@
         <description-item icon="team" title="Số người tối đa" :content="`${tour.number_persons} người`" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <a-tag v-if="tour.is_featured" color="blue">Tour nổi bật</a-tag>
+        <a-tag v-if="tour.is_featured" color="blue">Tour Spotlight</a-tag>
       </a-col>
     </a-row>
   </a-card>

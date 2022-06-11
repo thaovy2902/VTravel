@@ -3,7 +3,7 @@
     <div class="card-title-custom"><a-icon type="filter" style="margin-right:6px" />Bộ lọc tìm kiếm</div>
 
     <div class="form-group">
-      <span>Loại tour</span>
+      <span>Category</span>
       <div class="form-input">
         <a-radio-group :value="$route.query.category ? $route.query.category + '' : '0'" buttonStyle="solid" @change="onChangeCategory">
           <a-radio :style="radioStyle" value="0">Tất cả</a-radio>
@@ -15,9 +15,9 @@
     <a-divider />
 
     <div class="form-group">
-      <span>Nơi đến</span>
+      <span>Destination</span>
       <div class="form-input">
-        <a-select placeholder="Nơi đến" style="width: 100%" :value="$route.query.toPlace || undefined" @change="onChangeToPlace">
+        <a-select placeholder="Destination" style="width: 100%" :value="$route.query.toPlace || undefined" @change="onChangeToPlace">
           <a-select-option v-for="city in cities" :key="city.code" :value="city.code">{{ city.name }}</a-select-option>
         </a-select>
       </div>
@@ -29,7 +29,7 @@
       <div class="form-input">
         <a-select placeholder="Khởi hành" :value="$route.query.depart || undefined" style="width: 100%" @change="onChangeDepart">
           <a-select-option value="daily">Hằng ngày</a-select-option>
-          <a-select-option value="contact">Liên hệ</a-select-option>
+          <a-select-option value="contact">Contact</a-select-option>
         </a-select>
       </div>
     </div>

@@ -33,7 +33,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then(resp => {
-          if (resp.data && resp.status === 200) {
+          if (resp.data && resp.Status === 200) {
             commit("fetchSlides", resp.data.data);
             reslove(resp);
           }
@@ -49,13 +49,13 @@ const actions = {
 
   async createSlide({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`admin/slides`, "POST", payload);
-      if (data && status === 201) {
+      const { data, Status } = await callerApi(`admin/slides`, "POST", payload);
+      if (data && Status === 201) {
         commit("createSlide", data);
         vp.$notify.success("Success", "Thêm thành công");
       }
     } catch ({ response }) {
-      if (response && response.status === 422) {
+      if (response && response.Status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -64,13 +64,13 @@ const actions = {
 
   async updateSlide({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`admin/slides/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`admin/slides/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         commit("updateSlide", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
     } catch ({ response }) {
-      if (response && response.status === 422) {
+      if (response && response.Status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -79,8 +79,8 @@ const actions = {
 
   async updateActiveSlide({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`admin/update-active-slide/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`admin/update-active-slide/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         commit("updateSlide", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
@@ -94,8 +94,8 @@ const actions = {
 
   async deleteSlide({ commit }, id) {
     try {
-      const { data, status } = await callerApi(`admin/slides/${id}`, "DELETE");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`admin/slides/${id}`, "DELETE");
+      if (data && Status === 200) {
         commit("deleteSlide", id);
         vp.$notify.success("Success", data.message);
       }

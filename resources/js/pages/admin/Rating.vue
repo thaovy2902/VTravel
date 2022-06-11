@@ -103,12 +103,12 @@
             sorter: true
           },
           {
-            title: "Ẩn/hiện",
+            title: "Hide/Show",
             width: "5%",
             scopedSlots: { customRender: "active" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             key: "action",
             width: "10%",
             align: "center",

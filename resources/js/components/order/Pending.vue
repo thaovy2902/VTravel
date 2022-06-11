@@ -16,7 +16,7 @@
         </template>
         <a @click="$emit('view', record.id)">#{{ record.code }}</a>
       </a-tooltip>
-      <a-tag slot="status" slot-scope="record" :color="colorStatus(record)">{{ record | statusOrder }}</a-tag>
+      <a-tag slot="Status" slot-scope="record" :color="colorStatus(record)">{{ record | StatusOrder }}</a-tag>
       <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
       <template slot="update" slot-scope="record">
         <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Chấp nhận</a-button>
@@ -35,7 +35,7 @@
   export default {
     components: { CancelOrder },
     props: {
-      status: {
+      Status: {
         type: String
       },
       orders: {
@@ -62,7 +62,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Mã đặt tour",
+            title: "Tour ID",
             scopedSlots: { customRender: "code" }
           },
           {
@@ -79,12 +79,12 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "Trạng thái",
-            dataIndex: "status",
-            scopedSlots: { customRender: "status" }
+            title: "Status",
+            dataIndex: "Status",
+            scopedSlots: { customRender: "Status" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             align: "center",
             scopedSlots: { customRender: "update" }
           }
@@ -98,10 +98,10 @@
       onAccept(orderId) {
         const order = {
           id: orderId,
-          values: { status: 3 }
+          values: { Status: 3 }
         };
         this.updateOrder(order);
-        this.$emit("retrieveOrder", this.status);
+        this.$emit("retrieveOrder", this.Status);
       },
       onCancel(orderId) {
         this.visible = true;
@@ -116,13 +116,13 @@
               id: this.orderId,
               values: {
                 reason_cancel: values.reason_cancel,
-                status: 4
+                Status: 4
               }
             };
             await this.updateOrder(order);
             this.confirmLoading = false;
             this.cancel();
-            this.$emit("retrieveOrder", this.status);
+            this.$emit("retrieveOrder", this.Status);
           }
         });
       },

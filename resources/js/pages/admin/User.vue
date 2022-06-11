@@ -14,8 +14,8 @@
           <a-avatar v-if="text" :src="text" :size="32" />
           <a-avatar v-else icon="user" :size="32" />
         </template>
-        <template slot="status" slot-scope="record">
-          <a-tag :color="colorActive(record)">{{ record | status }}</a-tag>
+        <template slot="Status" slot-scope="record">
+          <a-tag :color="colorActive(record)">{{ record | Status }}</a-tag>
         </template>
         <template slot="active" slot-scope="record">
           <a-switch
@@ -54,7 +54,7 @@
 
     <drawer-table :visible="visible" :loading-button="loadingButton" :edit-mode="editMode" @saveForm="saveForm" @closeForm="closeForm">
       <a-form :form="form" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
-        <a-form-item label="Họ tên" has-feedback>
+        <a-form-item label="Full Name" has-feedback>
           <a-input
             v-decorator="[
               'name',
@@ -69,7 +69,7 @@
                 ],
               },
             ]"
-            placeholder="Nhập họ tên"
+            placeholder="Nhập Full Name"
           />
         </a-form-item>
         <a-form-item label="Email" :has-feedback="!editMode">
@@ -108,7 +108,7 @@
             placeholder="Nhập mật khẩu"
           />
         </a-form-item>
-        <a-form-item label="Số điện thoại">
+        <a-form-item label="Phone Number">
           <a-input
             v-decorator="[
               'phone_number',
@@ -116,13 +116,13 @@
                 rules: [{ max: 12, message: 'Tối đa 12 ký tự' }],
               },
             ]"
-            placeholder="Nhập số điện thoại"
+            placeholder="Nhập Phone Number"
           />
         </a-form-item>
-        <a-form-item label="Địa chỉ">
-          <a-textarea v-decorator="['address']" placeholder="Nhập địa chỉ" :autosize="{ minRows: 2, maxRows: 3 }" />
+        <a-form-item label="Address">
+          <a-textarea v-decorator="['address']" placeholder="Nhập Address" :autosize="{ minRows: 2, maxRows: 3 }" />
         </a-form-item>
-        <a-form-item label="Ẩn/hiện">
+        <a-form-item label="Hide/Show">
           <a-switch v-decorator="['is_active']" v-model="checked"> </a-switch>
         </a-form-item>
       </a-form>
@@ -173,7 +173,7 @@
             scopedSlots: { customRender: "avatar" },
           },
           {
-            title: "Họ tên",
+            title: "Full Name",
             dataIndex: "name",
             sorter: true,
           },
@@ -183,14 +183,14 @@
             sorter: true,
           },
           {
-            title: "Trạng thái",
+            title: "Status",
             dataIndex: "is_active",
-            key: "status",
+            key: "Status",
             width: "13%",
-            scopedSlots: { customRender: "status" },
+            scopedSlots: { customRender: "Status" },
           },
           {
-            title: "Ẩn/hiện",
+            title: "Hide/Show",
             align: "center",
             scopedSlots: { customRender: "active" },
           },
@@ -201,7 +201,7 @@
             scopedSlots: { customRender: "role_name" },
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             key: "action",
             align: "center",
             width: "13%",

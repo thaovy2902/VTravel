@@ -15,7 +15,7 @@
       </template>
       <a @click="$emit('view', record.id)">#{{ record.code }}</a>
     </a-tooltip>
-    <a-tag slot="status" slot-scope="record" color="red">{{ record | statusOrder }}</a-tag>
+    <a-tag slot="Status" slot-scope="record" color="red">{{ record | StatusOrder }}</a-tag>
   </a-table>
 </template>
 
@@ -40,7 +40,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Mã đặt",
+            title: "ID",
             dataIndex: "code",
             scopedSlots: { customRender: "code" }
           },
@@ -53,9 +53,9 @@
             dataIndex: "reason_cancel"
           },
           {
-            title: "Trạng thái",
-            dataIndex: "status",
-            scopedSlots: { customRender: "status" }
+            title: "Status",
+            dataIndex: "Status",
+            scopedSlots: { customRender: "Status" }
           }
         ];
 

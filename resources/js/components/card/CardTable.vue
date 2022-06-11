@@ -2,7 +2,7 @@
   <a-card :title="title" :bordered="false" :bodyStyle="{ padding: '16px' }" :headStyle="{ padding: '0 16px' }">
     <div slot="extra">
       <a-button v-if="addButton" type="primary" icon="plus" @click="open">
-        Thêm mới
+        Add New
       </a-button>
       <a-button class="reload" icon="reload" @click="reset">
         Tải lại

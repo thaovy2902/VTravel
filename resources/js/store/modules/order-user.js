@@ -55,12 +55,12 @@ const actions = {
       let url = `orders`;
       if (query.page) url += `?page=${query.page}`;
       if (query.perPage) url += `&perPage=${query.perPage}`;
-      if (query.status) url += `&status=${query.status}`;
+      if (query.Status) url += `&Status=${query.Status}`;
       if (query.q) url += `&q=${query.q}`;
 
       callerApi(url)
-        .then(({ data, status }) => {
-          if (data && status === 200) {
+        .then(({ data, Status }) => {
+          if (data && Status === 200) {
             commit("fetchOrders", data.data);
             reslove(data.meta);
           }
@@ -76,8 +76,8 @@ const actions = {
   async getTourData({ commit, state }) {
     try {
       const tourId = state.orderInfo.tour_id;
-      const { data, status } = await callerApi(`get-tour-data/${tourId}`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`get-tour-data/${tourId}`);
+      if (data && Status === 200) {
         commit("getTourData", data);
       }
     } catch (error) {
@@ -88,8 +88,8 @@ const actions = {
     return new Promise((reslove, reject) => {
       commit("setLoading", true);
       callerApi("orders", "POST", payload)
-        .then(({ data, status }) => {
-          if (data && status === 201) {
+        .then(({ data, Status }) => {
+          if (data && Status === 201) {
             reslove(data);
           }
         })
@@ -103,8 +103,8 @@ const actions = {
   },
   async cancelOrder({ commit, dispatch }, payload) {
     try {
-      const { data, status } = await callerApi(`orders/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`orders/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         vp.$message.success("Hủy thành công");
         dispatch("fetchOrders");
       }
@@ -115,8 +115,8 @@ const actions = {
   async sendVerifyToMail({ commit }, payload) {
     try {
       commit("setLoading", true);
-      const { data, status } = await callerApi("send-mail-verify-transaction", "POST", payload);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("send-mail-verify-transaction", "POST", payload);
+      if (data && Status === 200) {
         vp.$message.success(data.message);
       }
     } finally {
@@ -125,12 +125,12 @@ const actions = {
   },
   async verifyTransaction({ commit }, payload) {
     try {
-      const { data, status } = await callerApi("verify-transaction", "POST", payload);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("verify-transaction", "POST", payload);
+      if (data && Status === 200) {
         commit("setVerify", data.message.isSuccess);
       }
     } catch ({ response }) {
-      if (response && response.status === 404) {
+      if (response && response.Status === 404) {
         commit("setVerify", response.data.message.isSuccess);
         vp.$message.error(response.data.message.message);
         throw new Error(response);
@@ -153,8 +153,8 @@ const actions = {
   },
   async applyDiscount({ commit }, payload) {
     try {
-      const { data, status } = await callerApi("apply-discount", "POST", payload);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("apply-discount", "POST", payload);
+      if (data && Status === 200) {
         commit("setDiscount", data);
         vp.$message.info("Áp dụng mã giảm giá");
       }
@@ -177,8 +177,8 @@ const actions = {
   },
   async fetchPayments({ commit }) {
     try {
-      const { data, status } = await callerApi("payments");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("payments");
+      if (data && Status === 200) {
         commit("fetchPayments", data.data);
       }
     } catch (error) {

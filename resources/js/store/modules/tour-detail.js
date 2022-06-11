@@ -33,13 +33,13 @@ const actions = {
     try {
       commit("setLoading", true);
       const slug = store.state.route.params.slug;
-      const { data, status } = await callerApi(`tours/${slug}`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`tours/${slug}`);
+      if (data && Status === 200) {
         commit("getTour", data);
         // commit("fetchRatings", data.ratings);
       }
     } catch ({ response }) {
-      if (response && response.status === 404) {
+      if (response && response.Status === 404) {
         vp.$notify.error("Lỗi", "Không tìm thấy");
       }
     } finally {
@@ -50,8 +50,8 @@ const actions = {
     const currentTourId = payload.currentTourId;
     const toPlace = payload.toPlace;
     try {
-      const { data, status } = await callerApi(`related-tour?currentTourId=${currentTourId}&toPlace=${toPlace}`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`related-tour?currentTourId=${currentTourId}&toPlace=${toPlace}`);
+      if (data && Status === 200) {
         commit("fetchRelatedTours", data.data);
       }
     } catch ({ response }) {
@@ -63,14 +63,14 @@ const actions = {
     const page = payload.page || 1;
     return new Promise((reslove, reject) => {
       callerApi(`tours/${slug}/ratings?page=${page}`)
-        .then(({ data, status }) => {
-          if (data && status === 200) {
+        .then(({ data, Status }) => {
+          if (data && Status === 200) {
             commit("fetchRatings", data.data);
             reslove(data);
           }
         })
         .catch(({ response }) => {
-          if (response && response.status === 404) {
+          if (response && response.Status === 404) {
             vp.$notify.error("Lỗi", "Not found");
             reject(response);
           }
@@ -80,14 +80,14 @@ const actions = {
   async sendRating({ commit, dispatch }, payload) {
     try {
       const slug = store.state.route.params.slug;
-      const { data, status } = await callerApi(`tours/${slug}/ratings`, "POST", payload);
-      if (data && status === 201) {
+      const { data, Status } = await callerApi(`tours/${slug}/ratings`, "POST", payload);
+      if (data && Status === 201) {
         vp.$message.success("Đánh giá thành công");
         commit("sendRating", data);
         dispatch("getAvgRating");
       }
     } catch ({ response }) {
-      if (response && response.status === 422) {
+      if (response && response.Status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -95,14 +95,14 @@ const actions = {
   },
   async updateRating({ commit, dispatch }, payload) {
     try {
-      const { data, status } = await callerApi(`ratings/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`ratings/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         vp.$message.success("Sửa thành công");
         commit("updateRating", data);
         dispatch("getAvgRating");
       }
     } catch ({ response }) {
-      if (response && response.status === 422) {
+      if (response && response.Status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -110,14 +110,14 @@ const actions = {
   },
   async deleteRating({ commit, dispatch }, id) {
     try {
-      const { data, status } = await callerApi(`ratings/${id}`, "DELETE");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`ratings/${id}`, "DELETE");
+      if (data && Status === 200) {
         vp.$message.success("Xóa đánh giá thành công");
         dispatch("fetchRatings", { page: 1 });
         dispatch("getAvgRating");
       }
     } catch ({ response }) {
-      if (response && response.status === 401) {
+      if (response && response.Status === 401) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -126,8 +126,8 @@ const actions = {
   async getAvgRating({ commit }) {
     try {
       const slug = store.state.route.params.slug;
-      const { data, status } = await callerApi(`avg-rating/${slug}`);
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`avg-rating/${slug}`);
+      if (data && Status === 200) {
         commit("getAvgRating", data);
       }
     } catch (error) {

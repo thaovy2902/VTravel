@@ -31,7 +31,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then(resp => {
-          if (resp && resp.status === 200) {
+          if (resp && resp.Status === 200) {
             commit("fetchPermissions", resp.data.data);
             reslove(resp);
           }
@@ -47,8 +47,8 @@ const actions = {
 
   async fetchRoles({ commit }) {
     try {
-      const { data, status } = await callerApi("owner/roles");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi("owner/roles");
+      if (data && Status === 200) {
         commit("fetchRoles", data.data);
       }
     } catch ({ response }) {
@@ -58,13 +58,13 @@ const actions = {
 
   async updatePermission({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`owner/permissions/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`owner/permissions/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         commit("updatePermission", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
     } catch ({ response }) {
-      if (response && response.status === 404) {
+      if (response && response.Status === 404) {
         const message = response.data.message;
         vp.$notify.error("Error", message);
       }

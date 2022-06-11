@@ -30,7 +30,6 @@ class ForgotPasswordRequest extends FormRequest
     {
         return [
             'email' => config('validation.email'),
-            'recaptcha' => ['required', new ReCaptcha]
         ];
     }
 
@@ -41,7 +40,6 @@ class ForgotPasswordRequest extends FormRequest
             'email.string' => 'Email phải là một chuỗi',
             'email.email' => 'Không đúng định dạng email',
             'email.max' => 'Email tối đa :max ký tự',
-            'recaptcha.required' => 'Bạn chưa chọn Recaptcha',
         ];
     }
 

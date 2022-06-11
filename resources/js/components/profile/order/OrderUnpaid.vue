@@ -18,7 +18,7 @@
       </a-tooltip>
       <span slot="date_depart" slot-scope="text">{{ text | date }}</span>
       <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
-      <a-tag slot="status" slot-scope="record" color="purple">{{ record | statusOrder }}</a-tag>
+      <a-tag slot="Status" slot-scope="record" color="purple">{{ record | StatusOrder }}</a-tag>
       <template slot="action" slot-scope="text, record">
         <a-button size="small" @click="onClickCancel(record.id)">Hủy</a-button>
       </template>
@@ -58,7 +58,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Mã đặt",
+            title: "ID",
             dataIndex: "code",
             scopedSlots: { customRender: "code" }
           },
@@ -81,12 +81,12 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "Trạng thái",
-            dataIndex: "status",
-            scopedSlots: { customRender: "status" }
+            title: "Status",
+            dataIndex: "Status",
+            scopedSlots: { customRender: "Status" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             scopedSlots: { customRender: "action" }
           }
         ];
@@ -115,7 +115,7 @@
               id: this.orderId,
               values: {
                 reason_cancel: values.reason_cancel,
-                status: 4
+                Status: 4
               }
             };
             await this.cancelOrder(order);

@@ -11,8 +11,8 @@
   export default {
     metaInfo: {
       title: "Hệ thống đặt tour hàng đầu Việt Nam",
-      titleTemplate: "%s | Travel Bot",
-      meta: [{ vmid: "description", name: "description", content: "Travel Bot - Hệ thống đặt tour hàng đầu Việt Nam" }],
+      titleTemplate: "%s | VTravel",
+      meta: [{ vmid: "description", name: "description", content: "VTravel - Hệ thống đặt tour hàng đầu Việt Nam" }],
     },
     computed: {
       ...mapState("auth", ["user"]),

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-table placeholder="Tìm kiếm theo tên, mã tour" :title="title" :add-button="true" @open="open" @reset="reset" @search="search">
+    <card-table placeholder="Tìm kiếm theo tên, Tour ID" :title="title" :add-button="true" @open="open" @reset="reset" @search="search">
       <a-table
         :columns="columns"
         :loading="loading"
@@ -18,8 +18,8 @@
         <template slot="from_to_place" slot-scope="record">
           <span>{{ record.from_place_name }} - {{ record.to_place_name }}</span>
         </template>
-        <template slot="status" slot-scope="record">
-          <a-tag :color="colorActive(record)">{{ record | status }}</a-tag>
+        <template slot="Status" slot-scope="record">
+          <a-tag :color="colorActive(record)">{{ record | Status }}</a-tag>
         </template>
         <template slot="featured" slot-scope="record">
           <a-switch
@@ -93,7 +93,7 @@
             </a-form-item>
           </a-col>
           <a-col :span="12">
-            <a-form-item label="Loại tour" has-feedback>
+            <a-form-item label="Category" has-feedback>
               <a-select
                 v-decorator="[
                   'category_id',
@@ -101,7 +101,7 @@
                     rules: [{ required: true, message: 'Không được trống' }]
                   }
                 ]"
-                placeholder="Chọn loại tour"
+                placeholder="Chọn Category"
                 @change="onChangeCategory"
               >
                 <a-select-option v-for="cate in categories" :key="cate.id" :value="cate.id">
@@ -127,7 +127,7 @@
             </a-form-item>
           </a-col>
           <a-col :span="12">
-            <a-form-item label="Nơi đến" has-feedback>
+            <a-form-item label="Destination" has-feedback>
               <a-select
                 mode="multiple"
                 v-decorator="[
@@ -136,7 +136,7 @@
                     rules: [{ required: true, message: 'Không được trống', type: 'array' }]
                   }
                 ]"
-                placeholder="Chọn nơi đến"
+                placeholder="Chọn Destination"
               >
                 <a-select-option v-for="city in cities" :key="city.code" :value="city.code">{{ city.name }}</a-select-option>
               </a-select>
@@ -167,7 +167,7 @@
             <a-form-item label="Khởi hành" has-feedback>
               <a-select v-decorator="['depart', { rules: [{ required: true, message: 'Không được trống' }] }]" placeholder="Chọn">
                 <a-select-option value="daily">Hằng ngày</a-select-option>
-                <a-select-option value="contact">Liên hệ</a-select-option>
+                <a-select-option value="contact">Contact</a-select-option>
               </a-select>
             </a-form-item>
           </a-col>
@@ -240,7 +240,7 @@
                 </a-form-item>
               </a-col>
               <a-col :span="6">
-                <a-form-item label="Ẩn/hiện" :wrapperCol="{ span: 12 }" :labelCol="{ span: 12 }">
+                <a-form-item label="Hide/Show" :wrapperCol="{ span: 12 }" :labelCol="{ span: 12 }">
                   <a-switch v-decorator="['is_active']" v-model="isActive"> </a-switch>
                 </a-form-item>
               </a-col>
@@ -308,7 +308,7 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Mã tour",
+            title: "Tour ID",
             width: "15%",
             scopedSlots: { customRender: "code" }
           },
@@ -318,19 +318,19 @@
             sorter: true
           },
           {
-            title: "Nơi đi/nơi đến",
+            title: "Nơi đi/Destination",
             scopedSlots: { customRender: "from_to_place" }
           },
           {
-            title: "Loại tour",
+            title: "Category",
             dataIndex: "category_name"
           },
           {
-            title: "Trạng thái",
+            title: "Status",
             dataIndex: "is_active",
-            key: "status",
+            key: "Status",
             width: "13%",
-            scopedSlots: { customRender: "status" }
+            scopedSlots: { customRender: "Status" }
           },
           {
             title: "Nổi bật",
@@ -339,13 +339,13 @@
             scopedSlots: { customRender: "featured" }
           },
           {
-            title: "Ẩn/hiện",
+            title: "Hide/Show",
             align: "center",
             width: "5%",
             scopedSlots: { customRender: "active" }
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             key: "action",
             align: "center",
             width: "13%",

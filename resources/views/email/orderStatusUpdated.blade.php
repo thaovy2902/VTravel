@@ -5,10 +5,10 @@
 ### Cảm ơn Anh/Chị đã đặt tour tại {{ config('app.name') }}
 
 @component('mail::panel')
-@if ($order->status == 3)
+@if ($order->Status == 3)
 Đã được chấp nhận
 @else
-@if($order->status == 4)
+@if($order->Status == 4)
 Đã bị hủy. Lý do: {{ $order->reason_cancel }}
 @endif
 @endif

@@ -2,9 +2,9 @@
   <div :style="{ marginTop: '24px' }">
     <a-breadcrumb style="margin-bottom:16px">
       <a-breadcrumb-item>
-        <router-link :to="{ name: 'home' }">Trang chủ</router-link>
+        <router-link :to="{ name: 'home' }">Home</router-link>
       </a-breadcrumb-item>
-      <a-breadcrumb-item>Thông tin cá nhân</a-breadcrumb-item>
+      <a-breadcrumb-item>Personal Information</a-breadcrumb-item>
     </a-breadcrumb>
 
     <a-tabs :defaultActiveKey="$route.name" @change="onChangeTab">
@@ -24,8 +24,8 @@
     data() {
       return {
         tabs: [
-          { key: "profile.info", name: "Thông tin cá nhân", icon: "profile" },
-          { key: "profile.orders", name: "Lịch sử giao dịch", icon: "history" },
+          { key: "profile.info", name: "Personal Information", icon: "profile" },
+          { key: "profile.orders", name: "Payment History", icon: "history" },
         ],
       };
     },

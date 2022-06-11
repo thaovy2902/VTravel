@@ -33,7 +33,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then(resp => {
-          if (resp && resp.status === 200) {
+          if (resp && resp.Status === 200) {
             commit("fetchratings", resp.data.data);
             reslove(resp);
           }
@@ -49,13 +49,13 @@ const actions = {
 
   async createRating({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`admin/ratings`, "POST", payload);
-      if (data && status === 201) {
+      const { data, Status } = await callerApi(`admin/ratings`, "POST", payload);
+      if (data && Status === 201) {
         commit("createRating", data);
         vp.$notify.success("Success", "Thêm thành công");
       }
     } catch ({ response }) {
-      if (response && response.status === 422) {
+      if (response && response.Status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -64,8 +64,8 @@ const actions = {
 
   async updateRating({ commit }, payload) {
     try {
-      const { data, status } = await callerApi(`admin/ratings/${payload.id}`, "PUT", payload.values);
-      if (data && status === 202) {
+      const { data, Status } = await callerApi(`admin/ratings/${payload.id}`, "PUT", payload.values);
+      if (data && Status === 202) {
         commit("updateRating", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
@@ -79,8 +79,8 @@ const actions = {
 
   async deleteRating({ commit }, id) {
     try {
-      const { data, status } = await callerApi(`admin/ratings/${id}`, "DELETE");
-      if (data && status === 200) {
+      const { data, Status } = await callerApi(`admin/ratings/${id}`, "DELETE");
+      if (data && Status === 200) {
         commit("deleteRating", id);
         vp.$notify.success("Success", data.message);
       }

@@ -1,7 +1,7 @@
 <template>
   <a-card :bordered="false" :bodyStyle="{ padding: '16px' }" :headStyle="{ padding: '0 16px' }">
     <div class="header">
-      <h3>Doanh thu</h3>
+      <h3>Revenue</h3>
       <div>
         <a-select v-if="type === 'month'" v-model="month" placeholder="Chọn tháng" style="width:150px;margin-right:8px">
           <a-select-option value="1">Tháng 1</a-select-option>

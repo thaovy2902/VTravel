@@ -20,11 +20,11 @@ const dateFilter = (value) => {
   });
 };
 
-const statusFilter = (value) => {
+const StatusFilter = (value) => {
   return value ? "ACTIVATE" : "INACTIVATE";
 };
 
-const statusOrderFilter = (value) => {
+const StatusOrderFilter = (value) => {
   let result;
   switch (value) {
     case (value = 1):
@@ -103,8 +103,8 @@ const roundedAvgRating = (value) => {
 
 Vue.filter("dateTime", dateTimeFilter);
 Vue.filter("date", dateFilter);
-Vue.filter("status", statusFilter);
-Vue.filter("statusOrder", statusOrderFilter);
+Vue.filter("Status", StatusFilter);
+Vue.filter("StatusOrder", StatusOrderFilter);
 Vue.filter("typeFeedback", typeFeedbackFilter);
 Vue.filter("upperCase", upperCaseFilter);
 Vue.filter("currencyVN", currencyVN);

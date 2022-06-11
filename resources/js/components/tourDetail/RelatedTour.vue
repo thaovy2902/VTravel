@@ -4,7 +4,7 @@
       <a-col :xs="24" :sm="24" :md="16" :lg="16" class="mb-16">
         <span class="title">Tour liên quan</span>
         <a-divider type="vertical" />
-        <router-link :to="{ name: 'tours' }">Xem thêm</router-link>
+        <router-link :to="{ name: 'tours' }">More</router-link>
       </a-col>
     </a-row>
     <a-row :gutter="16">

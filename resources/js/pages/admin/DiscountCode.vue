@@ -144,7 +144,7 @@
             scopedSlots: { customRender: "created_at" },
           },
           {
-            title: "Tùy chọn",
+            title: "Option",
             scopedSlots: { customRender: "action" },
           },
         ];

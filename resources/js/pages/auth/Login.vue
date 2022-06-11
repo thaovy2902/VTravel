@@ -1,5 +1,8 @@
 <template>
   <auth-form>
+    <div>
+      <h2 style="color:#2595ff; text-align: center">ACCOUNT LOGIN</h2>
+    </div>
     <a-form :form="form" @submit.prevent="handleSubmit">
       <a-form-item has-feedback>
         <a-input
@@ -8,9 +11,8 @@
             'email',
             {
               rules: [
-                { type: 'email', message: 'Email không hợp lệ' },
-                { required: true, message: 'Vui lòng nhập email' },
-                { max: 255, message: 'Tối đa 255 ký tự' }
+                { type: 'email', message: 'The email address you have entered is not valid.' },
+                { required: true, message: 'This filed is required.' }
               ]
             }
           ]"
@@ -26,29 +28,28 @@
             'password',
             {
               rules: [
-                { required: true, message: 'Vui lòng nhập mật khẩu' },
-                { min: 6, message: 'Tối thiểu 6 ký tự' },
-                { max: 255, message: 'Tối đa 255 ký tự' }
+                { required: true, message: 'This filed is required.' },
+                { min: 6, message: 'Passwords must be at least 6 characters long.' }
               ]
             }
           ]"
           type="password"
-          placeholder="Mật khẩu"
+          placeholder="Password"
         >
           <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
         </a-input>
       </a-form-item>
       <a-form-item>
         <a-button size="large" type="primary" html-type="submit" :loading="loading" block>
-          Đăng nhập
+          Log In
         </a-button>
       </a-form-item>
       <div class="foot">
         <span>
-          Hoặc
-          <router-link :to="{ name: 'register' }">đăng ký</router-link>
+          or
+          <router-link :to="{ name: 'register' }">Sign Up</router-link>
         </span>
-        <router-link :to="{ name: 'forgotpassword' }" style="color:#ff0000">Quên mật khẩu?</router-link>
+        <router-link :to="{ name: 'forgotpassword' }" style="color:#2595ff">Forgot Your Password?</router-link>
       </div>
     </a-form>
   </auth-form>
@@ -62,11 +63,6 @@
     metaInfo: {
       title: "Đăng nhập",
     },
-    data() {
-      return {
-        recaptcha: ""
-      };
-    },
     computed: {
       ...mapGetters("auth", ["loading"])
     },
@@ -79,16 +75,11 @@
         e.preventDefault();
         this.form.validateFields((err, values) => {
           if (!err) {
-            values.recaptcha = this.recaptcha;
             this.login(values).catch(() => {
-              eventBus.$emit("resetReCaptcha");
             });
           }
         });
       },
-      responseReCaptcha(data) {
-        this.recaptcha = data;
-      }
     }
   };
 </script>

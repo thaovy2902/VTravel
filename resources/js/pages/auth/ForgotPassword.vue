@@ -1,5 +1,8 @@
 <template>
   <auth-form>
+    <div>
+      <h2 style="color:#2595ff; text-align: center">FORGOT PASSWORD</h2>
+    </div>
     <a-form :form="form" @submit.prevent="handleSubmit">
       <div v-if="!isSuccess">
         <a-form-item has-feedback>
@@ -9,9 +12,8 @@
               'email',
               {
                 rules: [
-                  { type: 'email', message: 'Email không hợp lệ' },
-                  { required: true, message: 'Vui lòng nhập email' },
-                  { max: 255, message: 'Tối đa 255 ký tự' }
+                  { type: 'email', message: 'The email address you have entered is not valid.' },
+                  { required: true, message: 'This filed is required.' },
                 ]
               }
             ]"
@@ -21,11 +23,8 @@
           </a-input>
         </a-form-item>
         <a-form-item>
-          <ReCaptcha ref="recaptcha" @responseReCaptcha="responseReCaptcha" />
-        </a-form-item>
-        <a-form-item>
           <a-button size="large" type="primary" html-type="submit" :loading="loading" block>
-            Gửi
+            Send
           </a-button>
         </a-form-item>
       </div>
@@ -40,8 +39,8 @@
         </a-form-item>
       </div>
       <div class="foot">
-        <router-link :to="{ name: 'login' }"> Đăng nhập</router-link>
-        <router-link :to="{ name: 'register' }">Đăng ký</router-link>
+        <router-link :to="{ name: 'login' }">Log In</router-link>
+        <router-link :to="{ name: 'register' }">Sign Up</router-link>
       </div>
     </a-form>
   </auth-form>

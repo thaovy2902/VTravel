@@ -5,18 +5,18 @@
         <a-col :xs="24" :sm="24" :md="6" :lg="6">
           <h3>Thông tin liên hệ</h3>
           <a-divider />
-          <description-item title="Họ tên" :content="userInfo.name" />
+          <description-item title="Full Name" :content="userInfo.name" />
           <description-item title="Email" :content="userInfo.email" />
-          <description-item title="Số điện thoại" :content="userInfo.phone_number" />
-          <description-item title="Địa chỉ" :content="userInfo.address" />
+          <description-item title="Phone Number" :content="userInfo.phone_number" />
+          <description-item title="Address" :content="userInfo.address" />
         </a-col>
         <a-col v-if="tour" :xs="24" :sm="24" :md="9" :lg="9">
           <h3>Thông tin tour</h3>
           <a-divider />
           <description-item title="Tên tour" :content="tour.name" />
-          <description-item title="Loại tour" :content="tour.category_name" />
+          <description-item title="Category" :content="tour.category_name" />
           <description-item title="Nơi đi" :content="tour.from_place_name" />
-          <description-item title="Nơi đến" :content="tour.to_place_name" />
+          <description-item title="Destination" :content="tour.to_place_name" />
           <description-item title="Phương tiện" :content="tour.transport" />
           <description-item title="Số ngày" :content="tour.number_days | numberDay" />
           <description-item title="Giá người lớn" :content="tour.price_default | currencyVN" />

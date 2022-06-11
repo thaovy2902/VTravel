@@ -19,17 +19,17 @@
         </a-divider>
         <list-tour-new :toursNew="toursNew" />
         <div style="margin-top:24px;text-align:center">
-          <a-button @click="$router.push({ name: 'tours' })">Xem thêm</a-button>
+          <a-button @click="$router.push({ name: 'tours' })">More</a-button>
         </div>
       </a-row>
 
       <a-row>
         <a-divider>
-          <span class="tour-title">Tour nổi bật</span>
+          <span class="tour-title">Tour Spotlight</span>
         </a-divider>
         <list-tour-featured :toursFeatured="toursFeatured" />
         <div style="margin-top:24px;text-align:center">
-          <a-button @click="$router.push({ name: 'tours' })">Xem thêm</a-button>
+          <a-button @click="$router.push({ name: 'tours' })">More</a-button>
         </div>
       </a-row>
     </section>
@@ -39,13 +39,14 @@
 <script>
   import HomeUtil from "@/components/home/HomeUtil";
   import Carousel from "@/components/home/Carousel";
+  import Banner from "@/components/home/Banner";
   import ListTourNew from "@/components/home/ListTourNew";
   import ListTourFeatured from "@/components/home/ListTourFeatured";
   import { mapActions, mapGetters } from "vuex";
   export default {
-    components: { HomeUtil, Carousel, ListTourNew, ListTourFeatured },
+    components: { HomeUtil, Carousel, ListTourNew, ListTourFeatured, Banner },
     metaInfo: {
-      title: "Trang chủ",
+      title: "Home",
     },
     computed: {
       ...mapGetters("home", [

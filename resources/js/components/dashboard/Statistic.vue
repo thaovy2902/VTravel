@@ -49,8 +49,8 @@
       </card-statistic>
     </a-col>
     <a-col :sm="24" :md="12" :xl="6">
-      <card-statistic title="Tổng doanh thu" :loading="loadingStatistic">
-        <a-tooltip title="Tổng doanh thu" slot="action">
+      <card-statistic title="Revenue" :loading="loadingStatistic">
+        <a-tooltip title="Revenue" slot="action">
           <a-icon type="info-circle-o" />
         </a-tooltip>
         <div slot="total">

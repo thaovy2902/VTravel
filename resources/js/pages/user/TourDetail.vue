@@ -5,7 +5,7 @@
       <div style="margin-bottom: 16px;">
         <a-breadcrumb>
           <a-breadcrumb-item>
-            <router-link :to="{ name: 'home' }">Trang chủ</router-link>
+            <router-link :to="{ name: 'home' }">Home</router-link>
           </a-breadcrumb-item>
           <a-breadcrumb-item>
             <router-link :to="{ name: 'tours' }">Tour</router-link>

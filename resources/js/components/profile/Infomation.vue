@@ -8,7 +8,7 @@
           <a-divider />
         </a-col>
         <a-col v-if="!$auth.user.phone_number && !$auth.user.address" :span="24" style="margin-bottom:16px">
-          <a-alert type="info" message="Bạn nên cập nhật đầy đủ thông tin" banner />
+          <a-alert type="info" message="Please update all the information." banner />
         </a-col>
         <a-col :xs="24" :sm="24" :md="8" :lg="8">
           <a-row type="flex" justify="center" align="middle">
@@ -33,7 +33,7 @@
                 <a-form-item label="Email">
                   <a-input :value="user.email" disabled />
                 </a-form-item>
-                <a-form-item label="Họ tên">
+                <a-form-item label="Full Name">
                   <a-input
                     v-decorator="[
                       'name',
@@ -49,11 +49,11 @@
                         ],
                       },
                     ]"
-                    placeholder="Nhập họ tên"
+                    placeholder="Nhập Full Name"
                     :disabled="disabled"
                   />
                 </a-form-item>
-                <a-form-item label="Số điện thoại">
+                <a-form-item label="Phone Number">
                   <a-input
                     v-decorator="[
                       'phone_number',
@@ -62,11 +62,11 @@
                         rules: [{ max: 12, message: 'Tối đa 12 ký tự' }],
                       },
                     ]"
-                    placeholder="Nhập số điện thoại"
+                    placeholder="Nhập Phone Number"
                     :disabled="disabled"
                   />
                 </a-form-item>
-                <a-form-item label="Địa chỉ">
+                <a-form-item label="Address">
                   <a-textarea
                     v-decorator="[
                       'address',
@@ -74,7 +74,7 @@
                         initialValue: user.address,
                       },
                     ]"
-                    placeholder="Nhập địa chỉ"
+                    placeholder="Nhập Address"
                     :autosize="{ minRows: 2, maxRows: 3 }"
                     :disabled="disabled"
                   />
@@ -219,7 +219,7 @@
   export default {
     components: { ChangePasswordForm },
     metaInfo: {
-      title: "Thông tin cá nhân",
+      title: "Personal Information",
     },
     data() {
       return {

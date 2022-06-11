@@ -12,7 +12,7 @@
             <description-item title="Tên tour" :content="data.name" />
           </a-col>
           <a-col>
-            <description-item title="Loại tour" :content="data.category_name" />
+            <description-item title="Category" :content="data.category_name" />
           </a-col>
           <a-col>
             <description-item title="Khởi hành" :content="data.depart" />
@@ -21,7 +21,7 @@
             <description-item title="Nơi đi" :content="data.from_place_name" />
           </a-col>
           <a-col>
-            <description-item title="Nơi đến" :content="data.to_place_name" />
+            <description-item title="Destination" :content="data.to_place_name" />
           </a-col>
         </a-row>
       </a-col>
@@ -55,7 +55,7 @@
         <description-item title="Nổi bật" :content="data.is_featured ? 'Nổi bật' : ''" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Ẩn/Hiện" :content="data.is_active ? 'Hiện' : 'Ẩn'" />
+        <description-item title="Hide/Show" :content="data.is_active ? 'Hiện' : 'Ẩn'" />
       </a-col>
     </a-row>
 
