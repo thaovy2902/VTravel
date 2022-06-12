@@ -34,7 +34,7 @@
       </a-comment>
     </div>
     <div v-if="!$auth.loggedIn && !$auth.user" style="text-align:center">
-      Vui lòng <router-link :to="{ name: 'login' }">đăng nhập</router-link> để đánh giá
+      Vui lòng <router-link :to="{ name: 'login' }">Log In</router-link> để đánh giá
     </div>
 
     <a-list class="comment-list" itemLayout="horizontal" :dataSource="ratings">

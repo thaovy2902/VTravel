@@ -61,7 +61,7 @@
   export default {
     components: { AuthForm },
     metaInfo: {
-      title: "Đăng nhập",
+      title: "Log In",
     },
     computed: {
       ...mapGetters("auth", ["loading"])

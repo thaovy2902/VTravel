@@ -1,7 +1,20 @@
 <template>
   <div>
     <loading-full-screen v-if="loadingSlide || loadingRating" />
-
+    <section :style="{ margin: '24px 0' }">
+      <a-row style="margin: 0 -80px">
+        <a-col :xs="24" :sm="24" :md="24" :lg="24">
+          <banner/>
+        </a-col>
+      </a-row>
+    </section>
+     <section :style="{ margin: '24px 0' }">
+      <a-row style="margin: 0 -80px">
+        <a-col :xs="24" :sm="24" :md="24" :lg="24">
+          <list-reason/>
+        </a-col>
+      </a-row>
+    </section>
     <section :style="{ margin: '24px 0' }">
       <a-row :gutter="{ xs: 8, sm: 16, md: 16, lg: 16 }">
         <a-col :xs="0" :sm="0" :md="7" :lg="7">
@@ -40,11 +53,12 @@
   import HomeUtil from "@/components/home/HomeUtil";
   import Carousel from "@/components/home/Carousel";
   import Banner from "@/components/home/Banner";
+  import ListReason from "@/components/home/ListReason";
   import ListTourNew from "@/components/home/ListTourNew";
   import ListTourFeatured from "@/components/home/ListTourFeatured";
   import { mapActions, mapGetters } from "vuex";
   export default {
-    components: { HomeUtil, Carousel, ListTourNew, ListTourFeatured, Banner },
+    components: { HomeUtil, Carousel, ListTourNew, ListTourFeatured, Banner, ListReason },
     metaInfo: {
       title: "Home",
     },

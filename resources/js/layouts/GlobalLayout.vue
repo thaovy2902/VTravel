@@ -25,7 +25,6 @@
 
 <style scoped>
   #global-layout {
-    margin-top: 64px;
     margin-bottom: 32px;
     min-height: calc(100vh - 165px);
   }

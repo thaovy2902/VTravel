@@ -47,7 +47,7 @@
       margin-bottom: 24px;
     }
     .content {
-      background: #fafafa;
+      background: #ffffff;
       padding: 24px 40px;
       border-radius: 2px;
       text-align: left;

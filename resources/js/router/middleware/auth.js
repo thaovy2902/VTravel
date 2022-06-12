@@ -8,7 +8,7 @@ export default function RedirectIfAuthenticated(router) {
 
     if (meta && !user) {
       next({ name: "login" });
-      vp.$message.error("Trang này yêu cầu đăng nhập");
+      vp.$message.error("Trang này yêu cầu Log In");
     } else {
       next();
     }

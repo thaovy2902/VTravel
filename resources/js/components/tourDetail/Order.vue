@@ -63,7 +63,7 @@
     </div>
     <div v-if="!$auth.user && !$auth.loggedIn">
       <a-alert type="warning" showIcon style="width: 100%;" banner>
-        <div slot="message">Vui lòng <router-link :to="{ name: 'login' }">đăng nhập</router-link> để đặt tour</div>
+        <div slot="message">Vui lòng <router-link :to="{ name: 'login' }">Log In</router-link> để đặt tour</div>
       </a-alert>
     </div>
     <a-button v-else type="primary" size="large" block @click="continueOrder">Tiếp tục</a-button>

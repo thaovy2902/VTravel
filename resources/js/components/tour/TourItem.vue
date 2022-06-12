@@ -50,7 +50,7 @@
 <style lang="less" scoped>
   img.img-tour {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
     object-position: center;
     border-top-left-radius: 2px;

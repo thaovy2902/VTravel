@@ -56,7 +56,6 @@
     },
     data() {
       return {
-        recaptcha: "",
         isSuccess: false
       };
     },
@@ -72,17 +71,12 @@
         e.preventDefault();
         this.form.validateFields((err, values) => {
           if (!err) {
-            values.recaptcha = this.recaptcha;
             this.forgotPassword(values)
               .catch(() => {
-                eventBus.$emit("resetReCaptcha");
               })
           }
         });
       },
-      responseReCaptcha(data) {
-        this.recaptcha = data;
-      }
     }
   };
 </script>

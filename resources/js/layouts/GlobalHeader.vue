@@ -32,7 +32,7 @@
                 icon="message"
                 @click="openModalFeedback"
               ></a-button>
-              <a-button @click="$router.push({ name: 'login' })">Đăng nhập</a-button>
+              <a-button @click="$router.push({ name: 'login' })">Log In</a-button>
             </div>
             <div v-else :style="{ display: 'flex', flexDirection: 'row', alignItems: 'center' }">
               <a-button style="marginRight:24px" v-if="$auth.isOwner || $auth.isAdmin" @click="$router.push({ name: pageManager })">
@@ -114,8 +114,8 @@
       padding-left: 35px !important;
     }
     @media (min-width: 1200px) {
-      padding-right: 50px !important;
-      padding-left: 50px !important;
+      padding-right: 80px !important;
+      padding-left: 80px !important;
     }
     .menu-right {
       float: right;

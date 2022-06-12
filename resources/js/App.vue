@@ -10,9 +10,9 @@
 
   export default {
     metaInfo: {
-      title: "Hệ thống đặt tour hàng đầu Việt Nam",
+      title: "Adventure Awaits, Go Find It.",
       titleTemplate: "%s | VTravel",
-      meta: [{ vmid: "description", name: "description", content: "VTravel - Hệ thống đặt tour hàng đầu Việt Nam" }],
+      meta: [{ vmid: "description", name: "description", content: "VTravel - Adventure Awaits, Go Find It." }],
     },
     computed: {
       ...mapState("auth", ["user"]),
@@ -160,12 +160,12 @@
 
   @media (min-width: 1200px) {
     .tb-padding {
-      padding-right: 50px;
-      padding-left: 50px;
+      padding-right: 80px;
+      padding-left: 80px;
     }
     .tb-margin {
-      margin-right: 50px;
-      margin-left: 50px;
+      margin-right: 80px;
+      margin-left: 80px;
     }
   }
 </style>

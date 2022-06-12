@@ -10,7 +10,7 @@
                 <img src="/img/logo.svg" alt="logo-footer" />
               </div>
               <div style="fontSize:16px">
-                Hệ thống đặt tour trực tuyến hàng đầu Việt Nam
+                Adventure Awaits, Go Find It.
               </div>
             </div>
           </div>
@@ -19,7 +19,7 @@
           <div class="footer-item">
             <div class="footer-item-title">Contact</div>
             <div style="fontSize:16px">
-              <div class="mb-1"><a-icon type="home" style="marginRight:8px" />Đà Nẵng, Việt Nam</div>
+              <div class="mb-1"><a-icon type="home" style="marginRight:8px" />Da Nang, Viet Nam</div>
               <div class="mb-1"><a-icon type="phone" style="marginRight:8px" />+84 853 753 422</div>
               <div class="mb-1"><a-icon type="contacts" style="marginRight:8px" />+84 853 753 422</div>
               <div class="mb-1"><a-icon type="mail" style="marginRight:8px" />info@vtravel.com</div>
@@ -27,7 +27,7 @@
           </div>
         </a-col>
         <a-col :xs="24" :sm="24" :md="8" :lg="8">
-          <div class="footer-item">
+          <!-- <div class="footer-item">
             <div class="footer-item-title">Theo dõi chúng tôi</div>
             <div>
               <a href="#" target="_blank" class="link-facebook">
@@ -40,7 +40,7 @@
                 <a-icon theme="filled" type="youtube" class="icon-social" />
               </a>
             </div>
-          </div>
+          </div> -->
         </a-col>
       </a-row>
     </div>
@@ -67,8 +67,8 @@
     color: #fff;
     box-shadow: 0px -1px 10px 0 rgba(0, 0, 0, 0.2);
     .global-footer-top {
-      background: #002140;
-      padding: 24px 50px;
+      background: #ffffff;
+      padding: 24px 80px;
       .footer-item {
         .logo-footer {
           background: #fff;

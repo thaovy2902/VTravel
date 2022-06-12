@@ -54,7 +54,7 @@
     margin-left: 8px;
   }
   .search {
-    width: 250px;
+    width: 280px;
     margin-left: 8px;
   }
 </style>

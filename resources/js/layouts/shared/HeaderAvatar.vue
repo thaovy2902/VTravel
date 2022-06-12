@@ -8,7 +8,7 @@
       <a-avatar v-else icon="user" :size="32" />
     </div>
 
-    <a-menu style="width: 150px" slot="overlay">
+    <a-menu style="width: 180px" slot="overlay">
       <a-menu-item>
         <router-link :to="{ name: 'profile.info' }"><a-icon type="user" :style="{ marginRight: '5px' }" />Trang cá nhân</router-link>
       </a-menu-item>

@@ -1,13 +1,10 @@
 <template>
 
-  <a-row :gutter="16">
+  <!-- <a-row :gutter="16">
     <a-col :xs="0" :sm="0" :md="24" :lg="24" style="margin-bottom:16px">
       <top-rating :topRatings="topRatings" />
     </a-col>
-    <a-col :xs="0" :sm="0" :md="24" :lg="24">
-      <quick-search />
-    </a-col>
-  </a-row>
+  </a-row> -->
 </template>
 
 <script>

@@ -54,7 +54,7 @@ const actions = {
             if (error.response.Status === 401) {
               message = Object.values(error.response.data.message);
             }
-            vp.$notify.error("Lỗi đăng nhập", message);
+            vp.$notify.error("Lỗi Log In", message);
             reject(error);
           }
         })
@@ -102,7 +102,7 @@ const actions = {
     } catch ({ response }) {
       if (response && response.Status === 401) {
         commit("purgeAuth");
-        vp.$notify.warning("Oops...", "Phiên làm việc đã hết hạn, vui lòng đăng nhập lại!");
+        vp.$notify.warning("Oops...", "Phiên làm việc đã hết hạn, vui lòng Log In lại!");
       }
     }
   },

@@ -14,7 +14,7 @@ mix.options({
 });
 
 mix
-  .js("resources/js/app.map.js", "public/js")
+  .js("resources/js/app1.js", "public/js")
   .sourceMaps()
   .version()
   .extract(["vue"]);
