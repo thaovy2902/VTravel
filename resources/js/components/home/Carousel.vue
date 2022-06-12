@@ -34,6 +34,7 @@
 
 <style lang="less" scoped>
   .ant-carousel {
+    padding-left: 32px;
     .slick-slide {
       text-align: center;
       overflow: hidden;
@@ -55,7 +56,7 @@
   .slide-container {
     position: relative;
     img {
-      height: 100%;
+      height: 450px;
       width: 100%;
       border-radius: 2px;
       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);

@@ -63,7 +63,7 @@ class RatingController extends BaseController
 
   public function getTopRating()
   {
-    $ratings = Rating::with(['user', 'tour'])->active()->latest('scores')->inRandomOrder()->take(10)->get();
+    $ratings = Rating::with(['user', 'tour'])->active()->latest('created_at')->inRandomOrder()->take(10)->get();
 
     return RatingResource::collection($ratings);
   }

@@ -159,7 +159,7 @@
 <style lang="less" scoped>
   .tours-banner {
     position: relative;
-    margin: 0 -80px;
+    margin: 0 -50px;
     img {
       width: 100%;
       max-height: 320px;

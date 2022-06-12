@@ -1,6 +1,6 @@
 <template>
   <a-card :bordered="false" :bodyStyle="{ }" class="shadow-sm" id="quick-search">
-    <div style="margin-bottom:8px">
+    <div style="margin-bottom: 16px">
       <a-input class="search-input" placeholder="What do you want to do?" v-model="query.q" allowClear />
     </div>
     <a-row :gutter="8" style="margin-bottom:16px">
@@ -77,6 +77,9 @@
     width: 50%;
     background: transparent;
     padding: 0 80px;
+  }
+  #quick-search .ant-card-body {
+    padding: 0;
   }
   .title {
     font-size: 16px;

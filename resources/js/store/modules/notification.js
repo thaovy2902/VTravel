@@ -64,7 +64,7 @@ const actions = {
   broadcastNotification({ commit }, data) {
     commit("broadcastNotification", data);
     const message = `${data.orderer} vừa đặt tour ${data.tour}`;
-    vp.$notify.info("Đơn đặt tour mới", message);
+    vp.$notify.info("Đơn đặt Newest Tours", message);
   }
 };
 

@@ -38,7 +38,7 @@
         <description-item icon="team" title="Số người tối đa" :content="`${tour.number_persons} người`" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <a-tag v-if="tour.is_featured" color="blue">Tour Spotlight</a-tag>
+        <a-tag v-if="tour.is_featured" color="blue">Top Attractions</a-tag>
       </a-col>
     </a-row>
   </a-card>

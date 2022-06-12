@@ -4,13 +4,14 @@
       <a-row type="flex" justify="center" align="top">
         <a-col :xs="24" :sm="24" :md="8" :lg="8">
           <div class="footer-item">
-            <div class="footer-item-title">VTravel</div>
             <div>
               <div class="logo-footer">
-                <img src="/img/logo.svg" alt="logo-footer" />
+                <router-link :to="{ name: 'home' }">
+                  <img class="logo" src="/img/logo.svg" alt="logo" />
+                </router-link>
               </div>
-              <div style="fontSize:16px">
-                Adventure Awaits, Go Find It.
+              <div style="fontSize: 20px">
+                A Tripadvisor Company
               </div>
             </div>
           </div>
@@ -45,8 +46,7 @@
       </a-row>
     </div>
     <div class="global-footer-bottom">
-      Made with
-      <a-icon type="heart" theme="filled" style="color:#bf0b2c" /> by VTravel TEAM ©{{ getCurrentYear() }}
+      © VTravel, Inc. 2022.
     </div>
   </a-layout-footer>
 </template>
@@ -64,10 +64,9 @@
 <style lang="less" scoped>
   #global-footer {
     padding: 0;
-    color: #fff;
-    box-shadow: 0px -1px 10px 0 rgba(0, 0, 0, 0.2);
+    color: #111111;
     .global-footer-top {
-      background: #ffffff;
+      background: #fbfbfb;
       padding: 24px 80px;
       .footer-item {
         .logo-footer {
@@ -77,6 +76,7 @@
           margin-bottom: 6px;
           img {
             padding: 4px 6px;
+            background: #fbfbfb;
           }
         }
         .footer-item-title {
@@ -88,9 +88,10 @@
       }
     }
     .global-footer-bottom {
-      background: #001529;
-      padding: 12px 0;
-      text-align: center;
+      background: #fbfbfb;
+      padding: 12px 80px;
+      text-align: left;
+      color: rgba(17, 17, 17, 0.5);
     }
     .icon-social {
       font-size: 28px;

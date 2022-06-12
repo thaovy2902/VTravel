@@ -1,21 +1,22 @@
 <template>
   <div>
     <loading-full-screen v-if="loadingSlide || loadingRating" />
-    <section :style="{ margin: '24px 0' }">
-      <a-row style="margin: 0 -80px">
+    <section :style="{ margin: '64px 0' }">
+      <a-row style="margin: 0 -50px">
         <a-col :xs="24" :sm="24" :md="24" :lg="24">
           <banner/>
         </a-col>
       </a-row>
     </section>
      <section :style="{ margin: '24px 0' }">
-      <a-row style="margin: 0 -80px">
+      <a-row style="margin: 0 -50px">
         <a-col :xs="24" :sm="24" :md="24" :lg="24">
           <list-reason/>
         </a-col>
       </a-row>
     </section>
-    <section :style="{ margin: '24px 0' }">
+    <section :style="{ margin: '24px 30px 80px' }">
+      <h2 class="large-title">Unmissable things to do</h2>
       <a-row :gutter="{ xs: 8, sm: 16, md: 16, lg: 16 }">
         <a-col :xs="0" :sm="0" :md="7" :lg="7">
           <home-util :topRatings="topRatings" />
@@ -25,23 +26,19 @@
         </a-col>
       </a-row>
     </section>
-    <section>
+    <section :style="{ margin: '24px 30px' }">
       <a-row>
-        <a-divider>
-          <span class="tour-title">Tour mới</span>
-        </a-divider>
+        <span class="tour-title">Newest tours</span>
         <list-tour-new :toursNew="toursNew" />
-        <div style="margin-top:24px;text-align:center">
+        <div style="text-align:center">
           <a-button @click="$router.push({ name: 'tours' })">More</a-button>
         </div>
       </a-row>
 
       <a-row>
-        <a-divider>
-          <span class="tour-title">Tour Spotlight</span>
-        </a-divider>
+        <span class="tour-title">Top attractions</span>
         <list-tour-featured :toursFeatured="toursFeatured" />
-        <div style="margin-top:24px;text-align:center">
+        <div style="text-align:center">
           <a-button @click="$router.push({ name: 'tours' })">More</a-button>
         </div>
       </a-row>
@@ -91,8 +88,16 @@
 
 <style>
   span.tour-title {
+    display: block;
+    margin-bottom: 24px;
     font-size: 24px;
     font-weight: 700;
-    text-transform: uppercase;
+    color: #111111;
+  }
+  h2.large-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 56px;
+    color: #ff8f00;
   }
 </style>

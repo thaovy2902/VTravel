@@ -1,10 +1,10 @@
 <template>
 
-  <!-- <a-row :gutter="16">
-    <a-col :xs="0" :sm="0" :md="24" :lg="24" style="margin-bottom:16px">
+  <a-row :gutter="16">
+    <a-col :xs="0" :sm="0" :md="24" :lg="24">
       <top-rating :topRatings="topRatings" />
     </a-col>
-  </a-row> -->
+  </a-row>
 </template>
 
 <script>

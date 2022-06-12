@@ -1,8 +1,10 @@
 <template>
-  <a-col class="mb-16" :xs="col.xs" :sm="col.sm" :md="col.md" :lg="col.lg">
+  <a-col class="tour-item" :xs="col.xs" :sm="col.sm" :md="col.md" :lg="col.lg">
     <router-link :to="{ name: 'tours.show', params: { slug: data.slug } }">
-      <a-card :bordered="false" :bodyStyle="{ padding: '16px' }" hoverable>
-        <img class="img-tour" :alt="data.name" v-lazy="data.image" slot="cover" />
+      <a-card :bordered="false" :bodyStyle="{ padding: '16px' }" class="tour-item-card" style="box-shadow: 0 2px 8px rgb(0 0 0 / 9%);" hoverable>
+        <div style="overflow: hidden;">
+          <img class="img-tour" :alt="data.name" v-lazy="data.image" slot="cover" />
+        </div>
         <a-card-meta :title="data.name">
           <template slot="description">
             <div class="description">{{ data.from_place_name }} <a-icon type="arrow-right" /> {{ data.to_place_name }}</div>
@@ -48,6 +50,17 @@
 </script>
 
 <style lang="less" scoped>
+  .tour-item {
+    padding: 0 20px !important;
+    margin-bottom: 40px;
+  }
+  .tour-item-card {
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
   img.img-tour {
     width: 100%;
     height: 280px;
@@ -56,9 +69,6 @@
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     transition: 0.5s ease;
-    &:hover {
-      opacity: 0.55;
-    }
   }
   .content {
     margin-top: 8px;

@@ -1,5 +1,5 @@
 <template>
-  <a-layout ref="container" :style="{ overflowY: 'auto' }">
+  <a-layout ref="container" :style="{ background: '#ffffff' }">
     <global-header />
     <a-layout-content id="global-layout" class="tb-margin">
       <router-view />
