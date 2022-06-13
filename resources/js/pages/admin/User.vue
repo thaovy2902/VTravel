@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-table placeholder="Tìm kiếm theo tên, email" :title="title" :add-button="true" @open="open" @reset="reset" @search="search">
+    <card-table placeholder="Search by name, email" :title="title" :add-button="true" @open="open" @reset="reset" @search="search">
       <a-table
         :columns="columns"
         :loading="loading"
@@ -36,7 +36,7 @@
             <a-icon type="edit"></a-icon>
           </a-button>
           <a-divider type="vertical" />
-          <a-popconfirm v-if="users.length" title="Bạn có chắc chắn?" @confirm="onDelete(record.id)">
+          <a-popconfirm v-if="users.length" title="Are you sure?" @confirm="onDelete(record.id)">
             <a-button type="dashed" size="small">
               <a-icon type="delete"></a-icon>
             </a-button>
@@ -60,7 +60,7 @@
               'name',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This field is required.' },
                   {
                     whitespace: true,
                     message: 'Không được nhập khoảng trắng',
@@ -69,7 +69,7 @@
                 ],
               },
             ]"
-            placeholder="Nhập Full Name"
+            placeholder="Input full name"
           />
         </a-form-item>
         <a-form-item label="Email" :has-feedback="!editMode">
@@ -79,33 +79,33 @@
               'email',
               {
                 rules: [
-                  { type: 'email', message: 'Không đúng định dạng email' },
-                  { required: true, message: 'Không được trống' },
+                  { type: 'email', message: 'The email address you have entered is not valid.' },
+                  { required: true, message: 'This field is required.' },
                   { max: 255, message: 'Tối đa 255 ký tự' },
                 ],
               },
             ]"
-            placeholder="Nhập email"
+            placeholder="Input email"
           />
         </a-form-item>
-        <a-form-item v-if="!editMode" label="Mật khẩu" :has-feedback="!editMode">
+        <a-form-item v-if="!editMode" label="Password" :has-feedback="!editMode">
           <a-input
             type="password"
             v-decorator="[
               'password',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This field is required.' },
                   {
                     whitespace: true,
                     message: 'Không được nhập khoảng trắng',
                   },
-                  { min: 6, message: 'Tối thiểu 6 ký tự' },
+                  { min: 6, message: 'Passwords must be at least 6 characters long.' },
                   { max: 255, message: 'Tối đa 255 ký tự' },
                 ],
               },
             ]"
-            placeholder="Nhập mật khẩu"
+            placeholder="Input password"
           />
         </a-form-item>
         <a-form-item label="Phone Number">
@@ -116,11 +116,11 @@
                 rules: [{ max: 12, message: 'Tối đa 12 ký tự' }],
               },
             ]"
-            placeholder="Nhập Phone Number"
+            placeholder="Input phone number"
           />
         </a-form-item>
         <a-form-item label="Address">
-          <a-textarea v-decorator="['address']" placeholder="Nhập Address" :autosize="{ minRows: 2, maxRows: 3 }" />
+          <a-textarea v-decorator="['address']" placeholder="Input address" :autosize="{ minRows: 2, maxRows: 3 }" />
         </a-form-item>
         <a-form-item label="Hide/Show">
           <a-switch v-decorator="['is_active']" v-model="checked"> </a-switch>
@@ -139,11 +139,11 @@
   export default {
     components: { CardTable, PaginationTable, DrawerTable },
     metaInfo: {
-      title: "Khách hàng",
+      title: "User",
     },
     data() {
       return {
-        title: "Khách hàng",
+        title: "User",
         pagination: {
           total: 0,
           perPage: 0,
@@ -195,7 +195,7 @@
             scopedSlots: { customRender: "active" },
           },
           {
-            title: "Quyền",
+            title: "Role",
             dataIndex: "role_name",
             align: "center",
             scopedSlots: { customRender: "role_name" },

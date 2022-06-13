@@ -1,12 +1,12 @@
 <template>
   <a-card :bordered="false" :bodyStyle="{ padding: '16px' }">
-    <div class="card-title-custom"><a-icon type="filter" style="margin-right:6px" />Bộ lọc tìm kiếm</div>
+    <div class="card-title-custom"><a-icon type="filter" style="margin-right:6px" />SEARCH FILTER</div>
 
     <div class="form-group">
-      <span>Category</span>
+      <span>By Category</span>
       <div class="form-input">
         <a-radio-group :value="$route.query.category ? $route.query.category + '' : '0'" buttonStyle="solid" @change="onChangeCategory">
-          <a-radio :style="radioStyle" value="0">Tất cả</a-radio>
+          <a-radio :style="radioStyle" value="0">All</a-radio>
           <a-radio :style="radioStyle" value="1">Trong nước</a-radio>
           <a-radio :style="radioStyle" value="2">Ngoài nước</a-radio>
         </a-radio-group>
@@ -15,7 +15,7 @@
     <a-divider />
 
     <div class="form-group">
-      <span>Destination</span>
+      <span>By Destination</span>
       <div class="form-input">
         <a-select placeholder="Destination" style="width: 100%" :value="$route.query.toPlace || undefined" @change="onChangeToPlace">
           <a-select-option v-for="city in cities" :key="city.code" :value="city.code">{{ city.name }}</a-select-option>
@@ -25,10 +25,10 @@
     <a-divider />
 
     <div class="form-group">
-      <span>Khởi hành</span>
+      <span>Date</span>
       <div class="form-input">
         <a-select placeholder="Khởi hành" :value="$route.query.depart || undefined" style="width: 100%" @change="onChangeDepart">
-          <a-select-option value="daily">Hằng ngày</a-select-option>
+          <a-select-option value="daily">Daily</a-select-option>
           <a-select-option value="contact">Contact</a-select-option>
         </a-select>
       </div>
@@ -36,15 +36,15 @@
     <a-divider />
 
     <div class="form-group">
-      <span>Nổi bật</span>
+      <span>Option</span>
       <div class="form-input">
-        <a-checkbox ref="featured" :checked="!!$route.query.featured || false" @change="onChangeFeatured">Nổi bật</a-checkbox>
+        <a-checkbox ref="featured" :checked="!!$route.query.featured || false" @change="onChangeFeatured">Is attraction</a-checkbox>
       </div>
     </div>
     <a-divider />
 
     <div class="form-group">
-      <span>Khoảng giá</span>
+      <span>Price range</span>
       <div class="form-input">
         <a-input-group>
           <a-row :gutter="8">
@@ -72,14 +72,14 @@
         </a-input-group>
 
         <a-button style="margin-top: 12px" type="primary" block @click="onClickChangePrice" :disabled="minPrice === 0 || maxPrice === 0">
-          Áp dụng
+          Apply
         </a-button>
       </div>
     </div>
     <a-divider />
 
     <div>
-      <a-button block @click="clearFilter" :disabled="$route.fullPath === '/tours'">Xóa lọc</a-button>
+      <a-button block @click="clearFilter" :disabled="$route.fullPath === '/tours'">Clear all</a-button>
     </div>
   </a-card>
 </template>

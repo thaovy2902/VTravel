@@ -10,7 +10,7 @@
   export default {
     data() {
       return {
-        title: "Tỉ lệ đặt tour",
+        title: "Order Rate",
         settings: {
           roseType: "radius",
           radius: [30, 100]

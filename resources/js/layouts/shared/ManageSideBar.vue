@@ -40,7 +40,7 @@
       <a-menu-item key="admin.ratings">
         <router-link :to="{ name: 'admin.ratings' }">
           <a-icon type="star" />
-          <span>Đánh giá</span>
+          <span>Reviews</span>
         </router-link>
       </a-menu-item>
 

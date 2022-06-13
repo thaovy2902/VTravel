@@ -4,7 +4,7 @@
     <a-card v-else class="shadow-sm" :bordered="false">
       <a-row :gutter="24">
         <a-col :span="24" class="title">
-          Thông tin tài khoản
+          MY PROFILE
           <a-divider />
         </a-col>
         <a-col v-if="!$auth.user.phone_number && !$auth.user.address" :span="24" style="margin-bottom:16px">
@@ -22,7 +22,7 @@
             </a-col>
             <a-col style="margin-top:12px">
               <input ref="inputAvatar" type="file" accept="image/*" style="display:none" @change="onChangeAvatar" />
-              <a-button type="dashed" size="small" icon="upload" @click="$refs.inputAvatar.click()">Chọn ảnh</a-button>
+              <a-button type="dashed" size="small" icon="upload" @click="$refs.inputAvatar.click()">Select image</a-button>
             </a-col>
           </a-row>
         </a-col>
@@ -40,7 +40,7 @@
                       {
                         initialValue: user.name,
                         rules: [
-                          { required: true, message: 'Không được trống' },
+                          { required: true, message: 'This filed is required.' },
                           {
                             whitespace: true,
                             message: 'Không được nhập khoảng trắng',
@@ -49,7 +49,7 @@
                         ],
                       },
                     ]"
-                    placeholder="Nhập Full Name"
+                    placeholder="Input full name"
                     :disabled="disabled"
                   />
                 </a-form-item>
@@ -62,7 +62,7 @@
                         rules: [{ max: 12, message: 'Tối đa 12 ký tự' }],
                       },
                     ]"
-                    placeholder="Nhập Phone Number"
+                    placeholder="Input phone number"
                     :disabled="disabled"
                   />
                 </a-form-item>
@@ -74,21 +74,21 @@
                         initialValue: user.address,
                       },
                     ]"
-                    placeholder="Nhập Address"
+                    placeholder="Input address"
                     :autosize="{ minRows: 2, maxRows: 3 }"
                     :disabled="disabled"
                   />
                 </a-form-item>
                 <a-row type="flex" justify="space-between" align="middle">
                   <a-col>
-                    <a-button icon="lock" @click="visible = true">Đổi mật khẩu</a-button>
+                    <a-button icon="lock" @click="visible = true">Change password</a-button>
                   </a-col>
                   <a-col>
                     <a-button v-if="!disabled" type="primary" htmlType="submit" icon="save">
-                      Lưu
+                      Save
                     </a-button>
                     <a-button @click="disabled = !disabled" :icon="disabled ? 'edit' : ''">
-                      {{ disabled ? "Cập nhật" : "Hủy" }}
+                      {{ disabled ? "Edit" : "Cancel" }}
                     </a-button>
                   </a-col>
                 </a-row>
@@ -142,45 +142,45 @@
       :visible="visible"
       :confirmLoading="confirmLoading"
       centered
-      title='Thay đổi mật khẩu'
-      okText='Lưu'
-      cancelText='Hủy'
+      title='Change password'
+      okText='Save'
+      cancelText='Cancel'
       @cancel="() => { $emit('cancel') }"
       @ok="() => { $emit('ok') }"
     >
       <a-form layout='vertical' :form="changePasswordForm" hideRequiredMark>
-        <a-form-item label='Mật khẩu cũ' hasFeedback>
+        <a-form-item label='Old password' hasFeedback>
           <a-input
             v-decorator="[
               'currentPassword',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This filed is required.' },
                   {
                     whitespace: true,
                     message: 'Không được nhập khoảng trắng'
                   },
-                  { min: 6, message: 'Tối thiểu 6 ký tự' },
+                  { min: 6, message: 'Passwords must be at least 6 characters long.' },
                   { max: 255, message: 'Tối đa 255 ký tự' }
                 ]
               }
             ]"
             type="password"
-            placeholder="Nhập mật khẩu cũ"
+            placeholder="Input old password"
           />
         </a-form-item>
-        <a-form-item label='Mật khẩu mới' hasFeedback>
+        <a-form-item label='New password' hasFeedback>
           <a-input
             v-decorator="[
               'newPassword',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This filed is required.' },
                   {
                     whitespace: true,
                     message: 'Không được nhập khoảng trắng'
                   },
-                  { min: 6, message: 'Tối thiểu 6 ký tự' },
+                  { min: 6, message: 'Passwords must be at least 6 characters long.' },
                   { max: 255, message: 'Tối đa 255 ký tự' },
                   {
                     validator: validateToNextPassword,
@@ -189,16 +189,16 @@
               }
             ]"
             type="password"
-            placeholder="Nhập mật khẩu mới"
+            placeholder="Input new password"
           />
         </a-form-item>
-        <a-form-item label='Xác nhận mật khẩu mới' hasFeedback>
+        <a-form-item label='Confirm new password' hasFeedback>
           <a-input
             v-decorator="[
               'confirmNewPassword',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This filed is required.' },
                   {
                     validator: compareToFirstPassword,
                   },
@@ -206,7 +206,7 @@
               }
             ]"
             type="password"
-            placeholder="Xác nhận mật khẩu mới"
+            placeholder="Confirm new password"
             @blur="handleConfirmBlur"
           />
         </a-form-item>

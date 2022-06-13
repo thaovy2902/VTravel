@@ -16,7 +16,7 @@
         <span slot="expire" slot-scope="text">{{ text | date }}</span>
         <span slot="created_at" slot-scope="text">{{ text | dateTime }}</span>
         <template slot="action" slot-scope="text, record">
-          <a-button size="small" :disabled="disabledButton(record)" @click="sendMail(record.id)">Gửi đến mail</a-button>
+          <a-button size="small" :disabled="disabledButton(record)" @click="sendMail(record.id)">Send to email</a-button>
         </template>
       </a-table>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-table placeholder="Tìm kiếm theo Tour ID" :title="title" @reset="reset" @search="search">
+    <card-table placeholder="Search by Tour ID" :title="title" @reset="reset" @search="search">
       <a-table
         size="middle"
         :columns="columns"
@@ -12,7 +12,7 @@
         <strong slot="no" slot-scope="text, record, index">{{ ++index }}</strong>
         <a-tooltip slot="code" slot-scope="text, record">
           <template slot="title">
-            Xem chi tiết
+            See details
           </template>
           <a @click="onClickDetail(record.id)">#{{ record.code }}</a>
         </a-tooltip>
@@ -20,8 +20,8 @@
         <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
         <a-tag slot="Status" slot-scope="record" :color="getColorStatusOrder(record)">{{ record | StatusOrder }}</a-tag>
         <template v-if="record.Status === 1 || record.Status === 2" slot="update" slot-scope="record">
-          <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Chấp nhận</a-button>
-          <a-button ref="cancelButton" size="small" type="dashed" @click="onCancel(record.id)">Hủy bỏ</a-button>
+          <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Approve</a-button>
+          <a-button ref="cancelButton" size="small" type="dashed" @click="onCancel(record.id)">Reject</a-button>
         </template>
       </a-table>
 
@@ -55,7 +55,7 @@
     components: { CardTable, OrderDetail, CancelOrder },
     data() {
       return {
-        title: "Đặt tour ngày hôm nay",
+        title: "Orders Today",
         pagination: {
           total: 0,
           per_page: 0,
@@ -79,11 +79,11 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "#Tour ID",
+            title: "#ID",
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Khách hàng",
+            title: "Customer",
             dataIndex: "customer_name"
           },
           {
@@ -92,11 +92,11 @@
             scopedSlots: { customRender: "tour_code" }
           },
           {
-            title: "Tên tour",
+            title: "Tour name",
             dataIndex: "tour.name"
           },
           {
-            title: "Thành tiền",
+            title: "Total",
             dataIndex: "total_amount",
             scopedSlots: { customRender: "total_amount" }
           },

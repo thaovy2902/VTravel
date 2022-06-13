@@ -2,19 +2,19 @@
   <div>
     <a-form style="max-width: 500px; margin: 40px auto 0;">
       <a-form-item v-if="disabledButton" :wrapperCol="{ span: 18, offset: 6 }">
-        <a-alert message="Bạn cần điền đầy đủ thông tin" />
+        <a-alert message="Please enter full information." />
       </a-form-item>
       <a-form-item label="Full Name" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập Full Name" v-model="customer.name" />
+        <a-input placeholder="Input full name" v-model="customer.name" />
       </a-form-item>
       <a-form-item label="Email" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập email" v-model="customer.email" />
+        <a-input placeholder="Input email" v-model="customer.email" />
       </a-form-item>
       <a-form-item label="Phone Number" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập Phone Number" v-model="customer.phone_number" />
+        <a-input placeholder="Input phone number" v-model="customer.phone_number" />
       </a-form-item>
       <a-form-item label="Address" :labelCol="{ span: 6 }" :wrapperCol="{ span: 18 }">
-        <a-input placeholder="Nhập Address" v-model="customer.address" />
+        <a-input placeholder="Input address" v-model="customer.address" />
       </a-form-item>
       <a-form-item
         v-if="!verified"

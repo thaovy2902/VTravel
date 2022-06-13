@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-form style="max-width: 500px; margin: 40px auto 0;">
-      <a-form-item label="Phương thức thanh toán" :labelCol="{ span: 8 }" :wrapperCol="{ span: 16 }">
+      <a-form-item label="Payment method" :labelCol="{ span: 8 }" :wrapperCol="{ span: 16 }">
         <a-select
           placeholder="Chọn phương thức thanh toán"
           :defaultValue="$route.query.vnp_ResponseCode ? 2 : undefined"

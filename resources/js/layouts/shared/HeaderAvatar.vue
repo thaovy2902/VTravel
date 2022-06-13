@@ -10,7 +10,7 @@
 
     <a-menu style="width: 180px" slot="overlay">
       <a-menu-item>
-        <router-link :to="{ name: 'profile.info' }"><a-icon type="user" :style="{ marginRight: '5px' }" />Trang cá nhân</router-link>
+        <router-link :to="{ name: 'profile.info' }"><a-icon type="user" :style="{ marginRight: '5px' }" />My Profile</router-link>
       </a-menu-item>
       <a-menu-divider />
       <a-menu-item>

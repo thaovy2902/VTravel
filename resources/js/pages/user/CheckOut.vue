@@ -1,7 +1,7 @@
 <template>
   <div :style="{ marginTop: '24px' }">
     <a-card :bordered="false" :bodyStyle="{ padding: '16px' }">
-      <a-button icon="arrow-left" @click="$router.push({ name: 'tours.show', params: { slug: orderInfo.slug } })">Quay lại</a-button>
+      <a-button icon="arrow-left" @click="$router.push({ name: 'tours.show', params: { slug: orderInfo.slug } })">Back</a-button>
       <a-divider />
       <a-steps :current="current" class="steps">
         <a-step v-for="item in steps" :key="item.title" :title="item.title">
@@ -38,19 +38,19 @@
       return {
         steps: [
           {
-            title: "Thông tin liên hệ",
+            title: "Contact information",
             icon: "user",
           },
           {
-            title: "Xác nhận thông tin",
+            title: "Confirmation",
             icon: "unordered-list",
           },
           {
-            title: "Phương thức thanh toán",
+            title: "Payment method",
             icon: "pay-circle",
           },
           {
-            title: "Hoàn thành",
+            title: "Completed",
             icon: "check-circle",
           },
         ],

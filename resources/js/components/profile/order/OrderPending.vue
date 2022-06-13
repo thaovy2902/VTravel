@@ -12,7 +12,7 @@
       <strong slot="no" slot-scope="text, record, index">{{ ++index }}</strong>
       <a-tooltip slot="code" slot-scope="text, record">
         <template slot="title">
-          Xem chi tiết
+          See details
         </template>
         <a @click="$emit('view', record.id)">#{{ record.code }}</a>
       </a-tooltip>
@@ -20,7 +20,7 @@
       <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
       <a-tag slot="Status" slot-scope="record" color="cyan">{{ record | StatusOrder }}</a-tag>
       <template slot="action" slot-scope="text, record">
-        <a-button size="small" @click="onClickCancel(record.id)">Hủy</a-button>
+        <a-button size="small" @click="onClickCancel(record.id)">Cancel</a-button>
       </template>
     </a-table>
 
@@ -62,11 +62,11 @@
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Tên tour",
+            title: "Tour name",
             dataIndex: "tour.name"
           },
           {
-            title: "Ngày khởi hành",
+            title: "Departure date",
             dataIndex: "date_depart",
             scopedSlots: { customRender: "date_depart" }
           },

@@ -2,7 +2,7 @@
   <div style="max-width: 500px; margin: 40px auto">
     <result :is-success="true" :title="title" :description="description">
       <div slot="action">
-        <a-button type="primary" @click="$router.push({ name: 'home' })">Về Home</a-button>
+        <a-button type="primary" @click="$router.push({ name: 'home' })">Home</a-button>
       </div>
     </result>
   </div>
@@ -16,7 +16,7 @@
       return {
         title: "Đặt tour thành công",
         description: `Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi. 
-          Mọi thắc mắc xin vui lòng liên hệ info@travelbot.com hoặc +84 0101 2345.
+          Mọi thắc mắc xin vui lòng liên hệ info@vtravel.com hoặc +84 0101 2345.
           Xin cảm ơn!`
       };
     }

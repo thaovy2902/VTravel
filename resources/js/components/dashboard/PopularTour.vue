@@ -9,7 +9,7 @@
         <div class="name">{{ item.tour_name }}</div>
       </a-col>
       <a-col :span="3">
-        <div class="times">{{ item.times_order }} lần</div>
+        <div class="times">{{ item.times_order }} orders</div>
       </a-col>
     </a-row>
   </a-card>
@@ -20,7 +20,7 @@
   export default {
     data() {
       return {
-        title: "Tour phổ biến"
+        title: "Best sellers"
       };
     },
     computed: {

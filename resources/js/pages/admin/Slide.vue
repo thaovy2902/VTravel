@@ -22,7 +22,7 @@
             <a-icon type="edit"></a-icon>
           </a-button>
           <a-divider type="vertical" />
-          <a-popconfirm v-if="slides.length" title="Bạn có chắc chắn?" @confirm="onDelete(record.id)">
+          <a-popconfirm v-if="slides.length" title="Are you sure?" @confirm="onDelete(record.id)">
             <a-button type="dashed" size="small">
               <a-icon type="delete"></a-icon>
             </a-button>
@@ -40,18 +40,18 @@
 
     <drawer-table :visible="visible" :edit-mode="editMode" @saveForm="saveForm" @closeForm="closeForm">
       <a-form :form="form" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
-        <a-form-item label="Tiêu đề">
+        <a-form-item label="Title">
           <a-input
             v-decorator="[
               'title',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This field is required.' },
                   { max: 255, message: 'Tối đa 255 ký tự' }
                 ]
               }
             ]"
-            placeholder="Nhập tiêu đề"
+            placeholder="Input title"
           />
         </a-form-item>
         <a-form-item label="Link">
@@ -60,22 +60,22 @@
               'link',
               {
                 rules: [
-                  { required: true, message: 'Không được trống' },
+                  { required: true, message: 'This field is required.' },
                   { max: 255, message: 'Tối đa 255 ký tự' }
                 ]
               }
             ]"
-            placeholder="Nhập link (nếu có)"
+            placeholder="Input link (If have)"
           />
         </a-form-item>
-        <a-form-item label="Ảnh">
+        <a-form-item label="Image">
           <div v-if="!imagePreview">
             <input type="file" ref="image" accept="image/*" :style="{ display: 'none' }" @change="onChangeImage" />
-            <a-button type="dashed" icon="plus" block @click="$refs.image.click()">Ảnh</a-button>
+            <a-button type="dashed" icon="plus" block @click="$refs.image.click()">Image</a-button>
           </div>
           <div v-else>
             <img :src="imagePreview" class="rounded w-100 mb-2" />
-            <a-button type="danger" icon="delete" block @click="onClickClearImage">Xóa</a-button>
+            <a-button type="danger" icon="delete" block @click="onClickClearImage">Delete</a-button>
           </div>
         </a-form-item>
         <a-form-item label="Hide/Show">
@@ -131,12 +131,12 @@
             scopedSlots: { customRender: "no" }
           },
           {
-            title: "Hình",
+            title: "Image",
             align: "center",
             scopedSlots: { customRender: "image" }
           },
           {
-            title: "Tiêu đề",
+            title: "Title",
             dataIndex: "title",
             width: "25%"
           },

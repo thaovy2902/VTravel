@@ -27,7 +27,7 @@
         </a-switch>
       </template>
       <template slot="action" slot-scope="record">
-        <a-popconfirm v-if="ratings.length" title="Bạn có chắc chắn?" @confirm="onDelete(record.id)">
+        <a-popconfirm v-if="ratings.length" title="Are you sure?" @confirm="onDelete(record.id)">
           <a-button type="dashed" size="small">
             <a-icon type="delete"></a-icon>
           </a-button>
@@ -52,11 +52,11 @@
   export default {
     components: { CardTable, PaginationTable },
     metaInfo: {
-      title: "Đánh giá",
+      title: "Reviews",
     },
     data() {
       return {
-        title: "Đánh giá tour",
+        title: "Reviews",
         pagination: {
           total: 0,
           perPage: 0,
@@ -81,23 +81,23 @@
             width: "20%"
           },
           {
-            title: "Người đánh giá",
+            title: "User",
             dataIndex: "author",
             width: "15%"
           },
           {
-            title: "Điểm",
+            title: "Rating",
             dataIndex: "scores",
             sorter: true,
             width: "9%",
             scopedSlots: { customRender: "scores" }
           },
           {
-            title: "Nội dung",
+            title: "Content",
             dataIndex: "content"
           },
           {
-            title: "Ngày đánh giá",
+            title: "Date",
             dataIndex: "created_at",
             width: "15%",
             sorter: true

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <card-table placeholder="Tìm kiếm theo tên, Tour ID" :title="title" :add-button="true" @open="open" @reset="reset" @search="search">
+    <card-table placeholder="Search by name, id" :title="title" :add-button="true" @open="open" @reset="reset" @search="search">
       <a-table
         :columns="columns"
         :loading="loading"
@@ -11,7 +11,7 @@
       >
         <strong slot="no" slot-scope="text, record, index">{{ ++index }}</strong>
         <template slot="code" slot-scope="record">
-          <a-tooltip placement="top" title="Click để xem chi tiết">
+          <a-tooltip placement="top" title="Click to see details">
             <a class="color-code" @click="onPreview(record.id)">#{{ record.code }}</a>
           </a-tooltip>
         </template>
@@ -48,7 +48,7 @@
             <a-icon type="edit"></a-icon>
           </a-button>
           <a-divider type="vertical" />
-          <a-popconfirm v-if="tours.length" title="Bạn có chắc chắn?" @confirm="onDelete(record.id)">
+          <a-popconfirm v-if="tours.length" title="Are you sure?" @confirm="onDelete(record.id)">
             <a-button type="dashed" size="small">
               <a-icon type="delete"></a-icon>
             </a-button>
@@ -77,18 +77,18 @@
       <a-form :form="form" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
         <a-row :gutter="16">
           <a-col :span="12">
-            <a-form-item label="Tên tour" has-feedback>
+            <a-form-item label="Tour name" has-feedback>
               <a-input
                 v-decorator="[
                   'name',
                   {
                     rules: [
-                      { required: true, message: 'Không được trống' },
+                      { required: true, message: 'This field is required.' },
                       { max: 255, message: 'Tối đa 255 ký tự' }
                     ]
                   }
                 ]"
-                placeholder="Nhập tên tour"
+                placeholder="Input tour name"
               />
             </a-form-item>
           </a-col>
@@ -98,10 +98,10 @@
                 v-decorator="[
                   'category_id',
                   {
-                    rules: [{ required: true, message: 'Không được trống' }]
+                    rules: [{ required: true, message: 'This field is required.' }]
                   }
                 ]"
-                placeholder="Chọn Category"
+                placeholder="Choose category"
                 @change="onChangeCategory"
               >
                 <a-select-option v-for="cate in categories" :key="cate.id" :value="cate.id">
@@ -114,15 +114,15 @@
 
         <a-row :gutter="16">
           <a-col :span="12">
-            <a-form-item label="Nơi đi" has-feedback>
+            <a-form-item label="Origin" has-feedback>
               <a-input
                 v-decorator="[
                   'from_place_name',
                   {
-                    rules: [{ required: true, message: 'Không được trống' }]
+                    rules: [{ required: true, message: 'This field is required.' }]
                   }
                 ]"
-                placeholder="Nhập nơi đi"
+                placeholder="Input origin"
               />
             </a-form-item>
           </a-col>
@@ -133,10 +133,10 @@
                 v-decorator="[
                   'to_place_code',
                   {
-                    rules: [{ required: true, message: 'Không được trống', type: 'array' }]
+                    rules: [{ required: true, message: 'This field is required.', type: 'array' }]
                   }
                 ]"
-                placeholder="Chọn Destination"
+                placeholder="Choose destination"
               >
                 <a-select-option v-for="city in cities" :key="city.code" :value="city.code">{{ city.name }}</a-select-option>
               </a-select>
@@ -146,17 +146,17 @@
 
         <a-row :gutter="16">
           <a-col :span="12">
-            <a-form-item label="Phương tiện" has-feedback>
-              <a-input v-decorator="['transport']" placeholder="Nhập phương tiện" />
+            <a-form-item label="Transport" has-feedback>
+              <a-input v-decorator="['transport']" placeholder="Input transport" />
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="Số ngày">
+            <a-form-item label="Time">
               <a-input-number v-decorator="['number_days']" :defaultValue="1" :min="1" :max="30" style="width: 100%" />
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="Số người tối đa">
+            <a-form-item label="Number of Participants">
               <a-input-number v-decorator="['number_persons']" :defaultValue="1" :min="1" :max="20" style="width: 100%" />
             </a-form-item>
           </a-col>
@@ -164,15 +164,15 @@
 
         <a-row :gutter="16">
           <a-col :span="6">
-            <a-form-item label="Khởi hành" has-feedback>
-              <a-select v-decorator="['depart', { rules: [{ required: true, message: 'Không được trống' }] }]" placeholder="Chọn">
-                <a-select-option value="daily">Hằng ngày</a-select-option>
+            <a-form-item label="Date" has-feedback>
+              <a-select v-decorator="['depart', { rules: [{ required: true, message: 'This field is required.' }] }]" placeholder="Choose">
+                <a-select-option value="daily">Daily</a-select-option>
                 <a-select-option value="contact">Contact</a-select-option>
               </a-select>
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="Giá người lớn (đồng)">
+            <a-form-item label="Adults">
               <a-input-number
                 v-decorator="['price_default']"
                 style="width: 100%"
@@ -184,7 +184,7 @@
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="Giá trẻ em (đồng)">
+            <a-form-item label="Children (2-12)">
               <a-input-number
                 v-decorator="['price_children']"
                 style="width: 100%"
@@ -196,7 +196,7 @@
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="Giá em bé (đồng)">
+            <a-form-item label="Infants (0-2)">
               <a-input-number
                 v-decorator="['price_baby']"
                 style="width: 100%"
@@ -211,14 +211,14 @@
 
         <a-row>
           <a-col>
-            <a-form-item label="Mô tả">
+            <a-form-item label="Description">
               <CKEditor @sendEditorData="sendEditorData" />
               <a-input v-decorator="['description']" :style="{ display: 'none' }" />
             </a-form-item>
           </a-col>
           <a-col>
-            <a-form-item label="Ghi chú">
-              <a-textarea v-decorator="['note']" placeholder="Nhập ghi chú (nếu cần)" :autosize="{ minRows: 3, maxRows: 5 }" />
+            <a-form-item label="Note">
+              <a-textarea v-decorator="['note']" placeholder="Input note (if need)" :autosize="{ minRows: 3, maxRows: 5 }" />
             </a-form-item>
           </a-col>
         </a-row>
@@ -230,12 +230,12 @@
           <a-col>
             <input type="file" ref="image" accept="image/*" :style="{ display: 'none' }" @change="onChangeImage" />
             <input type="file" ref="gallery" accept="image/*" multiple :style="{ display: 'none' }" @change="onChangeGallery" />
-            <a-button v-if="imagePreview" type="danger" icon="delete" block class="mb-2" @click="onClickClearImage">Xóa</a-button>
+            <a-button v-if="imagePreview" type="danger" icon="delete" block class="mb-2" @click="onClickClearImage">Delete</a-button>
             <a-button v-if="!imagePreview" type="dashed" icon="picture" block class="mb-2" @click="$refs.image.click()">Image</a-button>
             <a-button type="dashed" icon="switcher" block @click="$refs.gallery.click()">Gallery</a-button>
             <a-row :gutter="16" :style="{ marginTop: '24px' }">
               <a-col :span="6">
-                <a-form-item label="Nổi bật" :wrapperCol="{ span: 12 }" :labelCol="{ span: 12 }">
+                <a-form-item label="Is attraction" :wrapperCol="{ span: 12 }" :labelCol="{ span: 12 }">
                   <a-switch v-decorator="['is_featured']" v-model="isFeatured"> </a-switch>
                 </a-form-item>
               </a-col>
@@ -313,12 +313,12 @@
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Tên tour",
+            title: "Tour name",
             dataIndex: "name",
             sorter: true
           },
           {
-            title: "Nơi đi/Destination",
+            title: "Origin/Destination",
             scopedSlots: { customRender: "from_to_place" }
           },
           {
@@ -333,7 +333,7 @@
             scopedSlots: { customRender: "Status" }
           },
           {
-            title: "Nổi bật",
+            title: "Is Attraction",
             align: "center",
             width: "7%",
             scopedSlots: { customRender: "featured" }

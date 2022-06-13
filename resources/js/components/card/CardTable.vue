@@ -5,7 +5,7 @@
         Add New
       </a-button>
       <a-button class="reload" icon="reload" @click="reset">
-        Tải lại
+        Refresh
       </a-button>
       <a-input-search v-if="!noSearch" class="search" :placeholder="placeholder" allowClear @search="search" />
     </div>
@@ -31,7 +31,7 @@
       placeholder: {
         type: String,
         default() {
-          return "Tìm kiếm...";
+          return "Search...";
         },
       },
     },

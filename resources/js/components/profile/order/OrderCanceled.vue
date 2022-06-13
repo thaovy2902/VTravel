@@ -11,7 +11,7 @@
     <strong slot="no" slot-scope="text, record, index">{{ ++index }}</strong>
     <a-tooltip slot="code" slot-scope="text, record">
       <template slot="title">
-        Xem chi tiết
+        See details
       </template>
       <a @click="$emit('view', record.id)">#{{ record.code }}</a>
     </a-tooltip>
@@ -45,11 +45,11 @@
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Tên tour",
+            title: "Tour name",
             dataIndex: "tour.name"
           },
           {
-            title: "Lý do hủy",
+            title: "Reason",
             dataIndex: "reason_cancel"
           },
           {

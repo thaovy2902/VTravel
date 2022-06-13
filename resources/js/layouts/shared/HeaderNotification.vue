@@ -9,17 +9,17 @@
     <template slot="overlay">
       <div class="notification">
         <div class="header">
-          <span>Thông báo</span>
+          <span>Notifications</span>
           <div class="action">
             <div v-if="unRead.length > 0" :style="{ marginRight: '12px' }">
-              <a-tooltip placement="bottom" title="Đánh giấu là đã đọc">
+              <a-tooltip placement="bottom" title="Mark all as read">
                 <span style="cursor: pointer;" @click="markAsReadAll">
                   <a-icon type="check-circle" :style="{ fontSize: '18px', lineHeight: '18px' }" />
                 </span>
               </a-tooltip>
             </div>
             <div v-if="unRead.length !== 0 || read.length !== 0">
-              <a-tooltip placement="bottom" title="Xóa tất cả">
+              <a-tooltip placement="bottom" title="Delete all">
                 <span style="cursor: pointer;" @click="deleteNotification">
                   <a-icon type="close-circle" :style="{ fontSize: '18px', lineHeight: '18px' }" />
                 </span>
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div v-if="unRead.length === 0 && read.length === 0">
-          Chưa có thông báo nào
+          No notification
         </div>
         <a-list v-if="unRead.length > 0" itemLayout="horizontal" :dataSource="unRead">
           <a-list-item slot="renderItem" slot-scope="item" class="px-6">
