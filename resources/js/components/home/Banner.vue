@@ -22,7 +22,7 @@
     background-position: center;
   }
   #banner .banner-title {
-    padding: 40px 80px;
+    padding: 40px 120px;
     color: #ffffff;
     margin-bottom: 0;
   }

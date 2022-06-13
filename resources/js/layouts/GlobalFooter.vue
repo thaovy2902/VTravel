@@ -67,7 +67,7 @@
     color: #111111;
     .global-footer-top {
       background: #fbfbfb;
-      padding: 24px 80px;
+      padding: 24px 120px;
       .footer-item {
         .logo-footer {
           background: #fff;
@@ -89,7 +89,7 @@
     }
     .global-footer-bottom {
       background: #fbfbfb;
-      padding: 12px 80px;
+      padding: 12px 120px;
       text-align: left;
       color: rgba(17, 17, 17, 0.5);
     }

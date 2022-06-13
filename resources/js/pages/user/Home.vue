@@ -15,7 +15,7 @@
         </a-col>
       </a-row>
     </section>
-    <section :style="{ margin: '24px 30px 80px' }">
+    <section :style="{ margin: '24px 70px 80px' }">
       <h2 class="large-title">Unmissable things to do</h2>
       <a-row :gutter="{ xs: 8, sm: 16, md: 16, lg: 16 }">
         <a-col :xs="0" :sm="0" :md="7" :lg="7">
@@ -26,7 +26,7 @@
         </a-col>
       </a-row>
     </section>
-    <section :style="{ margin: '24px 30px' }">
+    <section :style="{ margin: '24px 70px' }">
       <a-row>
         <span class="tour-title">Newest tours</span>
         <list-tour-new :toursNew="toursNew" />
@@ -39,7 +39,7 @@
         <span class="tour-title">Top attractions</span>
         <list-tour-featured :toursFeatured="toursFeatured" />
         <div style="text-align:center">
-          <a-button @click="$router.push({ name: 'tours' })">More</a-button>
+          <a-button @click="$router.push({ name: 'tours' })"></a-button>
         </div>
       </a-row>
     </section>

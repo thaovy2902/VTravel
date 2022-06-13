@@ -39,15 +39,15 @@
 
 <style scoped>
   #reasons {
-    padding: 40px 80px;
+    padding: 40px 120px;
     text-align: center;
   }
   #reasons .reason-title {
     font-size: 28px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
   }
   .reason-item {
-    margin-right: 80px;
+    margin-right: 120px;
   }
   h4 {
     font-size: 20px;

@@ -160,12 +160,12 @@
 
   @media (min-width: 1200px) {
     .tb-padding {
-      padding-right: 80px;
-      padding-left: 80px;
+      padding-right: 120px;
+      padding-left: 120px;
     }
     .tb-margin {
-      margin-right: 80px;
-      margin-left: 80px;
+      margin-right: 120px;
+      margin-left: 120px;
     }
   }
 </style>

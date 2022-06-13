@@ -13,50 +13,6 @@
         </div>
         <div class="rating-content" :title="rating.content">{{ rating.content }}</div>
       </div>
-            <div v-for="(rating, index) in topRatings" :key="index" class="rating">
-        <div class="rating-header">
-          <div>
-            <a-avatar v-if="rating.avatar" :size="32" :src="rating.avatar" style="margin-right:4px" />
-            <a-avatar v-else :size="32" icon="user" style="margin-right:4px" />
-            <span style="font-weight:500">{{ rating.author }}</span>
-          </div>
-          <div><a-icon v-for="(rating, index) in rating.scores" :key="index" theme="filled" type="star" style="font-size:16px; color:#fadb14" /></div>
-        </div>
-        <div class="rating-content" :title="rating.content">{{ rating.content }}</div>
-      </div>
-            <div v-for="(rating, index) in topRatings" :key="index" class="rating">
-        <div class="rating-header">
-          <div>
-            <a-avatar v-if="rating.avatar" :size="32" :src="rating.avatar" style="margin-right:4px" />
-            <a-avatar v-else :size="32" icon="user" style="margin-right:4px" />
-            <span style="font-weight:500">{{ rating.author }}</span>
-          </div>
-          <div><a-icon v-for="(rating, index) in rating.scores" :key="index" theme="filled" type="star" style="font-size:16px; color:#fadb14" /></div>
-        </div>
-        <div class="rating-content" :title="rating.content">{{ rating.content }}</div>
-      </div>
-            <div v-for="(rating, index) in topRatings" :key="index" class="rating">
-        <div class="rating-header">
-          <div>
-            <a-avatar v-if="rating.avatar" :size="32" :src="rating.avatar" style="margin-right:4px" />
-            <a-avatar v-else :size="32" icon="user" style="margin-right:4px" />
-            <span style="font-weight:500">{{ rating.author }}</span>
-          </div>
-          <div><a-icon v-for="(rating, index) in rating.scores" :key="index" theme="filled" type="star" style="font-size:16px; color:#fadb14" /></div>
-        </div>
-        <div class="rating-content" :title="rating.content">{{ rating.content }}</div>
-      </div>
-            <div v-for="(rating, index) in topRatings" :key="index" class="rating">
-        <div class="rating-header">
-          <div>
-            <a-avatar v-if="rating.avatar" :size="32" :src="rating.avatar" style="margin-right:4px" />
-            <a-avatar v-else :size="32" icon="user" style="margin-right:4px" />
-            <span style="font-weight:500">{{ rating.author }}</span>
-          </div>
-          <div><a-icon v-for="(rating, index) in rating.scores" :key="index" theme="filled" type="star" style="font-size:16px; color:#fadb14" /></div>
-        </div>
-        <div class="rating-content" :title="rating.content">{{ rating.content }}</div>
-      </div>
     </div>
   </a-card>
 </template>

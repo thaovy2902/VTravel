@@ -114,8 +114,8 @@
       padding-left: 35px !important;
     }
     @media (min-width: 1200px) {
-      padding-right: 80px !important;
-      padding-left: 80px !important;
+      padding-right: 120px !important;
+      padding-left: 120px !important;
     }
     .menu-right {
       float: right;

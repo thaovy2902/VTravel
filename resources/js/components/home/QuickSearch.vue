@@ -76,7 +76,7 @@
     position: absolute;
     width: 50%;
     background: transparent;
-    padding: 0 80px;
+    padding: 0 120px;
   }
   #quick-search .ant-card-body {
     padding: 0;
