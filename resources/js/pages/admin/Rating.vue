@@ -78,12 +78,12 @@
           {
             title: "Tour",
             dataIndex: "tour",
-            width: "20%"
+            width: "25%"
           },
           {
             title: "User",
             dataIndex: "author",
-            width: "15%"
+            width: "10%"
           },
           {
             title: "Rating",
@@ -104,7 +104,7 @@
           },
           {
             title: "Hide/Show",
-            width: "5%",
+            width: "7%",
             scopedSlots: { customRender: "active" }
           },
           {

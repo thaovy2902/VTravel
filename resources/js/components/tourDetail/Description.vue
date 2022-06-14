@@ -5,7 +5,7 @@
       <div v-if="avgRating.count > 0" class="rating">
         <div>{{ avgRating.avg | rounded }}<a-icon class="icon" theme="filled" type="star" /></div>
         <a-divider type="vertical" />
-        <div>{{ avgRating.count }} đánh giá</div>
+        <div>{{ avgRating.count }} reviews</div>
       </div>
     </div>
     <a-row style="margin-bottom:8px">
@@ -21,21 +21,21 @@
     </a-row>
     <a-row style="margin-bottom:8px">
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="environment" title="Nơi đi" :content="tour.from_place_name" />
+        <description-item icon="environment" title="Origin" :content="tour.from_place_name" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
         <description-item icon="environment" title="Destination" :content="tour.to_place_name" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="car" title="Phương tiện" :content="tour.transport" />
+        <description-item icon="car" title="Transport" :content="tour.transport" />
       </a-col>
     </a-row>
     <a-row>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="history" title="Số ngày" :content="`${tour.number_days} ngày`" />
+        <description-item icon="history" title="Time" :content="`${tour.number_days} days`" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="team" title="Số người tối đa" :content="`${tour.number_persons} người`" />
+        <description-item icon="team" title="Maximum Number of Participants" :content="`${tour.number_persons} people`" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
         <a-tag v-if="tour.is_featured" color="blue">Top Attractions</a-tag>

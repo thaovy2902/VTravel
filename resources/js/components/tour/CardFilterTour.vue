@@ -1,14 +1,15 @@
 <template>
-  <a-card :bordered="false" :bodyStyle="{ padding: '16px' }">
+  <a-card :bordered="false" :bodyStyle="{ padding: '16px'}">
     <div class="card-title-custom"><a-icon type="filter" style="margin-right:6px" />SEARCH FILTER</div>
 
     <div class="form-group">
       <span>By Category</span>
       <div class="form-input">
-        <a-radio-group :value="$route.query.category ? $route.query.category + '' : '0'" buttonStyle="solid" @change="onChangeCategory">
+        <a-radio-group buttonStyle="solid" @change="onChangeCategory">
           <a-radio :style="radioStyle" value="0">All</a-radio>
-          <a-radio :style="radioStyle" value="1">Trong nước</a-radio>
-          <a-radio :style="radioStyle" value="2">Ngoài nước</a-radio>
+          <a-radio :style="radioStyle" v-for="cate in categories" :key="cate.id" :value="cate.id">
+            {{ cate.name }}
+          </a-radio>
         </a-radio-group>
       </div>
     </div>
@@ -35,13 +36,13 @@
     </div>
     <a-divider />
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <span>Option</span>
       <div class="form-input">
-        <a-checkbox ref="featured" :checked="!!$route.query.featured || false" @change="onChangeFeatured">Is attraction</a-checkbox>
+        <a-checkbox ref="featured" :checked="!$route.query.featured || false" @change="onChangeFeatured">Is attraction</a-checkbox>
       </div>
     </div>
-    <a-divider />
+    <a-divider /> -->
 
     <div class="form-group">
       <span>Price range</span>
@@ -78,9 +79,9 @@
     </div>
     <a-divider />
 
-    <div>
+    <!-- <div>
       <a-button block @click="clearFilter" :disabled="$route.fullPath === '/tours'">Clear all</a-button>
-    </div>
+    </div> -->
   </a-card>
 </template>
 
@@ -100,6 +101,7 @@
       };
     },
     computed: {
+      ...mapGetters("tour", ["categories"]),
       cities() {
         if (!this.categoryId) {
           return this.$root.cities;
@@ -112,7 +114,11 @@
         }
       },
     },
+    created() {
+      this.fetchCategories();
+    },
     methods: {
+      ...mapActions("tour", ["fetchCategories"]),
       onChangeCategory(e) {
         const categoryId = +e.target.value;
         this.categoryId = categoryId;
@@ -132,6 +138,7 @@
       },
       clearFilter() {
         const fullPath = this.$route.fullPath;
+        this.$emit("changeCategory", 0);
         if (fullPath !== "/tours") {
           this.$emit("clearFilter");
         }

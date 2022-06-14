@@ -1,7 +1,7 @@
 <template>
   <a-col class="tour-item" :xs="col.xs" :sm="col.sm" :md="col.md" :lg="col.lg">
     <router-link :to="{ name: 'tours.show', params: { slug: data.slug } }">
-      <a-card :bordered="false" :bodyStyle="{ padding: '16px' }" class="tour-item-card" style="box-shadow: 0 2px 8px rgb(0 0 0 / 9%);" hoverable>
+      <a-card :bordered="false" :bodyStyle="{ padding: '16px' }" class="tour-item-card" style="box-shadow: 0 2px 8px rgb(0 0 0 / 9%); border-radius: 20px; position: relative;" hoverable>
         <div style="overflow: hidden;">
           <img class="img-tour" :alt="data.name" v-lazy="data.image" slot="cover" />
         </div>
@@ -13,7 +13,7 @@
         <div class="content">
           <div class="content-rating">
             <a-rate :defaultValue="ratingRounded" disabled allowHalf />
-            | {{ data.count_rating }} đánh giá
+            | {{ data.count_rating }} reviews
           </div>
           <span class="content-price">{{ data.price_default | currencyVN }}</span>
         </div>
@@ -64,6 +64,8 @@
   img.img-tour {
     width: 100%;
     height: 280px;
+    border-radius: 10px;
+    margin-bottom: 20px;
     object-fit: cover;
     object-position: center;
     border-top-left-radius: 2px;
@@ -76,15 +78,18 @@
     .content-rating {
       font-size: 13px;
       font-weight: 600;
+      margin-bottom: 24px;
     }
     .content-price {
-      color: #FF8F00;
-      background: #FF8F0017;
-      padding: 2px 4px;
+      color: #ff0000;
+      background: #ffffff;
+      padding: 4px 8px;
       border-radius: 4px;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
-      float: right;
+      position: absolute;
+      right: 20px;
+      top: 20px;
     }
   }
   .mb-16 {
@@ -96,5 +101,6 @@
     -webkit-line-clamp: 1;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: 12px;
   }
 </style>

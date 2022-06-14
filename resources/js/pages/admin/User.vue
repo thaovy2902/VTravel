@@ -15,7 +15,7 @@
           <a-avatar v-else icon="user" :size="32" />
         </template>
         <template slot="Status" slot-scope="record">
-          <a-tag :color="colorActive(record)">{{ record | Status }}</a-tag>
+          <a-tag :color="colorActive(record)">{{ record ? 'active' : 'deactivated'}}</a-tag>
         </template>
         <template slot="active" slot-scope="record">
           <a-switch

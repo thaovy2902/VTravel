@@ -309,7 +309,7 @@
           },
           {
             title: "Tour ID",
-            width: "15%",
+            width: "10%",
             scopedSlots: { customRender: "code" }
           },
           {
@@ -329,19 +329,19 @@
             title: "Status",
             dataIndex: "is_active",
             key: "Status",
-            width: "13%",
+            width: "5%",
             scopedSlots: { customRender: "Status" }
           },
           {
             title: "Is Attraction",
             align: "center",
-            width: "7%",
+            width: "8%",
             scopedSlots: { customRender: "featured" }
           },
           {
             title: "Hide/Show",
             align: "center",
-            width: "5%",
+            width: "10%",
             scopedSlots: { customRender: "active" }
           },
           {

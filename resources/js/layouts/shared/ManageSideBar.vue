@@ -47,7 +47,7 @@
       <a-menu-item key="admin.slides">
         <router-link :to="{ name: 'admin.slides' }">
           <a-icon type="switcher" />
-          <span>Slide</span>
+          <span>Slides</span>
         </router-link>
       </a-menu-item>
 

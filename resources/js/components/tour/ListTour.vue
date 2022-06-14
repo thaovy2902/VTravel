@@ -16,7 +16,7 @@
             @change="onChange"
           />
         </a-col>
-        <a-col v-else>Không tìm thấy kết quả</a-col>
+        <a-col v-else>Oops we haven't found any results!</a-col>
       </a-row>
     </a-card>
   </div>

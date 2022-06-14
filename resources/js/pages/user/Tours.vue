@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div style="padding: 0 70px; margin-top: 40px;">
     <loading-full-screen v-if="loading" />
 
     <section class="tours-banner">
-      <img src="/img/tours-banner.jpg" alt="tours-banner" />
+      <img src="https://threekings.travel/files/thumb/1920/500//uploads//VietNam/Da-Nang/1.jpg" alt="tours-banner" />
       <span>VTravel</span>
     </section>
 
     <section style="margin-top:16px">
       <a-row :gutter="16">
-        <a-col :xs="24" :sm="24" :md="5" :lg="5">
+        <a-col :xs="24" :sm="24" :md="5" :lg="5" class="tour-filter">
           <card-filter-tour
             @changeCategory="changeCategory"
             @changeDepart="changeDepart"
@@ -156,13 +156,12 @@
   };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
   .tours-banner {
     position: relative;
-    margin: 0 -50px;
     img {
       width: 100%;
-      max-height: 320px;
+      height: 320px;
     }
     span {
       position: absolute;
@@ -179,5 +178,10 @@
       line-height: 32px;
       padding: 27px 80px;
     }
+  }
+  .tour-filter {
+    position: sticky;
+    top: 80px;
+    height: 650px;
   }
 </style>

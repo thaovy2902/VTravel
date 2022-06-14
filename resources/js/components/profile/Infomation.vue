@@ -300,16 +300,18 @@
   .container-avatar {
     border-radius: 50%;
     background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
     height: auto;
     cursor: pointer;
     img {
-      object-fit: contain;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      object-fit: cover;
       object-position: center;
-      padding: 4px;
-      width: 100%;
+      padding: 2px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      overflow: hidden;
     }
   }
 </style>

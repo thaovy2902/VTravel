@@ -2,23 +2,20 @@
   <a-card :bordered="false" :body-style="{ padding: '24px' }">
     <a-tabs defaultActiveKey="1" @change="onChangeTab">
       <div slot="tabBarExtraContent">
-        <a-button icon="reload" @click="reset">Tải lại</a-button>
-        <a-button style="margin-left:8px" :icon="!isSearch ? 'filter' : 'close'" @click="isSearch = !isSearch">
-          {{ !isSearch ? "Lọc" : "Đóng" }}
-        </a-button>
-        <a-range-picker v-if="isSearch" style="margin:0 8px" @change="onChangeRangePicker" />
-        <a-input-search v-if="isSearch" placeholder="Tìm kiếm theo ID" allowClear @search="search" :style="{ width: '200px' }" />
+        <a-button icon="reload" @click="reset">Refresh</a-button>
+        <a-range-picker style="margin:0 8px; width: 250px;" @change="onChangeRangePicker" />
+        <a-input-search placeholder="Search by id" allowClear @search="search" :style="{ width: '200px' }" />
       </div>
-      <a-tab-pane tab="Đang xử lý" key="1">
+      <a-tab-pane tab="Processing" key="1">
         <pending Status="1" :orders="orders" :loading="loading" @retrieveOrder="retrieveOrder" @view="viewDetail" />
       </a-tab-pane>
-      <a-tab-pane tab="Chưa thanh toán" key="2">
+      <a-tab-pane tab="Unpaid" key="2">
         <pending Status="2" :orders="orders" :loading="loading" @retrieveOrder="retrieveOrder" @view="viewDetail" />
       </a-tab-pane>
-      <a-tab-pane tab="Thành công" key="3">
+      <a-tab-pane tab="Completed" key="3">
         <successful :orders="orders" :loading="loading" @view="viewDetail" />
       </a-tab-pane>
-      <a-tab-pane tab="Bị hủy" key="4">
+      <a-tab-pane tab="Cancelled" key="4">
         <canceled :orders="orders" :loading="loading" @view="viewDetail" />
       </a-tab-pane>
     </a-tabs>

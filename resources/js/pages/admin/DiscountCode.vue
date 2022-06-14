@@ -31,23 +31,23 @@
 
     <drawer-table :visible="visible" :loading-button="loadingButton" @saveForm="saveForm" @closeForm="closeForm">
       <a-form :form="form" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
-        <a-form-item label="Phần trăm" hasFeedback>
-          <a-input-number v-decorator="['percent', config]" :min="0" :max="99" placeholder="Phần trăm" style="width:100%" />
+        <a-form-item label="Percentage discount (%)" hasFeedback>
+          <a-input-number v-decorator="['percent', config]" :min="0" :max="99" placeholder="Percentage discount (%)" style="width:100%" />
         </a-form-item>
         <a-form-item label="Lượt sử dụng" hasFeedback>
           <a-input-number v-decorator="['remaining', config]" :min="0" placeholder="Lượt sử dụng" style="width:100%" />
         </a-form-item>
-        <a-form-item label="Hạn dùng" hasFeedback>
+        <a-form-item label="Expiry Date" hasFeedback>
           <a-date-picker
             v-decorator="['expire', configDate]"
             :disabledDate="disabledDate"
             allowClear
-            placeholder="Hạn dùng"
+            placeholder="Expiry Date"
             style="width:100%"
           />
         </a-form-item>
-        <a-form-item label="Số lượng" extra="Không chọn nếu bạn tạo 1 mã">
-          <a-select v-decorator="['quantity']" placeholder="Số lượng" style="width:100%">
+        <a-form-item label="Quantity" extra="Không chọn nếu bạn tạo 1 mã">
+          <a-select v-decorator="['quantity']" placeholder="Quantity" style="width:100%">
             <a-select-option value="5">5</a-select-option>
             <a-select-option value="10">10</a-select-option>
             <a-select-option value="15">15</a-select-option>
@@ -60,8 +60,8 @@
     <a-modal
       centered
       title="Số khách hàng"
-      okText="Gửi"
-      cancelText="Đóng"
+      okText="Send"
+      cancelText="Close"
       :width="400"
       :visible="isVisibleModal"
       @cancel="onCancel"
@@ -86,11 +86,11 @@
   export default {
     components: { CardTable, PaginationTable, DrawerTable },
     metaInfo: {
-      title: "Mã giảm giá",
+      title: "Discounts",
     },
     data() {
       return {
-        title: "Mã giảm giá",
+        title: "Discounts",
         pagination: {
           total: 0,
           per_page: 0,
@@ -115,13 +115,13 @@
             scopedSlots: { customRender: "no" },
           },
           {
-            title: "Mã",
+            title: "Code",
             dataIndex: "code",
             sorter: true,
             scopedSlots: { customRender: "code" },
           },
           {
-            title: "Giảm",
+            title: "Percentage discount (%)",
             dataIndex: "percent",
             sorter: true,
             scopedSlots: { customRender: "percent" },
@@ -132,13 +132,13 @@
             dataIndex: "remaining",
           },
           {
-            title: "Hạn dùng",
+            title: "Expiry Date",
             dataIndex: "expire",
             sorter: true,
             scopedSlots: { customRender: "expire" },
           },
           {
-            title: "Ngày tạo",
+            title: "Created date",
             dataIndex: "created_at",
             sorter: true,
             scopedSlots: { customRender: "created_at" },

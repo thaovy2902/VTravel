@@ -24,8 +24,9 @@
           <a-select-option value="4">Fourth quarter</a-select-option>
         </a-select>
         <a-select placeholder="Choose year" v-model="year" style="width:180px;margin-right:8px">
-          <a-select-option value="2019">2019</a-select-option>
+          <a-select-option value="2021">2021</a-select-option>
           <a-select-option value="2020">2020</a-select-option>
+          <a-select-option value="2019">2019</a-select-option>
         </a-select>
 
         <a-button type="primary" :disabled="disabledButton" @click="getRevenue">View</a-button>

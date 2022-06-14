@@ -3,18 +3,18 @@
     <a-card class="shadow-sm" :bordered="false" :bodyStyle="{ padding: '16px' }">
       <a-tabs :defaultActiveKey="$route.query.Status" @change="onChangeTab">
         <div slot="tabBarExtraContent">
-          <a-input-search placeholder="Tìm kiếm theo Tour ID" allowClear @search="onSearch" style="width:220px" />
+          <a-input-search placeholder="Search by tour id" allowClear @search="onSearch" style="width:220px" />
         </div>
-        <a-tab-pane tab="Đang xử lý" key="1">
+        <a-tab-pane tab="Processing" key="1">
           <order-pending :orders="orders" :loading="loading" @view="viewDetail" />
         </a-tab-pane>
-        <a-tab-pane tab="Chờ thanh toán" key="2">
+        <a-tab-pane tab="Unpaid" key="2">
           <order-unpaid :orders="orders" :loading="loading" @view="viewDetail" />
         </a-tab-pane>
-        <a-tab-pane tab="Thành công" key="3">
+        <a-tab-pane tab="Completed" key="3">
           <order-successful :orders="orders" :loading="loading" @view="viewDetail" />
         </a-tab-pane>
-        <a-tab-pane tab="Đã hủy" key="4">
+        <a-tab-pane tab="Cancelled" key="4">
           <order-canceled :orders="orders" :loading="loading" @view="viewDetail" />
         </a-tab-pane>
       </a-tabs>
