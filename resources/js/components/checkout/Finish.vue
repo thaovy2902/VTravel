@@ -14,10 +14,9 @@
     components: { Result },
     data() {
       return {
-        title: "Đặt tour thành công",
-        description: `Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi. 
-          Mọi thắc mắc xin vui lòng liên hệ info@vtravel.com hoặc +84 0101 2345.
-          Xin cảm ơn!`
+        title: "Order Successful",
+        description: `Thank you so much for your order. You'll receive an email confirmation shortly.
+          Please contact us if you have any questions.`
       };
     }
   };

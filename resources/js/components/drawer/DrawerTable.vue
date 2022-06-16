@@ -3,9 +3,9 @@
     <slot></slot>
     <div class="drawer-footer">
       <a-button :style="{ marginRight: '8px' }" @click="close" icon="close">
-        Hủy
+        Cancel
       </a-button>
-      <a-button type="primary" icon="save" :loading="loadingButton" @click="save">Lưu</a-button>
+      <a-button type="primary" icon="save" :loading="loadingButton" @click="save">Save</a-button>
     </div>
   </a-drawer>
 </template>

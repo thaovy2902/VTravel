@@ -1,12 +1,12 @@
-@component('mail::message')
+<!-- @component('mail::message') -->
 # Xác nhận giao dịch
 
-Sao chép mã bên dưới và dán vào ô xác thực
+Copy code below and paste it into
 
 @component('mail::panel')
 {{ $code }}
 @endcomponent
 
-Cảm ơn,<br>
-{{ config('app.name') }}
+Thank you for your order,<br>
+VTravel
 @endcomponent

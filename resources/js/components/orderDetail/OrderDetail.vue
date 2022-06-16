@@ -5,16 +5,16 @@
       <a-tag :color="getColor(data.Status)">{{ data.Status | StatusOrder }}</a-tag>
     </div>
     <div v-if="data.Status === 4">
-      <p :style="pStyle">Lý do hủy</p>
+      <p :style="pStyle">Reason</p>
       <a-row>
         <a-col :span="24">
-          <description-item title="Lý do" :content="data.reason_cancel" />
+          <description-item title="Reason" :content="data.reason_cancel" />
         </a-col>
       </a-row>
       <a-divider />
     </div>
 
-    <p :style="pStyle">Thông tin liên hệ</p>
+    <p :style="pStyle">Contact Information</p>
     <a-row>
       <a-col :span="12">
         <description-item title="Full Name" :content="data.customer_name" />
@@ -28,14 +28,14 @@
 
     <a-divider />
 
-    <p :style="pStyle">Thông tin tour</p>
+    <p :style="pStyle">Tour Information</p>
     <a-row v-if="data.tour">
       <a-col :span="12">
         <description-item title="Tour ID" :content="`#${data.tour.code}`" />
-        <description-item title="Tên tour" :content="data.tour.name" />
-        <description-item title="Nơi đi" :content="data.tour.from_place_name" />
-        <description-item title="Số ngày" :content="data.tour.number_days | numberDay" />
-        <description-item title="Phương tiện" :content="data.tour.transport" />
+        <description-item title="Tour name" :content="data.tour.name" />
+        <description-item title="Origin" :content="data.tour.from_place_name" />
+        <description-item title="Time" :content="data.tour.number_days | numberDay" />
+        <description-item title="Transport" :content="data.tour.transport" />
         <description-item title="Giá trẻ em" :content="data.tour.price_children | currencyVN" />
       </a-col>
       <a-col :span="12">

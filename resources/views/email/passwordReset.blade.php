@@ -10,6 +10,6 @@ Nhấn vào nút bên dưới để thay đổi mật khẩu
 Đặt lại mật khẩu
 @endcomponent
 
-Cảm ơn,<br>
-{{ config('app.name') }}
+Thank you,<br>
+{{ VTravel }}
 @endcomponent

@@ -18,23 +18,23 @@
       </a-form-item>
       <a-form-item
         v-if="!verified"
-        label="Xác thực"
+        label="Verification"
         :labelCol="{ span: 6 }"
         :wrapperCol="{ span: 18 }"
-        extra="Chúng tôi cần xác thực cho lần giao dịch này. Mã code được gửi qua mail của bạn"
+        extra="A verification code will be sent to your email."
         hasFeedback
       >
         <a-row :gutter="16">
-          <a-col :span="17">
-            <a-input placeholder="Nhập mã code" v-model="verifyCode" />
+          <a-col :span="14">
+            <a-input placeholder="Input code" v-model="verifyCode" />
           </a-col>
-          <a-col :span="7">
-            <a-button block :loading="loading" @click="send">Gửi mã</a-button>
+          <a-col :span="10">
+            <a-button block :loading="loading" @click="send">Send Code</a-button>
           </a-col>
         </a-row>
       </a-form-item>
       <a-form-item :wrapperCol="{ span: 18, offset: 6 }">
-        <a-button type="primary" :disabled="disabledButton" @click="nextToAccept">Xác nhận</a-button>
+        <a-button type="primary" :disabled="disabledButton" @click="nextToAccept">Next</a-button>
       </a-form-item>
     </a-form>
   </div>

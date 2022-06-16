@@ -3,12 +3,12 @@
 
 ## Chúng tôi tặng bạn mã giảm giá {{ $discountCode->percent }}%
 
-Hạn sử dụng đến {{ $discountCode->expire }}
+Expiry Date: {{ $discountCode->expire }}
 
 @component('mail::panel')
 {{ $discountCode->code }}
 @endcomponent
 
-Cảm ơn,<br>
-{{ config('app.name') }}
+Thank you,<br>
+VTravel
 @endcomponent

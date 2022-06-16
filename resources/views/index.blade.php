@@ -8,7 +8,7 @@
   <meta name="pusher-key" content="{{ config('broadcasting.connections.pusher.key') }}">
   <link rel="shortcut icon" href="../../public/img/logo.svg">
   <link rel="icon" href="../../public/img/logo.svg">
-  <title>{{ config('app.name') }}</title>
+  <title>VTravel</title>
   <link rel="stylesheet" href="/css/app.css" type="text/css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>

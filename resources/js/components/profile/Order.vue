@@ -79,23 +79,23 @@
             dataIndex: "code",
           },
           {
-            title: "Tên tour",
+            title: "Tour name",
             dataIndex: "tour_name",
           },
           {
-            title: "Ngày khởi hành",
+            title: "Departure date",
             dataIndex: "date_depart",
           },
           {
-            title: "Số lượng người",
+            title: "Number of Participants",
             dataIndex: "total_people",
           },
           {
-            title: "Tổng tiền",
+            title: "Total",
             dataIndex: "total_amount",
           },
           {
-            title: "Thanh toán bằng",
+            title: "Payment method",
             dataIndex: "payment_method",
           },
         ];

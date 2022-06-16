@@ -12,15 +12,15 @@
       <strong slot="no" slot-scope="text, record, index">{{ ++index }}</strong>
       <a-tooltip slot="code" slot-scope="text, record">
         <template slot="title">
-          Xem chi tiết
+          See details
         </template>
         <a @click="$emit('view', record.id)">#{{ record.code }}</a>
       </a-tooltip>
       <a-tag slot="Status" slot-scope="record" :color="colorStatus(record)">{{ record | StatusOrder }}</a-tag>
       <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
       <template slot="update" slot-scope="record">
-        <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Chấp nhận</a-button>
-        <a-button ref="cancelButton" size="small" type="dashed" @click="onCancel(record.id)">Hủy bỏ</a-button>
+        <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Approve</a-button>
+        <a-button ref="cancelButton" size="small" type="dashed" @click="onCancel(record.id)">Reject</a-button>
       </template>
     </a-table>
 
@@ -66,15 +66,15 @@
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Khách hàng",
+            title: "User",
             dataIndex: "customer_name"
           },
           {
-            title: "Tên tour",
+            title: "Tour name",
             dataIndex: "tour.name"
           },
           {
-            title: "Thành tiền",
+            title: "Total",
             dataIndex: "total_amount",
             scopedSlots: { customRender: "total_amount" }
           },

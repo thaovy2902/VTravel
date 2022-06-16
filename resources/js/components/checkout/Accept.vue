@@ -31,15 +31,15 @@
           <description-item title="Children" :content="orderInfo.quantity_children | numberPerson" />
           <description-item title="Infants" :content="orderInfo.quantity_baby | numberPerson" />
           <description-item title="Discount code" :content="orderInfo.discount_code" />
-          <description-item title="Phần trăm giảm giá" :content="orderInfo.discount_percent | percent" />
+          <description-item title="Percentage discount (%)" :content="orderInfo.discount_percent | percent" />
           <description-item title="Subtotal" :content="orderInfo.total | currencyVN" />
-          <description-item title="Giảm giá" :content="orderInfo.discount | currencyVN" />
+          <description-item title="Discount" :content="orderInfo.discount | currencyVN" />
           <description-item title="Total" :content="orderInfo.total_amount | currencyVN" />
           <a-form-item label="Note">
             <a-textarea v-model="note" placeholder="Note" :autoSize="{ minRows: 2, maxRows: 4 }" />
           </a-form-item>
           <a-form-item>
-            <a-button @click="$emit('prevToContact')" :style="{ marginRight: '8px' }">Trước</a-button>
+            <a-button @click="$emit('prevToContact')" :style="{ marginRight: '8px' }">Back</a-button>
             <a-button type="primary" @click="nextToPayment">Pay</a-button>
           </a-form-item>
         </a-col>

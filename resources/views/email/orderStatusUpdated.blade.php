@@ -2,18 +2,18 @@
 # {{ '#'.$order->code }}
 
 ## Xin chào {{ $order->customer_name }}
-### Cảm ơn Anh/Chị đã đặt tour tại {{ config('app.name') }}
+### Cảm ơn Anh/Chị đã đặt tour tại VTravel
 
 @component('mail::panel')
 @if ($order->Status == 3)
 Đã được chấp nhận
 @else
 @if($order->Status == 4)
-Đã bị hủy. Lý do: {{ $order->reason_cancel }}
+Đã bị hủy. Reason: {{ $order->reason_cancel }}
 @endif
 @endif
 @endcomponent
 
-Cảm ơn,<br>
-{{ config('app.name') }}
+Thank you,<br>
+VTravel
 @endcomponent

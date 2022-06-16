@@ -31,7 +31,7 @@
           <span>Tour</span>
         </router-link>
       </a-menu-item>
-      <a-menu-item key="admin.orderss">
+      <a-menu-item key="admin.orders">
         <router-link :to="{ name: 'admin.orders' }">
           <a-icon type="shopping-cart" />
           <span>Orders</span>
@@ -68,7 +68,7 @@
       <a-menu-item key="owner.permissions">
         <router-link :to="{ name: 'owner.permissions' }">
           <a-icon type="lock" />
-          <span>Phân quyền</span>
+          <span>Decentralization</span>
         </router-link>
       </a-menu-item>
       <a-menu-item key="owner.feedbacks">

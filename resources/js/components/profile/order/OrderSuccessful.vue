@@ -51,21 +51,21 @@
             dataIndex: "tour.name"
           },
           {
-            title: "Ngày khởi hành",
+            title: "Departure date",
             dataIndex: "date_depart",
             scopedSlots: { customRender: "date_depart" }
           },
           {
-            title: "Số người",
+            title: "Number of Participants",
             dataIndex: "total_people"
           },
           {
-            title: "Tổng tiền",
+            title: "Total",
             dataIndex: "total_amount",
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "Thanh toán bằng",
+            title: "Payment method",
             dataIndex: "payment_method"
           },
           {

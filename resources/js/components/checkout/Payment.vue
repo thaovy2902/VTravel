@@ -3,7 +3,7 @@
     <a-form style="max-width: 500px; margin: 40px auto 0;">
       <a-form-item label="Payment method" :labelCol="{ span: 8 }" :wrapperCol="{ span: 16 }">
         <a-select
-          placeholder="Chọn phương thức thanh toán"
+          placeholder="Choose payment method"
           :defaultValue="$route.query.vnp_ResponseCode ? 2 : undefined"
           @change="onChangePaymentMethod"
         >
@@ -12,7 +12,7 @@
       </a-form-item>
       <a-form-item v-if="paymentSelected === 2">
         <h3>Thanh toán online VNPay</h3>
-        <description-item title="Số tiền thanh toán" :content="orderInfo.total_amount | currencyVN" />
+        <description-item title="Total Payment" :content="orderInfo.total_amount | currencyVN" />
         <div v-if="!isPaid" @click="vnpay" style="cursor: pointer;">
           <img class="ncb-logo" src="/img/ncb_logo.svg" alt="ncb_logo" />
           Ngân hàng Quốc dân (NCB)
@@ -27,8 +27,8 @@
         </div>
       </a-form-item>
       <a-form-item :wrapperCol="{ span: 16, offset: 8 }">
-        <a-button @click="$emit('prevToAccept')" style="margin-right: 8px;">Trước</a-button>
-        <a-button type="primary" :loading="isLoading" :disabled="disabledFinishButton" @click="finishOrder">Hoàn thành</a-button>
+        <a-button @click="$emit('prevToAccept')" style="margin-right: 8px;">Back</a-button>
+        <a-button type="primary" :loading="isLoading" :disabled="disabledFinishButton" @click="finishOrder">Complete</a-button>
       </a-form-item>
     </a-form>
   </div>
