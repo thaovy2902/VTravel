@@ -1,7 +1,7 @@
 @component('mail::message')
-# Cảm ơn về sự ủng hộ của bạn
+# Thank you for being our customer
 
-## Chúng tôi tặng bạn mã giảm giá {{ $discountCode->percent }}%
+## GET {{ $discountCode->percent }}% OFF
 
 Expiry Date: {{ $discountCode->expire }}
 

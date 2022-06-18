@@ -2,7 +2,7 @@
   <div v-if="relatedTours.length > 0">
     <a-row :gutter="8">
       <a-col :xs="24" :sm="24" :md="16" :lg="16" class="mb-16">
-        <span class="title">Tour liên quan</span>
+        <span class="title">Related Tours</span>
         <a-divider type="vertical" />
         <router-link :to="{ name: 'tours' }">More</router-link>
       </a-col>

@@ -28,7 +28,7 @@
       <a-menu-item key="admin.tours">
         <router-link :to="{ name: 'admin.tours' }">
           <a-icon type="table" />
-          <span>Tour</span>
+          <span>Tours</span>
         </router-link>
       </a-menu-item>
       <a-menu-item key="admin.orders">

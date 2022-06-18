@@ -1,15 +1,15 @@
 @component('mail::message')
 # {{ '#'.$order->code }}
 
-## Xin chào {{ $order->customer_name }}
-### Cảm ơn Anh/Chị đã đặt tour tại VTravel
+## Hi {{ $order->customer_name }}
+### Thank you for choosing to book with VTravel
 
 @component('mail::panel')
 @if ($order->Status == 3)
-Đã được chấp nhận
+Was approved
 @else
 @if($order->Status == 4)
-Đã bị hủy. Reason: {{ $order->reason_cancel }}
+Was cancelled. Reason: {{ $order->reason_cancel }}
 @endif
 @endif
 @endcomponent

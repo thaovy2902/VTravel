@@ -16,7 +16,7 @@
         <description-item icon="info-circle" title="Category" :content="tour.category_name" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="info-circle" title="Khởi hành" :content="tour.depart | depart" />
+        <description-item icon="info-circle" title="Departure" :content="tour.depart | depart" />
       </a-col>
     </a-row>
     <a-row style="margin-bottom:8px">

@@ -15,7 +15,7 @@
             <description-item title="Category" :content="data.category_name" />
           </a-col>
           <a-col>
-            <description-item title="Khởi hành" :content="data.depart" />
+            <description-item title="Departure" :content="data.depart" />
           </a-col>
           <a-col>
             <description-item title="Nơi đi" :content="data.from_place_name" />

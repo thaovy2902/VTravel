@@ -1,6 +1,6 @@
 <template>
   <a-card :bordered="false" :bodyStyle="{ padding: '16px' }" style="overflow-y: scroll; height: 450px; padding-right: 40px;" class="shadow-sm">
-    <div class="title">Recent Feedback</div>
+    <div class="title">Recent Feedbacks</div>
     <div>
       <div v-for="(rating, index) in topRatings" :key="index" class="rating">
         <div class="rating-header">

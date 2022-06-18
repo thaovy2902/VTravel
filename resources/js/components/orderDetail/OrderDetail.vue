@@ -2,7 +2,7 @@
   <a-drawer :width="width" :visible="visiblePreview" @close="$emit('close')">
     <div class="preview-title">
       Order #{{ data.code }}
-      <a-tag :color="getColor(data.Status)">{{ data.Status | StatusOrder }}</a-tag>
+      <a-tag :color="getColor(data.Status)">{{ data.Status  }}</a-tag>
     </div>
     <div v-if="data.Status === 4">
       <p :style="pStyle">Reason</p>
@@ -40,7 +40,7 @@
       </a-col>
       <a-col :span="12">
         <description-item title="Category" :content="data.tour.category_name" />
-        <description-item title="Khởi hành" :content="data.tour.depart" />
+        <description-item title="Departure" :content="data.tour.depart" />
         <description-item title="Destination" :content="data.tour.to_place_name" />
         <description-item title="Số người" :content="data.tour.number_persons | numberPerson" />
         <description-item title="Giá người lớn" :content="data.tour.price_default | currencyVN" />

@@ -1,5 +1,5 @@
-<!-- @component('mail::message') -->
-# Xác nhận giao dịch
+@component('mail::message')
+# Verify Transaction
 
 Copy code below and paste it into
 

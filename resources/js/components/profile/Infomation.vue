@@ -18,7 +18,7 @@
               </div>
             </a-col>
             <a-col v-else :span="24" style="text-align:center">
-              Chưa có ảnh đại diện. Vui lòng chọn ảnh
+              Choose Your Avatar.
             </a-col>
             <a-col style="margin-top:12px">
               <input ref="inputAvatar" type="file" accept="image/*" style="display:none" @change="onChangeAvatar" />

@@ -29,11 +29,6 @@
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    background: url(https://storage.cloud.google.com/graduation-4e427.appspot.com/images/bg-login.webp?hl=vi) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     .login {
       width: 410px;
       .logo {

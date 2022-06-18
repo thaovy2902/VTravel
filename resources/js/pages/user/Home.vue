@@ -100,4 +100,12 @@
     margin-bottom: 56px;
     color: #ff8f00;
   }
+  button {
+    padding: 0 40px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #ff8f00;
+    border: #ff8f00;
+  }
 </style>

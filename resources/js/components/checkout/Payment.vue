@@ -11,18 +11,18 @@
         </a-select>
       </a-form-item>
       <a-form-item v-if="paymentSelected === 2">
-        <h3>Thanh toán online VNPay</h3>
+        <h3>Online Payment VNPay</h3>
         <description-item title="Total Payment" :content="orderInfo.total_amount | currencyVN" />
         <div v-if="!isPaid" @click="vnpay" style="cursor: pointer;">
-          <img class="ncb-logo" src="/img/ncb_logo.svg" alt="ncb_logo" />
-          Ngân hàng Quốc dân (NCB)
+          <img class="ncb-logo" src="https://interloan.vn/static/images/ncb.png" alt="ncb_logo" />
+          National Citizen Bank (NCB)
         </div>
         <div v-if="$route.query.vnp_ResponseCode" style="margin: 12px 0;">
           <div v-if="paymentOnlineStatus === '00'">
-            <a-alert message="Thanh toán thành công" type="success" showIcon closable />
+            <a-alert message="Payment Successful!" type="success" showIcon closable />
           </div>
           <div v-if="paymentOnlineStatus !== '00'">
-            <a-alert message="Thanh toán thất bại" type="error" showIcon closable />
+            <a-alert message="Payment Failed" type="error" showIcon closable />
           </div>
         </div>
       </a-form-item>

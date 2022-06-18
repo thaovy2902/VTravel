@@ -8,7 +8,7 @@ import ReCaptcha from "./components/global/ReCaptcha";
 
 Vue.component("ImageCropper", ImageCropper);
 Vue.component("LoadingFullScreen", LoadingFullScreen);
-Vue.component("ReCaptcha", ReCaptcha);
+// Vue.component("ReCaptcha", ReCaptcha);
 
 window.md = md;
 window.eventBus = new Vue();

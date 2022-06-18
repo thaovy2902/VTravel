@@ -28,7 +28,7 @@
     <div class="form-group">
       <span>Date</span>
       <div class="form-input">
-        <a-select placeholder="Khởi hành" :value="$route.query.depart || undefined" style="width: 100%" @change="onChangeDepart">
+        <a-select placeholder="Departure" :value="$route.query.depart || undefined" style="width: 100%" @change="onChangeDepart">
           <a-select-option value="daily">Daily</a-select-option>
           <a-select-option value="contact">Contact</a-select-option>
         </a-select>

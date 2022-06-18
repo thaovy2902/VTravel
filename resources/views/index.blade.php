@@ -10,7 +10,7 @@
   <link rel="icon" href="../../public/img/logo.svg">
   <title>VTravel</title>
   <link rel="stylesheet" href="/css/app.css" type="text/css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </head>
 
 <body>
