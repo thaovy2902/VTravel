@@ -9,7 +9,7 @@
         },
         "version": "1.0.0"
     },
-    "host": "https://vtravel-dut.herokuapp.com/:8000",
+    "host": "https://vtravel-dut.herokuapp.com",
     "basePath": "/",
     "schemes": [
         "http"
