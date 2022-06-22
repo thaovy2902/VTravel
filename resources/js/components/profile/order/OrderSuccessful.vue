@@ -17,7 +17,7 @@
     </a-tooltip>
     <span slot="date_depart" slot-scope="text">{{ text | date }}</span>
     <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
-    <a-tag slot="Status" slot-scope="record" color="green">{{ record | StatusOrder }}</a-tag>
+    <a-tag slot="status" slot-scope="record" color="green">{{ record }}</a-tag>
   </a-table>
 </template>
 
@@ -69,9 +69,9 @@
             dataIndex: "payment_method"
           },
           {
-            title: "Status",
-            dataIndex: "Status",
-            scopedSlots: { customRender: "Status" }
+            title: "status",
+            dataIndex: "status",
+            scopedSlots: { customRender: "status" }
           }
         ];
 

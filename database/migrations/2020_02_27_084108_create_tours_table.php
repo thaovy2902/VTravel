@@ -39,10 +39,10 @@ class CreateToursTable extends Migration
             $table->timestamps();
         });
 
-        // DB::statement("ALTER TABLE tours ADD COLUMN searchtext TSVECTOR");
-        // DB::statement("UPDATE tours SET searchtext = to_tsvector('english', code || '' || name || '' || slug)");
-        // DB::statement("CREATE INDEX searchtext_tours_gin ON tours USING GIN(searchtext)");
-        // DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON tours FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.english', 'code', 'name', 'slug')");
+        DB::statement("ALTER TABLE tours ADD COLUMN searchtext TSVECTOR");
+        DB::statement("UPDATE tours SET searchtext = to_tsvector('english', code || '' || name || '' || slug)");
+        DB::statement("CREATE INDEX searchtext_tours_gin ON tours USING GIN(searchtext)");
+        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON tours FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.english', 'code', 'name', 'slug')");
     }
 
     /**

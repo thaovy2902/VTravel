@@ -35,7 +35,7 @@ const actions = {
 
       callerApi(url)
         .then(resp => {
-          if (resp.data && resp.Status === 200) {
+          if (resp.data && resp.status === 200) {
             commit("fetchTours", resp.data.data);
             reslove(resp.data.meta);
           }

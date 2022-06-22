@@ -38,8 +38,8 @@ const actions = {
     return new Promise((reslove, reject) => {
       commit("setLoading", true);
       callerApi(`auth/login`, "POST", credentials)
-        .then(({ data, Status }) => {
-          if (data && Status === 200) {
+        .then(({ data, status }) => {
+          if (data && status === 200) {
             commit("setAuth", data);
             router.push({ name: "home" });
             reslove(data);
@@ -48,10 +48,10 @@ const actions = {
         .catch((error) => {
           if (error.response) {
             let message;
-            if (error.response.Status === 422) {
+            if (error.response.status === 422) {
               message = Object.values(error.response.data.message)[0];
             }
-            if (error.response.Status === 401) {
+            if (error.response.status === 401) {
               message = Object.values(error.response.data.message);
             }
             vp.$notify.error("Lỗi Log In", message);
@@ -67,15 +67,15 @@ const actions = {
     return new Promise((reslove, reject) => {
       commit("setLoading", true);
       callerApi(`auth/register`, "POST", credentials)
-        .then(({ data, Status }) => {
-          if (data && Status === 200) {
+        .then(({ data, status }) => {
+          if (data && status === 200) {
             commit("setAuth", data);
             vp.$message.success("Đăng ký thành công");
             reslove(data);
           }
         })
         .catch((error) => {
-          if (error.response && error.response.Status === 422) {
+          if (error.response && error.response.status === 422) {
             const message = Object.values(error.response.data.message)[0];
             vp.$notify.error("Lỗi đăng ký", message);
             reject(error);
@@ -95,28 +95,28 @@ const actions = {
   },
   async me({ commit }) {
     try {
-      const { data, Status } = await callerApi("auth/me");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi("auth/me");
+      if (data && status === 200) {
         commit("setAuth", data);
       }
     } catch ({ response }) {
-      if (response && response.Status === 401) {
+      if (response && response.status === 401) {
         commit("purgeAuth");
         vp.$notify.warning("Oops...", "Phiên làm việc đã hết hạn, vui lòng Log In lại!");
       }
     }
   },
   async refresh({ commit }) {
-    const { data, Status } = await callerApi(`auth/refresh`, "POST");
-    if (data && Status === 200) {
+    const { data, status } = await callerApi(`auth/refresh`, "POST");
+    if (data && status === 200) {
       commit("setAuth", data);
     }
   },
   async forgotPassword({ commit }, payload) {
     try {
       commit("setLoading", true);
-      const { data, Status } = await callerApi(`auth/forgot-password`, "POST", payload);
-      if (data && Status === 200) {
+      const { data, status } = await callerApi(`auth/forgot-password`, "POST", payload);
+      if (data && status === 200) {
         vp.$notify.success("Forgot password", data.message);
       }
     } catch ({ response }) {
@@ -131,12 +131,12 @@ const actions = {
   async resetPassword({ commit }, payload) {
     try {
       commit("setLoading", true);
-      const { data, Status } = await callerApi(`auth/reset-password`, "PUT", payload);
-      if (data && Status === 200) {
+      const { data, status } = await callerApi(`auth/reset-password`, "PUT", payload);
+      if (data && status === 200) {
         vp.$notify.success("Reset password", data.message);
       }
     } catch ({ response }) {
-      if (response && response.Status === 422) {
+      if (response && response.status === 422) {
         const message = Object.values(response.data.message);
         vp.$notify.error("Error", message);
         throw new Error(response);

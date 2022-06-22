@@ -18,7 +18,7 @@
         <template slot="from_to_place" slot-scope="record">
           <span>{{ record.from_place_name }} - {{ record.to_place_name }}</span>
         </template>
-        <template slot="Status" slot-scope="record">
+        <template slot="status" slot-scope="record">
           <a-tag :color="colorActive(record)">{{ record | Status }}</a-tag>
         </template>
         <template slot="featured" slot-scope="record">
@@ -326,11 +326,11 @@
             dataIndex: "category_name"
           },
           {
-            title: "Status",
+            title: "status",
             dataIndex: "is_active",
-            key: "Status",
+            key: "status",
             width: "5%",
-            scopedSlots: { customRender: "Status" }
+            scopedSlots: { customRender: "status" }
           },
           {
             title: "Is Attraction",

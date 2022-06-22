@@ -49,7 +49,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::put('update-active-user/{user}', 'UserController@updateIsActive');
 
     //Update featured controller
-    Route::put('update-Status-tour/{tour}', 'TourController@updateStatus');
+    Route::put('update-status-tour/{tour}', 'TourController@updateStatus');
   });
 
   //User
@@ -104,7 +104,7 @@ Route::group(['prefix' => 'v1'], function () {
   ], function () {
     Route::get('statistic', 'DashboardController@statistic');
     Route::get('new-order', 'DashboardController@newOrder');
-    Route::put('update-Status-order/{order}', 'DashboardController@updateStatusOrder');
+    Route::put('update-status-order/{order}', 'DashboardController@updateStatusOrder');
     Route::get('ratio-order', 'DashboardController@ratioOrder');
     Route::get('popular-tour', 'DashboardController@popularTour');
     Route::get('revenue', 'DashboardController@revenue');

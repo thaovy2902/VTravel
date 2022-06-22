@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-card class="shadow-sm" :bordered="false" :bodyStyle="{ padding: '16px' }">
-      <a-tabs :defaultActiveKey="$route.query.Status" @change="onChangeTab">
+      <a-tabs :defaultActiveKey="$route.query.status" @change="onChangeTab">
         <div slot="tabBarExtraContent">
           <a-input-search placeholder="Search by tour id" allowClear @search="onSearch" style="width:220px" />
         </div>
@@ -59,7 +59,7 @@
         query: {
           page: 1,
           q: "",
-          Status: 0,
+          status: 1,
         },
         //
         order: {},
@@ -128,7 +128,7 @@
         this.hanldeChangeRoute();
       },
       onChangeTab(activeKey) {
-        this.query.Status = +activeKey;
+        this.query.status = +activeKey;
         this.hanldeChangeRoute();
       },
       hanldeChangeRoute() {
@@ -136,10 +136,10 @@
         let sendQuery = {};
         if (query.page) sendQuery.page = query.page;
         if (query.q) sendQuery.q = query.q;
-        if (query.Status) sendQuery.Status = query.Status;
-
+        if (query.status) sendQuery.status = query.status;
         this.$router.push({ query: { ...sendQuery } });
         this.query = sendQuery;
+        console.log(this.query)
       },
       viewDetail(orderId) {
         this.order = this.getOrderById(orderId);

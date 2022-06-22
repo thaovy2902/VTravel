@@ -24,7 +24,7 @@ class OrderController extends BaseController
   {
     $query = array(
       'perPage' =>  5,
-      'Status' => request()->Status ? (int) request()->Status : 1,
+      'status' => request()->status ? (int) request()->status : 1,
       'q' => request()->q,
     );
     $data = $this->getQueryData($query);
@@ -37,7 +37,7 @@ class OrderController extends BaseController
     $user = auth()->user();
     $request['code'] = time() . '-' . date('mY');
     if ((bool) $request->is_paid === false) {
-      $request['Status'] = 2;
+      $request['status'] = 2;
     }
     $order = $user->orders()->create($request->all());
 
@@ -49,7 +49,7 @@ class OrderController extends BaseController
 
   public function update(Request $request, Order $order)
   {
-    $order->update($request->only(['Status', 'reason_cancel']));
+    $order->update($request->only(['status', 'reason_cancel']));
 
     return $this->respondData(new OrderResource($order->load(['payment', 'tour', 'user'])), Response::HTTP_ACCEPTED);
   }
@@ -58,8 +58,8 @@ class OrderController extends BaseController
   {
     $results = Order::with(['payment', 'tour', 'user'])
       ->where('user_id', auth()->user()->id);
-    if ($query['Status']) {
-      $results = $results->where('Status', $query['Status']);
+    if ($query['status']) {
+      $results = $results->where('status', $query['status']);
     }
     if ($query['q']) {
       $results = $results->search($query['q']);

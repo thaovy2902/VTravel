@@ -2,9 +2,9 @@
   <a-drawer :width="width" :visible="visiblePreview" @close="$emit('close')">
     <div class="preview-title">
       Order #{{ data.code }}
-      <a-tag :color="getColor(data.Status)">{{ data.Status  }}</a-tag>
+      <a-tag :color="getColor(data.status)">{{ data.status  }}</a-tag>
     </div>
-    <div v-if="data.Status === 4">
+    <div v-if="data.status === 4">
       <p :style="pStyle">Reason</p>
       <a-row>
         <a-col :span="24">

@@ -84,14 +84,14 @@ class DashboardController extends BaseController
     if (request()->q) {
       $data = $data->search(request()->q);
     }
-    $data = $data->oldest('Status')->latest()->paginate(5);
+    $data = $data->oldest('status')->latest()->paginate(5);
 
     return OrderResource::collection($data);
   }
 
   public function updateStatusOrder(Request $request, Order $order)
   {
-    $order->update($request->only('Status'));
+    $order->update($request->only('status'));
     Mail::to($order->customer_email)->send(new OrderStatusUpdatedMail($order));
 
     return $this->respondData(new OrderResource($order->load(['payment', 'tour', 'user'])), Response::HTTP_ACCEPTED);
@@ -127,7 +127,7 @@ class DashboardController extends BaseController
     $quarter = request()->quarter;
     $year = request()->year;
 
-    $results = Order::where('Status', 3);
+    $results = Order::where('status', 3);
 
     if (!is_null($year)) {
       if ($type == 'month' && !is_null($month)) {

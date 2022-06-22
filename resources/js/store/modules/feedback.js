@@ -25,7 +25,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then(resp => {
-          if (resp && resp.Status === 200) {
+          if (resp && resp.status === 200) {
             commit("fetchFeedbacks", resp.data.data);
             reslove(resp);
           }
@@ -41,8 +41,8 @@ const actions = {
 
   async updateFeedback({ commit }, payload) {
     try {
-      const { data, Status } = await callerApi(`owner/feedbacks/${payload.id}`, "PUT", payload.values);
-      if (data && Status === 202) {
+      const { data, status } = await callerApi(`owner/feedbacks/${payload.id}`, "PUT", payload.values);
+      if (data && status === 202) {
         commit("updateFeedback", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
@@ -56,8 +56,8 @@ const actions = {
 
   async deleteFeedback({ commit }, id) {
     try {
-      const { data, Status } = await callerApi(`owner/feedbacks/${id}`, "DELETE");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi(`owner/feedbacks/${id}`, "DELETE");
+      if (data && status === 200) {
         commit("deleteFeedback", id);
         vp.$notify.success("Success", data.message);
       }

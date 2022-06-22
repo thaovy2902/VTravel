@@ -18,8 +18,8 @@
         </a-tooltip>
         <span slot="tour_code" slot-scope="text">#{{ text }}</span>
         <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
-        <a-tag slot="Status" slot-scope="record" :color="getColorStatusOrder(record)">{{ record | StatusOrder }}</a-tag>
-        <template v-if="record.Status === 1 || record.Status === 2" slot="update" slot-scope="record">
+        <a-tag slot="status" slot-scope="record" :color="getColorStatusOrder(record)">{{ record | StatusOrder }}</a-tag>
+        <template v-if="record.status === 1 || record.status === 2" slot="update" slot-scope="record">
           <a-button size="small" style="margin-right:6px" @click="onAccept(record.id)">Approve</a-button>
           <a-button ref="cancelButton" size="small" type="dashed" @click="onCancel(record.id)">Reject</a-button>
         </template>
@@ -101,9 +101,9 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "Status",
-            dataIndex: "Status",
-            scopedSlots: { customRender: "Status" }
+            title: "status",
+            dataIndex: "status",
+            scopedSlots: { customRender: "status" }
           },
           {
             title: "Option",
@@ -158,7 +158,7 @@
       onAccept(orderId) {
         const order = {
           id: orderId,
-          values: { Status: 3 }
+          values: { status: 3 }
         };
         this.updateStatusOrder(order);
       },
@@ -175,7 +175,7 @@
               id: this.orderId,
               values: {
                 reason_cancel: values.reason_cancel,
-                Status: 4
+                status: 4
               }
             };
             await this.updateStatusOrder(order);

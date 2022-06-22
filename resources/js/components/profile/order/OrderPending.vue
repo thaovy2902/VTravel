@@ -18,7 +18,7 @@
       </a-tooltip>
       <span slot="date_depart" slot-scope="text">{{ text | date }}</span>
       <span slot="total_amount" slot-scope="text">{{ text | currencyVN }}</span>
-      <a-tag slot="Status" slot-scope="record" color="cyan">{{ record | StatusOrder }}</a-tag>
+      <a-tag slot="status" slot-scope="record" color="cyan">{{ record  }}</a-tag>
       <template slot="action" slot-scope="text, record">
         <a-button size="small" @click="onClickCancel(record.id)">Cancel</a-button>
       </template>
@@ -84,9 +84,9 @@
             dataIndex: "payment_method"
           },
           {
-            title: "Status",
-            dataIndex: "Status",
-            scopedSlots: { customRender: "Status" }
+            title: "status",
+            dataIndex: "status",
+            scopedSlots: { customRender: "status" }
           },
           {
             title: "Option",
@@ -118,7 +118,7 @@
               id: this.orderId,
               values: {
                 reason_cancel: values.reason_cancel,
-                Status: 4
+                status: 4
               }
             };
             await this.cancelOrder(order);

@@ -20,8 +20,8 @@ const actions = {
     return new Promise((reslove, reject) => {
       commit("setLoading", true);
       callerApi(url)
-        .then(({ data, Status }) => {
-          if (data && Status === 200) {
+        .then(({ data, status }) => {
+          if (data && status === 200) {
             commit("fetchDiscountCodes", data.data);
             reslove(data.meta);
           }
@@ -36,8 +36,8 @@ const actions = {
   },
   async createDiscountCode({ commit, dispatch }, payload) {
     try {
-      const { data, Status } = await callerApi(url, "POST", payload);
-      if (data && Status === 201) {
+      const { data, status } = await callerApi(url, "POST", payload);
+      if (data && status === 201) {
         dispatch("fetchDiscountCodes", {});
         vp.$notify.success("Success", "Thêm thành công");
       }
@@ -48,8 +48,8 @@ const actions = {
   async sendMailDiscountCode({ commit }, payload) {
     try {
       vp.$message.loading("Đang gửi mail", 0);
-      const { data, Status } = await callerApi("admin/send-mail-discount-code", "POST", payload);
-      if (data && Status === 200) {
+      const { data, status } = await callerApi("admin/send-mail-discount-code", "POST", payload);
+      if (data && status === 200) {
         vp.$notify.success("Thành công", data.message);
       }
     } catch ({ response }) {

@@ -67,19 +67,19 @@ export const convertOrderBy = orderBy => {
   return orderBy === "ascend" ? "asc" : orderBy === "descend" ? "desc" : undefined;
 };
 
-export const getColorStatusOrder = Status => {
+export const getColorStatusOrder = status => {
   let color;
-  switch (Status) {
-    case (Status = 1):
+  switch (status) {
+    case (status = 1):
       color = "cyan";
       break;
-    case (Status = 2):
+    case (status = 2):
       color = "purple";
       break;
-    case (Status = 3):
+    case (status = 3):
       color = "green";
       break;
-    case (Status = 4):
+    case (status = 4):
       color = "red";
       break;
   }

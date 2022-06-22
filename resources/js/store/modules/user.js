@@ -34,7 +34,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then(resp => {
-          if (resp && resp.Status === 200) {
+          if (resp && resp.status === 200) {
             commit("fetchUsers", resp.data.data);
             reslove(resp);
           }
@@ -50,13 +50,13 @@ const actions = {
 
   async createUser({ commit }, payload) {
     try {
-      const { data, Status } = await callerApi(`admin/users`, "POST", payload);
-      if (data && Status === 201) {
+      const { data, status } = await callerApi(`admin/users`, "POST", payload);
+      if (data && status === 201) {
         commit("createUser", data);
         vp.$notify.success("Success", "Thêm thành công");
       }
     } catch ({ response }) {
-      if (response && response.Status === 422) {
+      if (response && response.status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -65,13 +65,13 @@ const actions = {
 
   async updateUser({ commit }, payload) {
     try {
-      const { data, Status } = await callerApi(`admin/users/${payload.id}`, "PUT", payload.values);
-      if (data && Status === 202) {
+      const { data, status } = await callerApi(`admin/users/${payload.id}`, "PUT", payload.values);
+      if (data && status === 202) {
         commit("updateUser", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
     } catch ({ response }) {
-      if (response && response.Status === 422) {
+      if (response && response.status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -80,8 +80,8 @@ const actions = {
 
   async updateActiveUser({ commit }, payload) {
     try {
-      const { data, Status } = await callerApi(`admin/update-active-user/${payload.id}`, "PUT", payload.values);
-      if (data && Status === 202) {
+      const { data, status } = await callerApi(`admin/update-active-user/${payload.id}`, "PUT", payload.values);
+      if (data && status === 202) {
         commit("updateUser", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
@@ -95,8 +95,8 @@ const actions = {
 
   async deleteUser({ commit }, id) {
     try {
-      const { data, Status } = await callerApi(`admin/users/${id}`, "DELETE");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi(`admin/users/${id}`, "DELETE");
+      if (data && status === 200) {
         commit("deleteUser", id);
         vp.$notify.success("Success", data.message);
       }

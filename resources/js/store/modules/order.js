@@ -31,7 +31,7 @@ const actions = {
       url += "?page=1";
     }
     if (payload.perPage) url += `&perPage=${payload.perPage}`;
-    if (payload.Status) url += `&Status=${payload.Status}`;
+    if (payload.status) url += `&status=${payload.status}`;
     if (payload.from_date) url += `&from_date=${payload.from_date}`;
     if (payload.to_date) url += `&to_date=${payload.to_date}`;
     if (payload.q) url += `&q=${payload.q}`;
@@ -40,7 +40,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then((resp) => {
-          if (resp && resp.Status === 200) {
+          if (resp && resp.status === 200) {
             commit("fetchOrders", resp.data.data);
             reslove(resp);
           }

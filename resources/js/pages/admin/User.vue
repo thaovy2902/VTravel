@@ -14,7 +14,7 @@
           <a-avatar v-if="text" :src="text" :size="32" />
           <a-avatar v-else icon="user" :size="32" />
         </template>
-        <template slot="Status" slot-scope="record">
+        <template slot="status" slot-scope="record">
           <a-tag :color="colorActive(record)">{{ record ? 'active' : 'deactivated'}}</a-tag>
         </template>
         <template slot="active" slot-scope="record">
@@ -183,11 +183,11 @@
             sorter: true,
           },
           {
-            title: "Status",
+            title: "status",
             dataIndex: "is_active",
-            key: "Status",
+            key: "status",
             width: "13%",
-            scopedSlots: { customRender: "Status" },
+            scopedSlots: { customRender: "status" },
           },
           {
             title: "Hide/Show",

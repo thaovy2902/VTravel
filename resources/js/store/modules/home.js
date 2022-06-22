@@ -42,8 +42,8 @@ const actions = {
   async fetchSlides({ commit }) {
     try {
       commit("setLoadingSlide", true);
-      const { data, Status } = await callerApi("slides");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi("slides");
+      if (data && status === 200) {
         commit("fetchSlides", data.data);
       }
     } catch ({ response }) {
@@ -55,8 +55,8 @@ const actions = {
   async fetchTopRating({ commit }) {
     try {
       commit("setLoadingRating", true);
-      const { data, Status } = await callerApi("top-rating");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi("top-rating");
+      if (data && status === 200) {
         commit("fetchTopRating", data.data);
       }
     } catch ({ response }) {
@@ -68,8 +68,8 @@ const actions = {
   async fetchToursNew({ commit }) {
     try {
       commit("setLoadingToursNew", true);
-      const { data, Status } = await callerApi("tours-new");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi("tours-new");
+      if (data && status === 200) {
         commit("fetchToursNew", data.data);
       }
     } catch ({ response }) {
@@ -81,8 +81,8 @@ const actions = {
   async fetchToursFeatured({ commit }) {
     try {
       commit("setLoadingToursFeatured", true);
-      const { data, Status } = await callerApi("tours-featured");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi("tours-featured");
+      if (data && status === 200) {
         commit("fetchToursFeatured", data.data);
       }
     } catch ({ response }) {

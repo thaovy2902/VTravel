@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdersSeeder extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -31,7 +31,7 @@ class CreateOrdersSeeder extends Migration
             $table->double('discount', 10, 2);
             $table->double('total_amount', 10, 2);
             $table->text('note')->nullable();
-            $table->tinyInteger('Status')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->boolean('is_paid')->default(false);
             $table->string('reason_cancel')->nullable();
             $table->integer('payment_id')->unsigned()->nullable();
@@ -42,10 +42,10 @@ class CreateOrdersSeeder extends Migration
             $table->foreign('tour_id')->references('id')->on('tours')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
-        // DB::statement("ALTER TABLE orders ADD COLUMN searchtext TSVECTOR");
-        // DB::statement("UPDATE orders SET searchtext = to_tsvector('english', code)");
-        // DB::statement("CREATE INDEX searchtext_orders_gin ON orders USING GIN(searchtext)");
-        // DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON orders FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.english', 'code')");
+        DB::statement("ALTER TABLE orders ADD COLUMN searchtext TSVECTOR");
+        DB::statement("UPDATE orders SET searchtext = to_tsvector('english', code)");
+        DB::statement("CREATE INDEX searchtext_orders_gin ON orders USING GIN(searchtext)");
+        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON orders FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.english', 'code')");
     }
 
     /**
@@ -55,9 +55,9 @@ class CreateOrdersSeeder extends Migration
      */
     public function down()
     {
-        // DB::statement("DROP TRIGGER IF EXISTS tsvector_update_trigger ON orders");
-        // DB::statement("DROP INDEX IF EXISTS searchtext_orders_gin");
-        // DB::statement("ALTER TABLE orders DROP COLUMN searchtext");
+        DB::statement("DROP TRIGGER IF EXISTS tsvector_update_trigger ON orders");
+        DB::statement("DROP INDEX IF EXISTS searchtext_orders_gin");
+        DB::statement("ALTER TABLE orders DROP COLUMN searchtext");
         Schema::dropIfExists('orders');
     }
 }

@@ -29,8 +29,8 @@ const getters = {
 const actions = {
   async fetchCategories({ commit }) {
     try {
-      const { data, Status } = await callerApi(`categories`);
-      if (data && Status === 200) {
+      const { data, status } = await callerApi(`categories`);
+      if (data && status === 200) {
         commit("fetchCategories", data.data);
       }
     } catch ({ response }) {
@@ -51,7 +51,7 @@ const actions = {
       commit("setLoading", true);
       callerApi(url)
         .then(resp => {
-          if (resp.data && resp.Status === 200) {
+          if (resp.data && resp.status === 200) {
             commit("fetchTours", resp.data.data);
             reslove(resp);
           }
@@ -67,14 +67,14 @@ const actions = {
 
   async createTour({ commit, dispatch }, payload) {
     try {
-      const { data, Status } = await callerApi(`admin/tours`, "POST", payload);
-      if (data && Status === 201) {
+      const { data, status } = await callerApi(`admin/tours`, "POST", payload);
+      if (data && status === 201) {
         commit("createTour", data);
         dispatch("fetchTours");
         vp.$notify.success("Success", "Thêm thành công");
       }
     } catch ({ response }) {
-      if (response && response.Status === 422) {
+      if (response && response.status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -83,13 +83,13 @@ const actions = {
 
   async updateTour({ commit }, payload) {
     try {
-      const { data, Status } = await callerApi(`admin/tours/${payload.id}`, "PUT", payload.values);
-      if (data && Status === 202) {
+      const { data, status } = await callerApi(`admin/tours/${payload.id}`, "PUT", payload.values);
+      if (data && status === 202) {
         commit("updateTour", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
     } catch ({ response }) {
-      if (response && response.Status === 422) {
+      if (response && response.status === 422) {
         const message = Object.values(response.data.message)[0];
         vp.$notify.error("Error", message);
       }
@@ -98,8 +98,8 @@ const actions = {
 
   async updateStatusTour({ commit }, payload) {
     try {
-      const { data, Status } = await callerApi(`admin/update-Status-tour/${payload.id}`, "PUT", payload.values);
-      if (data && Status === 202) {
+      const { data, status } = await callerApi(`admin/update-status-tour/${payload.id}`, "PUT", payload.values);
+      if (data && status === 202) {
         commit("updateTour", data);
         vp.$notify.success("Success", "Cập nhật thành công");
       }
@@ -113,8 +113,8 @@ const actions = {
 
   async deleteTour({ commit, dispatch }, id) {
     try {
-      const { data, Status } = await callerApi(`admin/tours/${id}`, "DELETE");
-      if (data && Status === 200) {
+      const { data, status } = await callerApi(`admin/tours/${id}`, "DELETE");
+      if (data && status === 200) {
         commit("deleteTour", id);
         dispatch("fetchTours");
         vp.$notify.success("Success", data.message);

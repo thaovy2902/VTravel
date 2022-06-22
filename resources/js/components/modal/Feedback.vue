@@ -111,14 +111,14 @@
           if (!err) {
             try {
               this.confirmLoading = true;
-              const { data, Status } = await axios.post("send-feedback", values);
-              if (data && Status === 201) {
+              const { data, status } = await axios.post("send-feedback", values);
+              if (data && status === 201) {
                 this.$message.success(data.message);
                 form.resetFields();
                 this.handleCancel();
               }
             } catch ({ response }) {
-              if (response && response.Status === 422) {
+              if (response && response.status === 422) {
                 const message = Object.values(response.data.message)[0];
                 this.$message.error(message);
               }

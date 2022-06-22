@@ -26,10 +26,10 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->unsigned();
             $table->timestamps();
         });
-        // DB::statement("ALTER TABLE users ADD COLUMN searchtext TSVECTOR");
-        // DB::statement("UPDATE users SET searchtext = to_tsvector('english', name || '' || email)");
-        // DB::statement("CREATE INDEX searchtext_users_gin ON users USING GIN(searchtext)");
-        // DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON users FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.english', 'name', 'email')");
+        DB::statement("ALTER TABLE users ADD COLUMN searchtext TSVECTOR");
+        DB::statement("UPDATE users SET searchtext = to_tsvector('english', name || '' || email)");
+        DB::statement("CREATE INDEX searchtext_users_gin ON users USING GIN(searchtext)");
+        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON users FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.english', 'name', 'email')");
     }
 
     /**
@@ -39,9 +39,9 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        // DB::statement("DROP TRIGGER IF EXISTS tsvector_update_trigger ON users");
-        // DB::statement("DROP INDEX IF EXISTS searchtext_users_gin");
-        // DB::statement("ALTER TABLE users DROP COLUMN searchtext");
+        DB::statement("DROP TRIGGER IF EXISTS tsvector_update_trigger ON users");
+        DB::statement("DROP INDEX IF EXISTS searchtext_users_gin");
+        DB::statement("ALTER TABLE users DROP COLUMN searchtext");
         Schema::dropIfExists('users');
     }
 }
