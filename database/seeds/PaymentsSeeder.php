@@ -14,14 +14,14 @@ class PaymentsSeeder extends Seeder
     {
         DB::table('payments')->insert([
             [
-                'payment_method' => 'Trực tiếp',
-                'description' => 'Thanh toán trực tiếp',
+                'payment_method' => 'Cash',
+                'description' => 'Cash',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'payment_method' => 'Online',
-                'description' => 'Thanh toán online',
+                'payment_method' => 'VNPay',
+                'description' => 'VNPay',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

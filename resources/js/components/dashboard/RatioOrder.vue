@@ -23,8 +23,8 @@
         const chartData = {
           columns: ["category", "times"],
           rows: [
-            { category: "Trong nước", times: this.totalOrderDomestic },
-            { category: "Ngoài nước", times: this.totalOrderForeign }
+            { category: "Domestic Tourism", times: this.totalOrderDomestic },
+            { category: "Travel Abroad", times: this.totalOrderForeign }
           ]
         };
         return chartData;
