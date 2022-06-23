@@ -39,7 +39,7 @@
 
 <style scoped>
   #reasons {
-    padding: 40px 120px;
+    padding: 40px 0;
     text-align: center;
   }
   #reasons .reason-title {

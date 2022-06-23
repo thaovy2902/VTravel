@@ -8,7 +8,7 @@
   >
     <div class="sidebar-header">
       <router-link :to="{ name: 'home' }">
-        <img v-if="!collapsed" src="/img/logo.svg" alt="logo" />
+        <img v-if="!collapsed" style="width: 100px" src="/img/logo.svg" alt="logo" />
         <a-icon v-else theme="filled" type="smile" :style="{ fontSize: '32px', lineHeight: '32px', color: '#188ffd', padding: '10px 0' }" />
       </router-link>
     </div>

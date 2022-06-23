@@ -1,21 +1,21 @@
 <template>
   <div>
     <loading-full-screen v-if="loadingSlide || loadingRating" />
-    <section :style="{ margin: '64px 0' }">
-      <a-row style="margin: 0 -50px">
+    <section>
+      <a-row style="margin: 0 -120px">
         <a-col :xs="24" :sm="24" :md="24" :lg="24">
           <banner/>
         </a-col>
       </a-row>
     </section>
      <section :style="{ margin: '24px 0' }">
-      <a-row style="margin: 0 -50px">
+      <a-row style="margin: 0 -120px">
         <a-col :xs="24" :sm="24" :md="24" :lg="24">
           <list-reason/>
         </a-col>
       </a-row>
     </section>
-    <section :style="{ margin: '24px 70px 80px' }">
+    <section :style="{ margin: '24px 0px 80px' }">
       <h2 class="large-title">Unmissable things to do</h2>
       <a-row :gutter="{ xs: 8, sm: 16, md: 16, lg: 16 }">
         <a-col :xs="0" :sm="0" :md="7" :lg="7">
@@ -26,7 +26,7 @@
         </a-col>
       </a-row>
     </section>
-    <section :style="{ margin: '24px 70px' }">
+    <section :style="{ margin: '24px 0px' }">
       <a-row>
         <span class="tour-title">Newest tours</span>
         <list-tour-new :toursNew="toursNew" />

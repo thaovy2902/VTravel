@@ -13,7 +13,7 @@
         <a-col v-if="tour" :xs="24" :sm="24" :md="9" :lg="9">
           <h3>Tour information</h3>
           <a-divider />
-          <description-item title="Tour name" :content="tour.name" />
+          <description-item title="Tour Name" :content="tour.name" />
           <description-item title="Category" :content="tour.category_name" />
           <description-item title="Origin" :content="tour.from_place_name" />
           <description-item title="Destination" :content="tour.to_place_name" />

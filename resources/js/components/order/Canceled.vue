@@ -47,7 +47,7 @@
             dataIndex: "customer_name",
           },
           {
-            title: "Tour name",
+            title: "Tour Name",
             dataIndex: "tour.name",
           },
           {
@@ -55,7 +55,7 @@
             dataIndex: "reason_cancel",
           },
           {
-            title: "status",
+            title: "Status",
             dataIndex: "status",
             scopedSlots: { customRender: "status" },
           },

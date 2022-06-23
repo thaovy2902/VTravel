@@ -46,7 +46,7 @@
             icon: "unordered-list",
           },
           {
-            title: "Payment method",
+            title: "Payment Method",
             icon: "pay-circle",
           },
           {

@@ -51,7 +51,7 @@
 
 <style lang="less" scoped>
   .tour-item {
-    padding: 0 20px !important;
+    padding: 0 40px !important;
     margin-bottom: 40px;
   }
   .tour-item-card {

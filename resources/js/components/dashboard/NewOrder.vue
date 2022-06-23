@@ -92,7 +92,7 @@
             scopedSlots: { customRender: "tour_code" }
           },
           {
-            title: "Tour name",
+            title: "Tour Name",
             dataIndex: "tour.name"
           },
           {

@@ -70,7 +70,7 @@
             dataIndex: "customer_name"
           },
           {
-            title: "Tour name",
+            title: "Tour Name",
             dataIndex: "tour.name"
           },
           {
@@ -79,7 +79,7 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "status",
+            title: "Status",
             dataIndex: "status",
             scopedSlots: { customRender: "status" }
           },

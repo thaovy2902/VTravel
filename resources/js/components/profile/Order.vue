@@ -3,7 +3,7 @@
     <a-card class="shadow-sm" :bordered="false" :bodyStyle="{ padding: '16px' }">
       <a-tabs :defaultActiveKey="$route.query.status" @change="onChangeTab">
         <div slot="tabBarExtraContent">
-          <a-input-search placeholder="Search by tour id" allowClear @search="onSearch" style="width:220px" />
+          <a-input-search placeholder="Search by Tour ID" allowClear @search="onSearch" style="width:220px" />
         </div>
         <a-tab-pane tab="Processing" key="1">
           <order-pending :orders="orders" :loading="loading" @view="viewDetail" />
@@ -79,11 +79,11 @@
             dataIndex: "code",
           },
           {
-            title: "Tour name",
+            title: "Tour Name",
             dataIndex: "tour_name",
           },
           {
-            title: "Departure date",
+            title: "Departure Date",
             dataIndex: "date_depart",
           },
           {
@@ -95,7 +95,7 @@
             dataIndex: "total_amount",
           },
           {
-            title: "Payment method",
+            title: "Payment Method",
             dataIndex: "payment_method",
           },
         ];

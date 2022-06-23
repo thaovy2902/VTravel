@@ -32,7 +32,7 @@
     <a-row v-if="data.tour">
       <a-col :span="12">
         <description-item title="Tour ID" :content="`#${data.tour.code}`" />
-        <description-item title="Tour name" :content="data.tour.name" />
+        <description-item title="Tour Name" :content="data.tour.name" />
         <description-item title="Origin" :content="data.tour.from_place_name" />
         <description-item title="Time" :content="data.tour.number_days | numberDay" />
         <description-item title="Transport" :content="data.tour.transport" />

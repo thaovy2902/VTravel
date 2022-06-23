@@ -47,11 +47,11 @@
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Tour name",
+            title: "Tour Name",
             dataIndex: "tour.name"
           },
           {
-            title: "Departure date",
+            title: "Departure Date",
             dataIndex: "date_depart",
             scopedSlots: { customRender: "date_depart" }
           },
@@ -65,11 +65,11 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "Payment method",
+            title: "Payment Method",
             dataIndex: "payment_method"
           },
           {
-            title: "status",
+            title: "Status",
             dataIndex: "status",
             scopedSlots: { customRender: "status" }
           }

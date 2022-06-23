@@ -77,7 +77,7 @@
       <a-form :form="form" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
         <a-row :gutter="16">
           <a-col :span="12">
-            <a-form-item label="Tour name" has-feedback>
+            <a-form-item label="Tour Name" has-feedback>
               <a-input
                 v-decorator="[
                   'name',
@@ -88,7 +88,7 @@
                     ]
                   }
                 ]"
-                placeholder="Input tour name"
+                placeholder="Input Tour name"
               />
             </a-form-item>
           </a-col>
@@ -313,7 +313,7 @@
             scopedSlots: { customRender: "code" }
           },
           {
-            title: "Tour name",
+            title: "Tour Name",
             dataIndex: "name",
             sorter: true
           },
