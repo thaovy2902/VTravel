@@ -43,7 +43,7 @@
   export default {
     components: { Pending, Successful, Canceled, PaginationTable, OrderDetail },
     metaInfo: {
-      title: "Đặt tour",
+      title: "Book Tour",
     },
     data() {
       return {

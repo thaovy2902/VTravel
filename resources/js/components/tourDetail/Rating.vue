@@ -1,32 +1,32 @@
 <template>
-  <a-card class="shadow-sm" title="Đánh giá" :bordered="false" :bodyStyle="{ padding: '16px' }" style="margin:16px 0">
+  <a-card class="shadow-sm" title="Reviews" :bordered="false" :bodyStyle="{ padding: '16px' }" style="margin:16px 0">
     <div v-if="avgRating.count > 0" slot="extra">
       <span class="avg-rating">{{ avgRating.avg | rounded }} /5</span>
       <a-icon class="avg-icon" theme="filled" type="star" />
       <a-divider type="vertical" />
-      <span class="count-rating">{{ avgRating.count }} đánh giá</span>
+      <span class="count-rating">{{ avgRating.count }} Reviews</span>
     </div>
 
     <div v-if="$auth.loggedIn && $auth.user">
-      <div v-if="isRated" class="alert">Bạn đã đánh giá tour này</div>
+      <div v-if="isRated" class="alert">""</div>
       <a-button v-if="!isVisible" type="dashed" :icon="!isRated ? 'plus' : 'edit'" block @click="!isRated ? add() : edit()">
-        {{ !isRated ? "Viết đánh giá" : "Sửa đánh giá" }}
+        {{ !isRated ? "Write Your Review" : "Edit Your Review" }}
       </a-button>
       <a-comment v-else>
         <a-avatar v-if="$auth.user.avatar" slot="avatar" :src="$auth.user.avatar" />
         <a-avatar v-else slot="avatar" icon="user" />
         <div slot="content">
           <a-form-item>
-            <a-textarea placeholder="Nội dung đánh giá" :rows="3" :value="rating.content" @change="onChangeContent"></a-textarea>
+            <a-textarea placeholder="Content" :rows="3" :value="rating.content" @change="onChangeContent"></a-textarea>
           </a-form-item>
           <a-row type="flex" justify="space-between" align="middle">
             <a-col>
               <a-rate :tooltips="descRating" :value="rating.scores" allowClear @change="onChangeRating" />
             </a-col>
             <a-col>
-              <a-button @click="close" style="margin-right:6px">Hủy</a-button>
+              <a-button @click="close" style="margin-right:6px">Cancel</a-button>
               <a-button type="primary" :loading="loadingRating" :disabled="rating.scores === 0 || !rating.content" @click="onSubmitRating">
-                {{ !isEdit ? "Gửi đánh giá" : "Sửa đánh giá" }}
+                {{ !isEdit ? "Submit" : "Edit Your Review" }}
               </a-button>
             </a-col>
           </a-row>
@@ -34,7 +34,7 @@
       </a-comment>
     </div>
     <div v-if="!$auth.loggedIn && !$auth.user" style="text-align:center">
-      Vui lòng <router-link :to="{ name: 'login' }">Log In</router-link> để đánh giá
+      <router-link :to="{ name: 'login' }">Log in</router-link> to write your review.
     </div>
 
     <a-list class="comment-list" itemLayout="horizontal" :dataSource="ratings">
@@ -50,9 +50,9 @@
           </a-tooltip>
 
           <template slot="actions" v-if="item.is_author">
-            <span key="edit-rating" @click="edit()">Cập nhật</span>
+            <span key="edit-rating" @click="edit()">Edit</span>
             <a-popconfirm title="Bạn có chắc chắn?" okText="Có" cancelText="Không" @confirm="onDeleteRating(item.id)">
-              <span key="delete-rating">Xóa</span>
+              <span key="delete-rating">Delete</span>
             </a-popconfirm>
           </template>
         </a-comment>
@@ -82,7 +82,7 @@
     },
     data() {
       return {
-        descRating: ["Rất tệ", "Tệ", "Bình thường", "Tốt", "Tuyệt vời"],
+        descRating: ["Terrible", "Bad", "Normal", "Good", "Excellent"],
         rating: {
           scores: 0,
           content: "",

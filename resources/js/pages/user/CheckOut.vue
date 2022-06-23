@@ -27,7 +27,7 @@
   export default {
     components: { Contact, Payment, Accept, Finish },
     metaInfo: {
-      title: "Đặt tour",
+      title: "Book Tour",
     },
     props: {
       tour: {

@@ -8,7 +8,7 @@ return [
   'delete_success' => 'Xóa thành công',
 
   //auth
-  'login_error' => 'Email hoặc mật khẩu không đúng',
+  'login_error' => 'The email or password is incorrect.',
   'email_notfound' => 'Email is not correct.',
   'forgotpassword_success' => 'Link reset mật khẩu được gửi thành công, vui lòng kiểm tra hộp thư đến của bạn',
   'changeprofile_success' => 'Thay đổi thông tin thành công',
@@ -19,11 +19,11 @@ return [
   'resetpassword_error' => 'Token hoặc email không đúng',
 
   //discount code
-  'discount_expired' => 'Mã giảm giá đã hết hạn sử dụng',
-  'discount_outofuse' => 'Mã giảm giá đã hết lượt sử dụng',
-  'discount_notfound' => 'Mã giảm giá không đúng, vui lòng kiểm tra lại',
+  'discount_expired' => 'Discount Code đã hết hạn sử dụng',
+  'discount_outofuse' => 'Discount Code đã hết lượt sử dụng',
+  'discount_notfound' => 'This discount code cannot be found. It may have been entered wrongly, in the wrong input bar, or is no longer in use.',
 
   //verify transaction
   // 'verifytransaction_success' => 'Mã code đã được gửi thành công, vui lòng kiểm tra hộp thư đến của bạn',
-  // 'verifytransaction_error' => 'Mã code không đúng, vui lòng kiểm tra lại'
+  // 'verifytransaction_error' => 'This discount code cannot be found. It may have been entered wrongly, in the wrong input bar, or is no longer in use.'
 ];

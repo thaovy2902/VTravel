@@ -156,7 +156,7 @@ const actions = {
       const { data, status } = await callerApi("apply-discount", "POST", payload);
       if (data && status === 200) {
         commit("setDiscount", data);
-        vp.$message.info("Áp dụng mã giảm giá");
+        vp.$message.info("Apply a discount code");
       }
     } catch ({ response }) {
       if (response) {

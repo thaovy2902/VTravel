@@ -54,13 +54,13 @@ const typeFeedbackFilter = (type) => {
       result = "Không hài lòng";
       break;
     case (type = 3):
-      result = "Bình thường";
+      result = "Normal";
       break;
     case (type = 4):
       result = "Hài lòng";
       break;
     case (type = 5):
-      result = "Tuyệt vời";
+      result = "Excellent";
       break;
   }
 
@@ -73,24 +73,24 @@ const upperCaseFilter = (value) => {
 
 const currencyVN = (value) => {
   const valueStr = value + "";
-  return `${valueStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND`;
+  return `${valueStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".")} $`;
 };
 
 const departFilter = (value) => {
   if (value === "daily") {
-    return "Hằng ngày";
+    return "Daily";
   }
   if (value === "contact") {
-    return "Liên hệ";
+    return "Contact";
   }
 };
 
 const numberDayFilter = (value) => {
-  return `${value} ngày`;
+  return `${value} days`;
 };
 
 const numberPersonFilter = (value) => {
-  return `${value} người`;
+  return `${value} people`;
 };
 
 const percentFilter = (value) => {

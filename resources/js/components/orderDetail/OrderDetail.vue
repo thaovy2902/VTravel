@@ -36,15 +36,15 @@
         <description-item title="Origin" :content="data.tour.from_place_name" />
         <description-item title="Time" :content="data.tour.number_days | numberDay" />
         <description-item title="Transport" :content="data.tour.transport" />
-        <description-item title="Giá trẻ em" :content="data.tour.price_children | currencyVN" />
+        <description-item title="Children (2-12)" :content="data.tour.price_children | currencyVN" />
       </a-col>
       <a-col :span="12">
         <description-item title="Category" :content="data.tour.category_name" />
         <description-item title="Departure" :content="data.tour.depart" />
         <description-item title="Destination" :content="data.tour.to_place_name" />
         <description-item title="Số người" :content="data.tour.number_persons | numberPerson" />
-        <description-item title="Giá người lớn" :content="data.tour.price_default | currencyVN" />
-        <description-item title="Giá em bé" :content="data.tour.price_baby | currencyVN" />
+        <description-item title="Adults" :content="data.tour.price_default | currencyVN" />
+        <description-item title="Infants (0-2)" :content="data.tour.price_baby | currencyVN" />
       </a-col>
     </a-row>
 
@@ -54,24 +54,24 @@
     <a-row>
       <a-col :span="12">
         <description-item title="Ngày đặt" :content="data.created_at | dateTime" />
-        <description-item title="Ngày khởi hành" :content="data.date_depart | date" />
-        <description-item title="Em bé" :content="data.quantity_baby | numberPerson" />
+        <description-item title="Departure Date" :content="data.date_depart | date" />
+        <description-item title="Infants (0-2)" :content="data.quantity_baby | numberPerson" />
       </a-col>
       <a-col :span="12">
         <description-item title="Thanh toán bằng" :content="data.payment_method" />
-        <description-item title="Người lớn" :content="data.quantity_people | numberPerson" />
-        <description-item title="Trẻ em" :content="data.quantity_children | numberPerson" />
+        <description-item title="Adults" :content="data.quantity_people | numberPerson" />
+        <description-item title="Children (2-12)" :content="data.quantity_children | numberPerson" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Mã giảm giá" :content="data.discount_code" />
-        <description-item title="Tổng cộng" :content="data.total | currencyVN" />
+        <description-item title="Discount Code" :content="data.discount_code" />
+        <description-item title="Subtotal" :content="data.total | currencyVN" />
       </a-col>
       <a-col :span="12">
         <description-item title="Phần trăm giảm giá" :content="data.discount_percent | percent" />
-        <description-item title="Giảm giá" :content="data.discount | currencyVN" />
+        <description-item title="Discount" :content="data.discount | currencyVN" />
       </a-col>
       <a-col :span="24">
-        <description-item title="Thành tiền" :content="data.total_amount | currencyVN" />
+        <description-item title="Total" :content="data.total_amount | currencyVN" />
         <description-item title="Ghi chú" :content="data.note" />
       </a-col>
     </a-row>

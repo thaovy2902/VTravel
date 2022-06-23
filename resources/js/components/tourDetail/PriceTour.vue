@@ -1,13 +1,13 @@
 <template>
-  <a-card class="shadow-sm" title="Giá tour" :bordered="false" :bodyStyle="{ padding: '16px' }" :style="{ marginBottom: '16px' }">
+  <a-card class="shadow-sm" title="Tour Price" :bordered="false" :bodyStyle="{ padding: '16px' }" :style="{ marginBottom: '16px' }">
     <div>
-      Người lớn: <b>{{ tour.price_default | currencyVN }}</b>
+      Adults: <b>{{ tour.price_default | currencyVN }}</b>
     </div>
     <div :style="{ margin: '10px 0' }">
-      Trẻ em: <b>{{ tour.price_children | currencyVN }}</b> (từ 2 tuổi đến dưới 12 tuổi)
+      Children (2-12): <b>{{ tour.price_children | currencyVN }}</b> 
     </div>
     <div>
-      Em bé: <b>{{ tour.price_baby | currencyVN }}</b> (dưới 2 tuổi)
+      Infants (0-2): <b>{{ tour.price_baby | currencyVN }}</b>
     </div>
   </a-card>
 </template>

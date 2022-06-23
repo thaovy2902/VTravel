@@ -1,5 +1,5 @@
 <template>
-  <a-card class="shadow-sm" title="Lịch trình" :bordered="false" :bodyStyle="{ padding: '16px' }" style="margin:16px 0">
+  <a-card class="shadow-sm" title="Itinerary" :bordered="false" :bodyStyle="{ padding: '16px' }" style="margin:16px 0">
     <div v-html="description" />
     <div v-if="tour.note">
       <a-divider>Ghi chú</a-divider>

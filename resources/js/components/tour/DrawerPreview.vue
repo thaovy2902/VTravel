@@ -18,7 +18,7 @@
             <description-item title="Departure" :content="data.depart" />
           </a-col>
           <a-col>
-            <description-item title="Nơi đi" :content="data.from_place_name" />
+            <description-item title="Origin" :content="data.from_place_name" />
           </a-col>
           <a-col>
             <description-item title="Destination" :content="data.to_place_name" />
@@ -28,7 +28,7 @@
     </a-row>
     <a-row>
       <a-col :span="12">
-        <description-item title="Số ngày" :content="`${data.number_days} ngày`" />
+        <description-item title="Time" :content="`${data.number_days} days`" />
       </a-col>
       <a-col :span="12">
         <description-item title="Số người" :content="`${data.number_persons} người`" />
@@ -36,18 +36,18 @@
     </a-row>
     <a-row>
       <a-col :span="12">
-        <description-item title="Phương tiện" :content="data.transport" />
+        <description-item title="Transport" :content="data.transport" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Giá người lớn" :content="`${data.price_default} đồng`" />
+        <description-item title="Adults" :content="`${data.price_default} đồng`" />
       </a-col>
     </a-row>
     <a-row>
       <a-col :span="12">
-        <description-item title="Giá trẻ em" :content="`${data.price_children} đồng`" />
+        <description-item title="Children (2-12)" :content="`${data.price_children} đồng`" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Giá em bé" :content="`${data.price_baby} đồng`" />
+        <description-item title="Infants (0-2)" :content="`${data.price_baby} đồng`" />
       </a-col>
     </a-row>
     <a-row>

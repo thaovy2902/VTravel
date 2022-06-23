@@ -4,7 +4,7 @@
     :confirmLoading="confirmLoading"
     centered
     title="Hủy tour"
-    cancelText="Hủy"
+    cancelText="Cancel"
     okText="Xác nhận"
     @cancel="$emit('cancel')"
     @ok="$emit('ok')"

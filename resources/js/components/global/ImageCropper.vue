@@ -4,7 +4,7 @@
       <VueCropper ref="cropper" v-bind="options" />
     </div>
     <template slot="footer">
-      <a-button key="back" @click="modalCancel">Hủy</a-button>
+      <a-button key="back" @click="modalCancel">Cancel</a-button>
       <a-button key="submit" type="primary" @click="modalOk">
         Lưu
       </a-button>

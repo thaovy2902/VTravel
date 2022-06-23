@@ -7,7 +7,7 @@
     props: ["visible", "confirmLoading"],
     data() {
       return {
-        desc: ["Rất không hài lòng", "Không hài lòng", "Bình thường", "Hài lòng", "Tuyệt vời"]
+        desc: ["Rất không hài lòng", "Không hài lòng", "Normal", "Hài lòng", "Excellent"]
       };
     },
     beforeCreate() {

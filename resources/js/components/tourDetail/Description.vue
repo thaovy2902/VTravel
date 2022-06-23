@@ -35,7 +35,7 @@
         <description-item icon="history" title="Time" :content="`${tour.number_days} days`" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="team" title="Maximum Number of Participants" :content="`${tour.number_persons} people`" />
+        <description-item icon="team" title="Maximum Participants" :content="`${tour.number_persons} people`" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
         <a-tag v-if="tour.is_featured" color="blue">Top Attractions</a-tag>

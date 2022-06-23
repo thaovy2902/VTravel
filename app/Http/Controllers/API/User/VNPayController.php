@@ -29,7 +29,7 @@ class VNPayController extends BaseController
       "vnp_Amount" => $vnp_Amount,
       "vnp_Command" => "pay",
       "vnp_CreateDate" => date('YmdHis'),
-      "vnp_CurrCode" => "VND",
+      "vnp_CurrCode" => "$",
       "vnp_IpAddr" => $vnp_IpAddr,
       "vnp_Locale" => $vnp_Locale,
       "vnp_OrderInfo" => $vnp_OrderInfo,

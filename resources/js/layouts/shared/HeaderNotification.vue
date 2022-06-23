@@ -34,7 +34,7 @@
           <a-list-item slot="renderItem" slot-scope="item" class="px-6">
             <div class="item unread" @click="readIt(item.id)">
               <div>
-                <div>{{ item.orderer }} đã đặt tour {{ item.tour }}</div>
+                <div>{{ item.orderer }} booked {{ item.tour }}</div>
               </div>
             </div>
           </a-list-item>
@@ -43,7 +43,7 @@
           <a-list-item slot="renderItem" slot-scope="item" class="px-6">
             <div class="item">
               <div>
-                <div>{{ item.orderer }} đã đặt tour {{ item.tour }}</div>
+                <div>{{ item.orderer }} booked {{ item.tour }}</div>
               </div>
             </div>
           </a-list-item>

@@ -32,7 +32,7 @@
     },
     computed: {
       title() {
-        return !this.editMode ? "Add New" : "Cập nhật";
+        return !this.editMode ? "Add New" : "Edit";
       }
     },
     methods: {
