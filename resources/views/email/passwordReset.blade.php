@@ -11,5 +11,5 @@ Reset Your Password
 @endcomponent
 
 Thank you,<br>
-{{ VTravel }}
+VTravel
 @endcomponent
