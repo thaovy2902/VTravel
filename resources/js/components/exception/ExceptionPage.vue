@@ -6,7 +6,7 @@
       <div class="desc">{{ config[type].desc }}</div>
       <div class="action">
         <a-button type="primary" @click="type == 403 ? logout() : backToHome()">
-          {{ type == 403 ? "Log Out" : "Về Home" }}
+          {{ type == 403 ? "Log Out" : "Home" }}
         </a-button>
       </div>
     </div>

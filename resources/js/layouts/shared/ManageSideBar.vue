@@ -58,7 +58,7 @@
         </router-link>
       </a-menu-item>
     </a-menu>
-    <a-menu v-if="isOwner" theme="dark" :defaultSelectedKeys="[$route.name]" mode="inline">
+    <!-- <a-menu v-if="isOwner" theme="dark" :defaultSelectedKeys="[$route.name]" mode="inline">
       <a-menu-item key="owner.dashboard">
         <router-link :to="{ name: 'owner.dashboard' }">
           <a-icon type="dashboard" />
@@ -77,7 +77,7 @@
           <span>Feedbacks</span>
         </router-link>
       </a-menu-item>
-    </a-menu>
+    </a-menu> -->
   </a-layout-sider>
 </template>
 
