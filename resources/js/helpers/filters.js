@@ -48,16 +48,16 @@ const typeFeedbackFilter = (type) => {
   let result;
   switch (type) {
     case (type = 1):
-      result = "Rất không hài lòng";
+      result = "Terrible";
       break;
     case (type = 2):
-      result = "Không hài lòng";
+      result = "Bad";
       break;
     case (type = 3):
       result = "Normal";
       break;
     case (type = 4):
-      result = "Hài lòng";
+      result = "Good";
       break;
     case (type = 5):
       result = "Excellent";

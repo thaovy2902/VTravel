@@ -36,9 +36,9 @@ class ForgotPasswordRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Email không được trống',
-            'email.string' => 'Email phải là một chuỗi',
-            'email.email' => 'Không đúng định dạng email',
+            'email.required' => 'Email is required.',
+            'email.string' => 'Email must be a string.',
+            'email.email' => 'The email address you have entered is not valid.',
             'email.max' => 'Email tối đa :max ký tự',
         ];
     }

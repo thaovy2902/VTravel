@@ -39,20 +39,20 @@ class SendFeedbackRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Tên không được trống',
-            'name.string' => 'Tên phải là một chuỗi',
-            'name.max' => 'Tên tối đa :max ký tự',
-            'email.unique' => 'Email đã tồn tại',
-            'email.required' => 'Email không được trống',
-            'email.string' => 'Email phải là một chuỗi',
-            'email.email' => 'Không đúng định dạng email',
-            'email.max' => 'Email tối đa :max ký tự',
-            'phone_number.required' => 'Phone Number không được trống',
-            'phone_number.between' => 'Phone Number từ :min - :max ký tự',
-            'type.required' => 'Loại không được trống',
-            'content.required' => 'Nội dung không được trống',
-            'content.string' => 'Nội dung phải là một chuỗi',
-            'content.min' => 'Nội dung tối thiểu :min ký tự',
+            'name.required' => 'Name is required.',
+            'name.string' => 'Name must be a string.',
+            'name.max' => 'Name may not be greater than :max characters.',
+            'email.unique' => 'Email is already exists.',
+            'email.required' => 'Email is required.',
+            'email.string' => 'Email must be a string.',
+            'email.email' => 'The email address you have entered is not valid.',
+            'email.max' => 'Email may not be greater than :max characters.',
+            'phone_number.required' => 'Phone Number is required.',
+            'phone_number.between' => 'Phone Number must be between :min and :max characters long.',
+            'type.required' => 'Type is required.',
+            'content.required' => 'Content is required.',
+            'content.string' => 'Content must be a string.',
+            'content.min' => 'Content must be at least :min characters long.',
         ];
     }
 

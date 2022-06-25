@@ -40,19 +40,19 @@ class CreateUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Tên không được trống',
-            'name.string' => 'Tên phải là một chuỗi',
-            'name.max' => 'Tên tối đa :max ký tự',
-            'email.unique' => 'Email đã tồn tại',
-            'email.required' => 'Email không được trống',
-            'email.string' => 'Email phải là một chuỗi',
-            'email.email' => 'Không đúng định dạng email',
-            'email.max' => 'Email tối đa :max ký tự',
-            'password.required' => 'Mật khẩu không được trống',
-            'password.between' => 'Mật khẩu từ :min - :max ký tự',
-            'phone_number.between' => 'Phone Number từ :min - :max ký tự',
-            'address.string' => 'Address phải là một chuỗi',
-            'address.max' => 'Address tối đa :max ký tự',
+            'name.required' => 'Name is required.',
+            'name.string' => 'Name must be a string.',
+            'name.max' => 'Name may not be greater than :max characters.',
+            'email.unique' => 'Email is already exists.',
+            'email.required' => 'Email is required.',
+            'email.string' => 'Email must be a string.',
+            'email.email' => 'The email address you have entered is not valid.',
+            'email.max' => 'Email may not be greater than :max characters.',
+            'password.required' => 'Password is required.',
+            'password.between' => 'Password must be between :min and :max characters long.',
+            'phone_number.between' => 'Phone Number must be between :min and :max characters long.',
+            'address.string' => 'Address must be a string.',
+            'address.max' => 'Address may not be greater than :max characters.',
         ];
     }
 

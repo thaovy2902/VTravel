@@ -36,9 +36,9 @@ class RatingRequest extends FormRequest
     public function messages()
     {
         return [
-            'scores.required' => 'Điểm không được trống',
-            'scores.numeric' => 'Điểm phải là một số',
-            'content.required' => 'Nội dung không được trống',
+            'scores.required' => 'Score is required.',
+            'scores.numeric' => 'Score must be a number.',
+            'content.required' => 'Content is required.',
         ];
     }
 

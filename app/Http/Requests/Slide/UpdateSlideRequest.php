@@ -38,11 +38,11 @@ class UpdateSlideRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Tiêu đề không được trống',
-            'title.string' => 'Tiêu đề phải là một chuỗi',
-            'title.max' => 'Tiêu đề tối đa :max ký tự',
-            'image.max' => 'Tên ảnh tối đa :max ký tự',
-            'link.max' => 'Link tối đa :max ký tự',
+            'title.required' => 'Title is required.',
+            'title.string' => 'Title must be a string.',
+            'title.max' => 'Title may not be greater than :max characters.',
+            'image.max' => 'Image Title may not be greater than :max characters.',
+            'link.max' => 'Link may not be greater than :max characters.',
         ];
     }
 

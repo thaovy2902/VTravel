@@ -7,7 +7,7 @@
   export default {
     components: { ExceptionPage },
     metaInfo: {
-      title: "Cấm truy cập",
+      title: "Not Authorized",
     },
   };
 </script>

@@ -34,8 +34,8 @@
         <a-form-item label="Percentage discount (%)" hasFeedback>
           <a-input-number v-decorator="['percent', config]" :min="0" :max="99" placeholder="Percentage discount (%)" style="width:100%" />
         </a-form-item>
-        <a-form-item label="Uses per Coupon" hasFeedback>
-          <a-input-number v-decorator="['remaining', config]" :min="0" placeholder="Uses per Coupon" style="width:100%" />
+        <a-form-item label="Usage limits" hasFeedback>
+          <a-input-number v-decorator="['remaining', config]" :min="0" placeholder="Usage limits" style="width:100%" />
         </a-form-item>
         <a-form-item label="Expiry Date" hasFeedback>
           <a-date-picker
@@ -46,7 +46,7 @@
             style="width:100%"
           />
         </a-form-item>
-        <a-form-item label="Quantity" extra="""">
+        <a-form-item label="Quantity" extra="">
           <a-select v-decorator="['quantity']" placeholder="Quantity" style="width:100%">
             <a-select-option value="5">5</a-select-option>
             <a-select-option value="10">10</a-select-option>
@@ -102,8 +102,8 @@
         loadingButton: false,
         discountCodeId: "",
         numberUser: undefined,
-        config: { rules: [{ type: "number", required: true, message: "Không được trống" }] },
-        configDate: { rules: [{ type: "object", required: true, message: "Không được trống" }] },
+        config: { rules: [{ type: "number", required: true, message: "This field is required." }] },
+        configDate: { rules: [{ type: "object", required: true, message: "This field is required." }] },
       };
     },
     computed: {
@@ -127,7 +127,7 @@
             scopedSlots: { customRender: "percent" },
           },
           {
-            title: "Remains",
+            title: "Remaining",
             sorter: true,
             dataIndex: "remaining",
           },

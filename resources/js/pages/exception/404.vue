@@ -7,7 +7,7 @@
   export default {
     components: { ExceptionPage },
     metaInfo: {
-      title: "Không tìm thấy",
+      title: "Not Found",
     },
   };
 </script>

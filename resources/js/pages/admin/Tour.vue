@@ -84,11 +84,11 @@
                   {
                     rules: [
                       { required: true, message: 'This field is required.' },
-                      { max: 255, message: 'Tối đa 255 ký tự' }
+                      { max: 255, message: 'Tour Name may not be greater than 255 characters.' }
                     ]
                   }
                 ]"
-                placeholder="Input Tour name"
+                placeholder="Input Tour Name"
               />
             </a-form-item>
           </a-col>
@@ -101,7 +101,7 @@
                     rules: [{ required: true, message: 'This field is required.' }]
                   }
                 ]"
-                placeholder="Choose category"
+                placeholder="Choose Category"
                 @change="onChangeCategory"
               >
                 <a-select-option v-for="cate in categories" :key="cate.id" :value="cate.id">
@@ -122,7 +122,7 @@
                     rules: [{ required: true, message: 'This field is required.' }]
                   }
                 ]"
-                placeholder="Input origin"
+                placeholder="Input Origin"
               />
             </a-form-item>
           </a-col>
@@ -136,7 +136,7 @@
                     rules: [{ required: true, message: 'This field is required.', type: 'array' }]
                   }
                 ]"
-                placeholder="Choose destination"
+                placeholder="Choose Destination"
               >
                 <a-select-option v-for="city in cities" :key="city.code" :value="city.code">{{ city.name }}</a-select-option>
               </a-select>
@@ -147,7 +147,7 @@
         <a-row :gutter="16">
           <a-col :span="12">
             <a-form-item label="Transport" has-feedback>
-              <a-input v-decorator="['transport']" placeholder="Input transport" />
+              <a-input v-decorator="['transport']" placeholder="Input Transport" />
             </a-form-item>
           </a-col>
           <a-col :span="6">

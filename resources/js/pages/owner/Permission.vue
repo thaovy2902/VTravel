@@ -1,5 +1,5 @@
 <template>
-  <card-table placeholder="Tìm kiếm theo tên, email" :title="title" @reset="reset" @search="search">
+  <card-table placeholder="Search by Name, Email" :title="title" @reset="reset" @search="search">
     <a-table
       size="middle"
       :columns="columns"
@@ -56,11 +56,11 @@
   export default {
     components: { CardTable, PaginationTable },
     metaInfo: {
-      title: "Phân quyền",
+      title: "Decentralization",
     },
     data() {
       return {
-        title: "Phân quyền",
+        title: "Decentralization",
         pagination: {
           total: 0,
           perPage: 0,
@@ -96,7 +96,7 @@
             sorter: true,
           },
           {
-            title: "status",
+            title: "Status",
             dataIndex: "is_active",
             width: "12%",
             sorter: true,
@@ -109,7 +109,7 @@
             scopedSlots: { customRender: "active" },
           },
           {
-            title: "Quyền",
+            title: "Role",
             align: "center",
             width: "23%",
             scopedSlots: { customRender: "action" },

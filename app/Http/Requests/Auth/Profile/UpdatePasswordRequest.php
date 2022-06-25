@@ -36,10 +36,9 @@ class UpdatePasswordRequest extends FormRequest
     public function messages()
     {
         return [
-            'currentPassword.required' => 'Mật khẩu cũ không được trống',
-            'currentPassword.between' => 'Mật khẩu cũ từ :min - :max ký tự',
-            'newPassword.required' => 'Mật khẩu mới không được trống',
-            'newPassword.between' => 'Mật khẩu mới từ :min - :max ký tự',
+            'currentPassword.required' => 'Current Password is required.',
+            'newPassword.required' => 'New Password is required.',
+            'newPassword.between' => 'New password must be between :min and :max characters long.',
         ];
     }
 

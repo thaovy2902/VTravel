@@ -12,7 +12,7 @@
             {
               rules: [
                 { required: true, message: 'This filed is required.' },
-                { max: 255, message: 'Tối đa 255 ký tự' }
+                { max: 255, message: 'Name may not be greater than 255 characters.' }
               ]
             }
           ]"
@@ -30,7 +30,7 @@
               rules: [
                 { type: 'email', message: 'The email address you have entered is not valid.' },
                 { required: true, message: 'This filed is required.' },
-                { max: 255, message: 'Tối đa 255 ký tự' }
+                { max: 255, message: 'Email may not be greater than 255 characters.' }
               ]
             }
           ]"

@@ -2,7 +2,7 @@ import { callerApi } from "@/helpers/caller-api";
 import { vp } from "@/helpers/tools";
 import router from "@/router";
 
-const OWNER = 1;
+const OWNER = 2;
 const ADMIN = 2;
 
 const localStorageKeys = {

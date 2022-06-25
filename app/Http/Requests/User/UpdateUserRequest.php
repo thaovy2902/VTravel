@@ -38,12 +38,14 @@ class UpdateUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Tên không được trống',
-            'name.string' => 'Tên phải là một chuỗi',
-            'name.max' => 'Tên tối đa :max ký tự',
-            'phone_number.between' => 'Phone Number từ :min - :max ký tự',
-            'address.string' => 'Address phải là một chuỗi',
-            'address.max' => 'Address tối đa :max ký tự',
+            
+            'name.required' => 'Name is required.',
+            'name.string' => 'Name must be a string.',
+            'name.max' => 'Name may not be greater than :max characters.',
+            'phone_number.between' => 'Phone Number must be between :min and :max characters long.',
+            'address.string' => 'Address must be a string.',
+            'address.max' => 'Address may not be greater than :max characters.',
+
         ];
     }
 

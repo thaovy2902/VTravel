@@ -118,7 +118,7 @@
       compareToFirstPassword(rule, value, callback) {
         const form = this.form;
         if (value && value !== form.getFieldValue("password")) {
-          callback("Mật khẩu nhập lại không đúng");
+          callback("The new password and the confirm password do not match.");
         } else {
           callback();
         }

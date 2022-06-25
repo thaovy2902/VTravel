@@ -10,6 +10,6 @@ class RoleController extends BaseController
 {
   public function __invoke()
   {
-    return new RoleCollection(Role::where('slug', '!=', 'owner')->get());
+    return new RoleCollection(Role::where('slug', '!=', 'admin')->get());
   }
 }

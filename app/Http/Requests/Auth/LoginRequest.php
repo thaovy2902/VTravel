@@ -37,12 +37,12 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Email không được trống',
-            'email.string' => 'Email phải là một chuỗi',
-            'email.email' => 'Không đúng định dạng email',
-            'email.max' => 'Email tối đa :max ký tự',
-            'password.required' => 'Mật khẩu không được trống',
-            'password.between' => 'Mật khẩu từ :min - :max ký tự',
+            'email.required' => 'Email is required.',
+            'email.string' => 'Email must be a string.',
+            'email.email' => 'The email address you have entered is not valid.',
+            'email.max' => 'Email may not be greater than :max characters.',
+            'password.required' => 'Password is required.',
+            'password.between' => 'Password must be between :min and :max characters long.',
         ];
     }
 

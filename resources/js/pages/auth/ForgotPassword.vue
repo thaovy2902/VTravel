@@ -31,8 +31,8 @@
       <div v-else>
         <a-form-item>
           <a-alert
-            message="Thành công"
-            description="Link reset mật khẩu đã được gửi về mail của bạn. Vui lòng check mail!"
+            message="Success"
+            description="A password reset link was sent. Please check your email!"
             type="success"
             showIcon
           />
@@ -52,7 +52,7 @@
   export default {
     components: { AuthForm },
     metaInfo: {
-      title: "Quên mật khẩu",
+      title: "Forgot Password",
     },
     data() {
       return {

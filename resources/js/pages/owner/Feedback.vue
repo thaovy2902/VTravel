@@ -27,7 +27,7 @@
         </a-switch>
       </template>
       <template slot="action" slot-scope="record">
-        <a-popconfirm v-if="feedbacks.length" title="Bạn có chắc chắn?" @confirm="onDelete(record.id)">
+        <a-popconfirm v-if="feedbacks.length" title="Are you sure?" @confirm="onDelete(record.id)">
           <a-button type="dashed" size="small">
             <a-icon type="delete"></a-icon>
           </a-button>

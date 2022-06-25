@@ -7,7 +7,7 @@
   export default {
     components: { ExceptionPage },
     metaInfo: {
-      title: "Lỗi server",
+      title: "Server Error",
     },
   };
 </script>

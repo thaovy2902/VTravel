@@ -61,15 +61,11 @@
               {
                 rules: [
                   { required: true, message: 'This field is required.' },
-                  {
-                    whitespace: true,
-                    message: 'Không được nhập khoảng trắng',
-                  },
-                  { max: 255, message: 'Tối đa 255 ký tự' },
+                  { max: 255, message: 'Full Name may not be greater than 255 characters.' },
                 ],
               },
             ]"
-            placeholder="Input full name"
+            placeholder="Input Full Name"
           />
         </a-form-item>
         <a-form-item label="Email" :has-feedback="!editMode">
@@ -81,11 +77,11 @@
                 rules: [
                   { type: 'email', message: 'The email address you have entered is not valid.' },
                   { required: true, message: 'This field is required.' },
-                  { max: 255, message: 'Tối đa 255 ký tự' },
+                  { max: 255, message: 'Email may not be greater than 255 characters' },
                 ],
               },
             ]"
-            placeholder="Input email"
+            placeholder="Input Email"
           />
         </a-form-item>
         <a-form-item v-if="!editMode" label="Password" :has-feedback="!editMode">
@@ -96,16 +92,12 @@
               {
                 rules: [
                   { required: true, message: 'This field is required.' },
-                  {
-                    whitespace: true,
-                    message: 'Không được nhập khoảng trắng',
-                  },
                   { min: 6, message: 'Passwords must be at least 6 characters long.' },
-                  { max: 255, message: 'Tối đa 255 ký tự' },
+                  { max: 255, message: 'Password may not be greater than 255 characters.' },
                 ],
               },
             ]"
-            placeholder="Input password"
+            placeholder="Input Password"
           />
         </a-form-item>
         <a-form-item label="Phone Number">
@@ -113,10 +105,10 @@
             v-decorator="[
               'phone_number',
               {
-                rules: [{ max: 12, message: 'Tối đa 12 ký tự' }],
+                rules: [{ max: 12, message: 'Phone Number may not be greater than 12 characters.' }],
               },
             ]"
-            placeholder="Input phone number"
+            placeholder="Input Phone Number"
           />
         </a-form-item>
         <a-form-item label="Address">

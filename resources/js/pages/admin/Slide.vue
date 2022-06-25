@@ -47,7 +47,7 @@
               {
                 rules: [
                   { required: true, message: 'This field is required.' },
-                  { max: 255, message: 'Tối đa 255 ký tự' }
+                  { max: 255, message: 'Title may not be greater than 255 characters.' }
                 ]
               }
             ]"
@@ -61,7 +61,7 @@
               {
                 rules: [
                   { required: true, message: 'This field is required.' },
-                  { max: 255, message: 'Tối đa 255 ký tự' }
+                  { max: 255, message: 'Link may not be greater than 255 characters.' }
                 ]
               }
             ]"

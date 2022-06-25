@@ -39,7 +39,7 @@ class PermissionController extends BaseController
 
   private function getQueryData($query)
   {
-    $results = User::with(['role'])->where('role_id', '!=', 1);
+    $results = User::with(['role'])->where('role_id', '!=', 2);
     if ($query['q']) {
       $results = $results->search($query['q']);
     }
