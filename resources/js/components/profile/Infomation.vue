@@ -10,7 +10,7 @@
         <a-col v-if="!$auth.user.phone_number && !$auth.user.address" :span="24" style="margin-bottom:16px">
           <a-alert type="info" message="Please update all the information." banner />
         </a-col>
-        <a-col :xs="24" :sm="24" :md="8" :lg="8">
+        <a-col :xs="24" :sm="24" :md="6" :lg="6">
           <a-row type="flex" justify="center" align="middle">
             <a-col v-if="$auth.user.avatar" :span="20">
               <div class="container-avatar" @click="$refs.inputAvatar.click()">
@@ -26,10 +26,10 @@
             </a-col>
           </a-row>
         </a-col>
-        <a-col :xs="24" :sm="24" :md="16" :lg="16">
+        <a-col :xs="24" :sm="24" :md="9" :lg="9">
           <a-row type="flex" justify="center" align="middle">
             <a-col :span="18">
-              <a-form :form="formUserData" v-bind="formItemLayout" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
+              <a-form :form="formUserData" layout="vertical" @submit.prevent="saveForm" hideRequiredMark>
                 <a-form-item label="Email">
                   <a-input :value="user.email" disabled />
                 </a-form-item>
@@ -41,11 +41,7 @@
                         initialValue: user.name,
                         rules: [
                           { required: true, message: 'This filed is required.' },
-                          {
-                            whitespace: true,
-                            message: 'Không được nhập khoảng trắng',
-                          },
-                          { max: 255, message: 'Tối đa 255 ký tự' },
+                          { max: 255, message: 'Full Name may not be greater than 255 characters.' },
                         ],
                       },
                     ]"
@@ -59,7 +55,7 @@
                       'phone_number',
                       {
                         initialValue: user.phone_number,
-                        rules: [{ max: 12, message: 'Tối đa 12 ký tự' }],
+                        rules: [{ max: 12, message: 'Phone Number may not be greater than 12 characters.' }],
                       },
                     ]"
                     placeholder="Input phone number"
@@ -80,9 +76,9 @@
                   />
                 </a-form-item>
                 <a-row type="flex" justify="space-between" align="middle">
-                  <a-col>
+                  <!-- <a-col>
                     <a-button icon="lock" @click="visible = true">Change password</a-button>
-                  </a-col>
+                  </a-col> -->
                   <a-col>
                     <a-button v-if="!disabled" type="primary" htmlType="submit" icon="save">
                       Save
@@ -93,16 +89,19 @@
                   </a-col>
                 </a-row>
               </a-form>
-
-              <change-password-form
+            </a-col>
+          </a-row>
+        </a-col>
+        <a-col :xs="24" :sm="24" :md="9" :lg="9">
+          <!-- <a-row type="flex" justify="center" align="middle"> -->
+            <change-password-form
                 ref="changePasswordForm"
                 :visible="visible"
                 :confirmLoading="confirmLoading"
                 @cancel="handleCancel"
                 @ok="handleOk"
               />
-            </a-col>
-          </a-row>
+          <!-- </a-row> -->
         </a-col>
       </a-row>
     </a-card>
@@ -123,7 +122,7 @@
       compareToFirstPassword(rule, value, callback) {
         const form = this.changePasswordForm;
         if (value && value !== form.getFieldValue("newPassword")) {
-          callback("Mật khẩu nhập lại không đúng");
+          callback("The password and the confirm password do not match.");
         } else {
           callback();
         }
@@ -137,18 +136,13 @@
       },
     },
     template: `
-    <a-modal
-      :width="450"
-      :visible="visible"
-      :confirmLoading="confirmLoading"
-      centered
-      title='Change password'
-      okText='Save'
-      cancelText='Cancel'
-      @cancel="() => { $emit('cancel') }"
-      @ok="() => { $emit('ok') }"
+    <a-row
+      type="flex"
+      justify="center"
+      align="middle"
     >
-      <a-form layout='vertical' :form="changePasswordForm" hideRequiredMark>
+    <a-col :span="18">
+      <a-form layout="vertical" :form="changePasswordForm" hideRequiredMark>
         <a-form-item label='Old password' hasFeedback>
           <a-input
             v-decorator="[
@@ -156,12 +150,8 @@
               {
                 rules: [
                   { required: true, message: 'This filed is required.' },
-                  {
-                    whitespace: true,
-                    message: 'Không được nhập khoảng trắng'
-                  },
-                  { min: 6, message: 'Passwords must be at least 6 characters long.' },
-                  { max: 255, message: 'Tối đa 255 ký tự' }
+                  { min: 6, message: 'Password must be at least 6 characters long.' },
+                  { max: 255, message: 'Password may not be greater than 255 characters.' }
                 ]
               }
             ]"
@@ -176,12 +166,8 @@
               {
                 rules: [
                   { required: true, message: 'This filed is required.' },
-                  {
-                    whitespace: true,
-                    message: 'Không được nhập khoảng trắng'
-                  },
-                  { min: 6, message: 'Passwords must be at least 6 characters long.' },
-                  { max: 255, message: 'Tối đa 255 ký tự' },
+                  { min: 6, message: 'New Password must be at least 6 characters long.' },
+                  { max: 255, message: 'New Password may not be greater than 255 characters.' },
                   {
                     validator: validateToNextPassword,
                   },
@@ -210,8 +196,12 @@
             @blur="handleConfirmBlur"
           />
         </a-form-item>
+        <a-button @click="() => { $emit('ok') }" type="primary" htmlType="submit" icon="save">
+          Change Password
+        </a-button>
       </a-form>
-    </a-modal>
+    </a-col>
+  </a-row>
   `,
   };
   import { mapGetters, mapActions } from "vuex";

@@ -1,8 +1,8 @@
 <template>
   <a-layout-footer id="global-footer">
     <div class="global-footer-top">
-      <a-row type="flex" justify="center" align="top">
-        <a-col :xs="24" :sm="24" :md="8" :lg="8">
+      <a-row type="flex" justify="space-between">
+        <a-col :xs="24" :sm="24" :md="12" :lg="12">
           <div class="footer-item">
             <div>
               <div class="logo-footer">
@@ -16,7 +16,16 @@
             </div>
           </div>
         </a-col>
-        <a-col :xs="24" :sm="24" :md="8" :lg="8">
+        <a-col :xs="24" :sm="24" :md="6" :lg="6">
+          <div class="footer-item">
+            <div class="footer-item-title">Menu</div>
+            <div style="fontSize:16px">
+              <div class="mb-1"><router-link :to="{ name: 'home' }">Home</router-link></div>
+              <div class="mb-1"><router-link :to="{ name: 'tours' }">Tours</router-link></div>
+            </div>
+          </div>
+        </a-col>
+        <a-col :xs="24" :sm="24" :md="6" :lg="6">
           <div class="footer-item">
             <div class="footer-item-title">Contact</div>
             <div style="fontSize:16px">
@@ -26,22 +35,6 @@
               <div class="mb-1"><a-icon type="mail" style="marginRight:8px" />info@vtravel.com</div>
             </div>
           </div>
-        </a-col>
-        <a-col :xs="24" :sm="24" :md="8" :lg="8">
-          <!-- <div class="footer-item">
-            <div class="footer-item-title">Theo dõi chúng tôi</div>
-            <div>
-              <a href="#" target="_blank" class="link-facebook">
-                <a-icon theme="filled" type="facebook" class="icon-social" />
-              </a>
-              <a href="#" target="_blank" class="link-instagram">
-                <a-icon theme="filled" type="instagram" class="icon-social" />
-              </a>
-              <a href="#" target="_blank" class="link-youtube">
-                <a-icon theme="filled" type="youtube" class="icon-social" />
-              </a>
-            </div>
-          </div> -->
         </a-col>
       </a-row>
     </div>
@@ -65,6 +58,9 @@
   #global-footer {
     padding: 0;
     color: #111111;
+    a {
+      color: #111111;
+    }
     .global-footer-top {
       background: #fbfbfb;
       padding: 24px 120px;

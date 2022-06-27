@@ -89,7 +89,7 @@
 <style>
   span.tour-title {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     font-size: 24px;
     font-weight: 700;
     color: #111111;

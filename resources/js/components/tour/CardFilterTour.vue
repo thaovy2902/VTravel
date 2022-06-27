@@ -150,9 +150,10 @@
 <style lang="less" scoped>
   .card-title-custom {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     margin-bottom: 24px;
+    color: #111111;
   }
   .form-group {
     margin-bottom: 24px;
@@ -160,6 +161,7 @@
       font-size: 14px;
       text-transform: uppercase;
       font-weight: 500;
+      color: rgb(37, 149, 255);
     }
     .form-input {
       margin-top: 8px;

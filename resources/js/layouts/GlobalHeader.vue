@@ -39,10 +39,6 @@
                 Dashboard
               </a-button>
 
-              <a class="color-link-icon" @click="openModalFeedback">
-                <a-icon type="message" :style="{ fontSize: '18px' }" />
-              </a>
-
               <header-notification />
 
               <header-avatar />
@@ -96,6 +92,8 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      width: 100px;
+      height: 64px;
     }
     @media (max-width: 576px) {
       padding-right: 15px !important;

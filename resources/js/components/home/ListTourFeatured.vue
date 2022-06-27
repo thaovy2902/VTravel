@@ -1,6 +1,6 @@
 <template>
   <a-col :style="{ marginTop: '16px' }">
-    <a-row :gutter="16" :style="{ margin: '0 -40px' }">
+    <a-row :gutter="16" class="row-featured">
       <tour-item v-for="tour in toursFeatured" :key="tour.id" :data="tour" />
     </a-row>
   </a-col>
@@ -19,4 +19,8 @@
   };
 </script>
 
-<style></style>
+<style>
+  .row-featured {
+    margin: 0 -40px !important;
+  }
+</style>
