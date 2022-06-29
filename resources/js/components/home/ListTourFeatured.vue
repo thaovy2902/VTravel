@@ -20,7 +20,4 @@
 </script>
 
 <style>
-  .row-featured {
-    margin: 0 -40px !important;
-  }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <auth-form>
+    <a-col :xs="24" :sm="24" :md="24" :lg="24" style="padding: 40px 160px;">
     <div>
       <h2 style="color:#2595ff; text-align: center">FORGOT PASSWORD</h2>
     </div>
@@ -43,6 +44,8 @@
         <router-link :to="{ name: 'register' }">Sign Up</router-link>
       </div>
     </a-form>
+    </a-col>
+    
   </auth-form>
 </template>
 

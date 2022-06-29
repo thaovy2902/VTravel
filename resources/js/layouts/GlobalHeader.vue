@@ -2,36 +2,24 @@
   <div>
     <a-layout-header id="header">
       <a-row>
-        <a-col :xs="4" :sm="4" :md="12" :lg="12">
-          <a-row :gutter="{ xs: 0, sm: 8, md: 24, lg: 24 }">
-            <a-col :xs="24" :sm="24" :md="5" :lg="5">
+        <a-col :xs="4" :sm="4" :md="10" :lg="10">
               <router-link :to="{ name: 'home' }">
                 <img class="logo" src="/img/logo.svg" alt="logo" />
               </router-link>
-            </a-col>
-            <a-col :xs="0" :sm="0" :md="19" :lg="19">
-              <a-menu mode="horizontal" :selectedKeys="[$route.name]" :style="{ lineHeight: '62px' }">
-                <a-menu-item key="home">
-                  <router-link :to="{ name: 'home' }">Home</router-link>
-                </a-menu-item>
-                <a-menu-item key="tours">
-                  <router-link :to="{ name: 'tours' }">Tours</router-link>
-                </a-menu-item>
-              </a-menu>
-            </a-col>
-          </a-row>
         </a-col>
-        <a-col :xs="20" :sm="20" :md="12" :lg="12">
+        <a-col :xs="0" :sm="0" :md="7" :lg="7">
+          <a-menu mode="horizontal" :selectedKeys="[$route.name]" :style="{ lineHeight: '62px' }">
+            <a-menu-item key="home">
+              <router-link :to="{ name: 'home' }">Home</router-link>
+            </a-menu-item>
+            <a-menu-item key="tours">
+              <router-link :to="{ name: 'tours' }">Tours</router-link>
+            </a-menu-item>
+          </a-menu>
+        </a-col>
+        <a-col :xs="20" :sm="20" :md="7" :lg="7">
           <div class="menu-right">
             <div v-if="!$auth.loggedIn && !$auth.user">
-              <a-button
-                :style="{ marginRight: '12px' }"
-                class="color-link-icon"
-                type="link"
-                size="large"
-                icon="message"
-                @click="openModalFeedback"
-              ></a-button>
               <a-button @click="$router.push({ name: 'login' })">Log In</a-button>
             </div>
             <div v-else :style="{ display: 'flex', flexDirection: 'row', alignItems: 'center' }">

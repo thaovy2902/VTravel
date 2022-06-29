@@ -1,7 +1,25 @@
 <template>
   <auth-form>
-    <div>
-      <h2 style="color:#2595ff; text-align: center">CREATE ACCOUNT</h2>
+        <a-col :xs="4" :sm="4" :md="9" :lg="9">
+      <div class="left-column">
+        <div class="left-column-content">
+          <h2>WELCOME BACK!</h2>
+          <p style="margin-bottom: 5px;">If you already have an account</p>
+          <p style="margin-bottom: 40px;">Please Log In form here!</p>
+          <span class="link-span">
+            <router-link :to="{ name: 'login' }">Log In</router-link>
+        </span>
+        </div>
+      </div>
+    </a-col>
+    <a-col :xs="4" :sm="4" :md="15" :lg="15" style="padding: 0 80px 40px;">
+      <div class="logo">
+        <router-link :to="{ name: 'home' }">
+          <img src="/img/logo.svg" alt="logo" />
+        </router-link>
+      </div>  
+      <div>
+      <h2 style="color:#2595ff; text-align: center; margin-top: 20px;">CREATE ACCOUNT</h2>
     </div>
     <a-form :form="form" @submit.prevent="handleSubmit">
       <a-form-item has-feedback>
@@ -86,12 +104,11 @@
       </a-form-item>
       <div class="foot">
         <span>
-          or
-          <router-link :to="{ name: 'login' }">Log In</router-link>
         </span>
         <router-link :to="{ name: 'forgotpassword' }" style="color:#2595ff">Forgot Your Password?</router-link>
       </div>
     </a-form>
+    </a-col>
   </auth-form>
 </template>
 
@@ -101,7 +118,7 @@
   export default {
     components: { AuthForm },
     metaInfo: {
-      title: "Đăng ký",
+      title: "Register",
     },
     computed: {
       ...mapGetters("auth", ["loading"])
@@ -153,5 +170,27 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .left-column {
+    background: #FF8F00;
+    color: #fff;
+    text-align: center;
+    height: 561px;
+    padding-top: 200px;
+    font-size: 16px;
+  }
+  .left-column h2 {
+    color: #fff;
+    font-size: 28px;
+  }
+  .link-span {
+    background: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 18px;
   }
 </style>

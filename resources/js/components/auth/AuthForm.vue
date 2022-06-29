@@ -1,12 +1,9 @@
 <template>
   <div class="container">
-    <a-card class="login m-auto shadow" :bordered="false" :bodyStyle="{ padding: '16px' }">
-      <div class="logo">
-        <router-link :to="{ name: 'home' }">
-          <img src="/img/logo.svg" alt="logo" />
-        </router-link>
-      </div>
-      <slot></slot>
+    <a-card class="login m-auto shadow" :bordered="false" :bodyStyle="{ padding: '0' }">
+      <a-row>
+         <slot></slot>
+      </a-row>
     </a-card>
   </div>
 </template>
@@ -30,7 +27,7 @@
     height: 100vh;
     overflow: hidden;
     .login {
-      width: 410px;
+      width: 1000px;
       .logo {
         text-align: center;
         margin-bottom: 20px;
