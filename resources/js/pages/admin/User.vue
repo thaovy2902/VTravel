@@ -175,13 +175,6 @@
             sorter: true,
           },
           {
-            title: "status",
-            dataIndex: "is_active",
-            key: "status",
-            width: "13%",
-            scopedSlots: { customRender: "status" },
-          },
-          {
             title: "Hide/Show",
             align: "center",
             scopedSlots: { customRender: "active" },

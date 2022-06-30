@@ -1,17 +1,14 @@
 <template>
   <a-card class="shadow-sm" :bordered="false" :bodyStyle="{ padding: '16px' }" style="margin-bottom:16px">
     <div class="container" slot="cover">
-      <img :alt="tour.name" v-lazy="tour.image" />
-      <div v-if="avgRating.count > 0" class="rating">
+      <gallery :tour="tour" />
+      <!-- <div v-if="avgRating.count > 0" class="rating">
         <div>{{ avgRating.avg | rounded }}<a-icon class="icon" theme="filled" type="star" /></div>
         <a-divider type="vertical" />
         <div>{{ avgRating.count }} reviews</div>
-      </div>
+      </div> -->
     </div>
     <a-row style="margin-bottom:8px">
-      <a-col :xs="24" :sm="24" :md="8" :lg="8">
-        <description-item icon="barcode" title="Tour ID" :content="tour.code" />
-      </a-col>
       <a-col :xs="24" :sm="24" :md="8" :lg="8">
         <description-item icon="info-circle" title="Category" :content="tour.category_name" />
       </a-col>
@@ -46,10 +43,11 @@
 
 <script>
   import DescriptionItem from "@/components/description/DescriptionItem";
+  import Gallery from "@/components/tourDetail/Gallery";
   import { mapState } from "vuex";
 
   export default {
-    components: { DescriptionItem },
+    components: { DescriptionItem, Gallery },
     props: {
       tour: {
         type: Object,

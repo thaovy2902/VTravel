@@ -1,5 +1,5 @@
 <template>
-  <a-layout :style="{ minHeight: '100vh' }">
+  <a-layout :style="{ minHeight: '100vh' }" class="admin-layout">
     <manage-side-bar :manageRole="manageRole" />
     <a-layout>
       <manage-header />
@@ -45,5 +45,14 @@
   }
   .ant-drawer-content-wrapper {
     transition: all 0.5s;
+  }
+</style>
+
+<style lang="less">
+  .admin-layout .layout-header {
+    background: #ff8f00;
+  }
+    .admin-layout .layout-header b {
+    color: #f2f2f2;
   }
 </style>

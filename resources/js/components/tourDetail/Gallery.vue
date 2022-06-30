@@ -17,7 +17,7 @@
       </a-carousel>
     </div>
     <div v-else>
-      <div style="text-align:center">Không có hình nào</div>
+      <div style="text-align:center">No image available.</div>
     </div>
   </a-card>
 </template>

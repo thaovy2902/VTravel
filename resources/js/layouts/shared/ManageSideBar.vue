@@ -58,26 +58,6 @@
         </router-link>
       </a-menu-item>
     </a-menu>
-    <!-- <a-menu v-if="isOwner" theme="dark" :defaultSelectedKeys="[$route.name]" mode="inline">
-      <a-menu-item key="owner.dashboard">
-        <router-link :to="{ name: 'owner.dashboard' }">
-          <a-icon type="dashboard" />
-          <span>Dashboard</span>
-        </router-link>
-      </a-menu-item>
-      <a-menu-item key="owner.permissions">
-        <router-link :to="{ name: 'owner.permissions' }">
-          <a-icon type="lock" />
-          <span>Decentralization</span>
-        </router-link>
-      </a-menu-item>
-      <a-menu-item key="owner.feedbacks">
-        <router-link :to="{ name: 'owner.feedbacks' }">
-          <a-icon type="message" />
-          <span>Feedbacks</span>
-        </router-link>
-      </a-menu-item>
-    </a-menu> -->
   </a-layout-sider>
 </template>
 
@@ -92,9 +72,6 @@
     computed: {
       isAdmin() {
         return this.manageRole === "admin";
-      },
-      isOwner() {
-        return this.manageRole === "owner";
       },
     },
     data() {
@@ -113,5 +90,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  a {
+    color: #868e96;
+  }
+  a:hover {
+    color: #ff8f00 !important;
   }
 </style>

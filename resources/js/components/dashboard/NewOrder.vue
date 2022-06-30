@@ -101,7 +101,7 @@
             scopedSlots: { customRender: "total_amount" }
           },
           {
-            title: "status",
+            title: "Status",
             dataIndex: "status",
             scopedSlots: { customRender: "status" }
           },

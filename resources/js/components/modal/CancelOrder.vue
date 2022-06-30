@@ -3,7 +3,7 @@
     :visible="visible"
     :confirmLoading="confirmLoading"
     centered
-    title="Hủy tour"
+    title="Cancel"
     cancelText="Cancel"
     okText="Xác nhận"
     @cancel="$emit('cancel')"

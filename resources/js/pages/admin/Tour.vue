@@ -156,7 +156,7 @@
             </a-form-item>
           </a-col>
           <a-col :span="6">
-            <a-form-item label="Number of Participants">
+            <a-form-item label="Maximum Participants">
               <a-input-number v-decorator="['number_persons']" :defaultValue="1" :min="1" :max="20" style="width: 100%" />
             </a-form-item>
           </a-col>
@@ -324,13 +324,6 @@
           {
             title: "Category",
             dataIndex: "category_name"
-          },
-          {
-            title: "status",
-            dataIndex: "is_active",
-            key: "status",
-            width: "5%",
-            scopedSlots: { customRender: "status" }
           },
           {
             title: "Is Attraction",
@@ -526,6 +519,7 @@
         this.galleryUpload.length = 0;
         this.onClickClearImage();
         this.form.resetFields();
+        this.reset()
         eventBus.$emit("emptyEditor", () => {});
       },
 

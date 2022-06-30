@@ -1,15 +1,15 @@
 <template>
   <a-drawer :width="width" :visible="visiblePreview" @close="close">
     <p class="preview-title">Tour #{{ data.code }}</p>
-    <p :style="pStyle">Thông tin</p>
+    <p :style="pStyle">Tour's Detail</p>
     <a-row>
       <a-col :span="12">
-        <img :style="{ height: '95%', width: '95%', borderRadius: '3px', boxShadow: '2px 2px 6px 0 #00152924' }" :src="data.image" />
+        <img :style="{ height: '95%', width: '95%', borderRadius: '3px', boxShadow: '2px 2px 6px 0 #fff24' }" :src="data.image" />
       </a-col>
       <a-col :span="12">
         <a-row>
           <a-col>
-            <description-item title="Tên tour" :content="data.name" />
+            <description-item title="Tour Name" :content="data.name" />
           </a-col>
           <a-col>
             <description-item title="Category" :content="data.category_name" />
@@ -31,7 +31,7 @@
         <description-item title="Time" :content="`${data.number_days} days`" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Số người" :content="`${data.number_persons} người`" />
+        <description-item title="Maximum Participants" :content="`${data.number_persons} People`" />
       </a-col>
     </a-row>
     <a-row>
@@ -39,29 +39,29 @@
         <description-item title="Transport" :content="data.transport" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Adults" :content="`${data.price_default} đồng`" />
+        <description-item title="Adults" :content="`${data.price_default} $`" />
       </a-col>
     </a-row>
     <a-row>
       <a-col :span="12">
-        <description-item title="Children (2-12)" :content="`${data.price_children} đồng`" />
+        <description-item title="Children (2-12)" :content="`${data.price_children} $`" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Infants (0-2)" :content="`${data.price_baby} đồng`" />
+        <description-item title="Infants (0-2)" :content="`${data.price_baby} $`" />
       </a-col>
     </a-row>
     <a-row>
       <a-col :span="12">
-        <description-item title="Nổi bật" :content="data.is_featured ? 'Nổi bật' : ''" />
+        <description-item title="Is Attraction" :content="data.is_featured ? 'Yes' : 'No'" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Hide/Show" :content="data.is_active ? 'Hiện' : 'Ẩn'" />
+        <description-item title="Hide/Show" :content="data.is_active ? 'Show' : 'Ide'" />
       </a-col>
     </a-row>
 
     <a-divider />
 
-    <p :style="pStyle">Mô tả</p>
+    <p :style="pStyle">Description</p>
     <a-row>
       <a-col :span="24">
         <div v-html="description"></div>
@@ -72,7 +72,7 @@
 
     <a-row>
       <a-col :span="24">
-        <description-item title="Ghi chú" :content="data.note" />
+        <description-item title="Note" :content="data.note" />
       </a-col>
     </a-row>
   </a-drawer>
@@ -100,9 +100,10 @@
     data() {
       return {
         pStyle: {
-          fontSize: "16px",
-          color: "rgba(0,0,0,0.85)",
+          fontSize: "18px",
+          color: "#111111",
           lineHeight: "24px",
+          fontWeight: "500",
           display: "block",
           marginBottom: "16px"
         }
@@ -128,7 +129,7 @@
   .preview-title {
     font-size: 16px;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.85);
+    color: #ff8f00;
     line-height: 24px;
     display: block;
     margin-bottom: 16px;

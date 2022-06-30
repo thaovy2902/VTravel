@@ -4,9 +4,6 @@
       <a-button v-if="addButton" type="primary" icon="plus" @click="open">
         Add New
       </a-button>
-      <a-button class="reload" icon="reload" @click="reset">
-        Refresh
-      </a-button>
       <a-input-search v-if="!noSearch" class="search" :placeholder="placeholder" allowClear @search="search" />
     </div>
     <slot></slot>
