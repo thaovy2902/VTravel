@@ -19,7 +19,7 @@ class VNPayController extends BaseController
     $vnp_TxnRef = strtoupper(Str::random(12));
     $vnp_OrderInfo = config('vnpay.vnp_OrderInfo');
     $vnp_OrderType = config('vnpay.vnp_OrderType');
-    $vnp_Amount = $request->total_amount * 100;
+    $vnp_Amount = $request->total_amount * 100 * 22000;
     $vnp_Locale = config('vnpay.vnp_Locale');
     $vnp_IpAddr = request()->ip();
 
@@ -29,7 +29,7 @@ class VNPayController extends BaseController
       "vnp_Amount" => $vnp_Amount,
       "vnp_Command" => "pay",
       "vnp_CreateDate" => date('YmdHis'),
-      "vnp_CurrCode" => "$",
+      "vnp_CurrCode" => "VND",
       "vnp_IpAddr" => $vnp_IpAddr,
       "vnp_Locale" => $vnp_Locale,
       "vnp_OrderInfo" => $vnp_OrderInfo,
