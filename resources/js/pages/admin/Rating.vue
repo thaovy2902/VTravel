@@ -99,12 +99,12 @@
           {
             title: "Date",
             dataIndex: "created_at",
-            width: "15%",
+            width: "13%",
             sorter: true
           },
           {
             title: "Hide/Show",
-            width: "7%",
+            width: "9%",
             scopedSlots: { customRender: "active" }
           },
           {

@@ -82,7 +82,7 @@ const actions = {
       const slug = store.state.route.params.slug;
       const { data, status } = await callerApi(`tours/${slug}/ratings`, "POST", payload);
       if (data && status === 201) {
-        vp.$message.success("Đánh giá thành công");
+        vp.$message.success("Write review successfully");
         commit("sendRating", data);
         dispatch("getAvgRating");
       }
@@ -112,7 +112,7 @@ const actions = {
     try {
       const { data, status } = await callerApi(`ratings/${id}`, "DELETE");
       if (data && status === 200) {
-        vp.$message.success("Xóa đánh giá thành công");
+        vp.$message.success("Delete successfully");
         dispatch("fetchRatings", { page: 1 });
         dispatch("getAvgRating");
       }

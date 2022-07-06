@@ -42,7 +42,7 @@
         <description-item title="Category" :content="data.tour.category_name" />
         <description-item title="Departure" :content="data.tour.depart" />
         <description-item title="Destination" :content="data.tour.to_place_name" />
-        <description-item title="Số người" :content="data.tour.number_persons | numberPerson" />
+        <description-item title="Participants" :content="data.tour.number_persons | numberPerson" />
         <description-item title="Adults" :content="data.tour.price_default | currencyVN" />
         <description-item title="Infants (0-2)" :content="data.tour.price_baby | currencyVN" />
       </a-col>
@@ -50,15 +50,15 @@
 
     <a-divider />
 
-    <p :style="pStyle">Thông tin đặt tour</p>
+    <p :style="pStyle">Booking Information</p>
     <a-row>
       <a-col :span="12">
-        <description-item title="Ngày đặt" :content="data.created_at | dateTime" />
+        <description-item title="Booking Date" :content="data.created_at | dateTime" />
         <description-item title="Departure Date" :content="data.date_depart | date" />
         <description-item title="Infants (0-2)" :content="data.quantity_baby | numberPerson" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Thanh toán bằng" :content="data.payment_method" />
+        <description-item title="Payment Method" :content="data.payment_method" />
         <description-item title="Adults" :content="data.quantity_people | numberPerson" />
         <description-item title="Children (2-12)" :content="data.quantity_children | numberPerson" />
       </a-col>
@@ -67,12 +67,12 @@
         <description-item title="Subtotal" :content="data.total | currencyVN" />
       </a-col>
       <a-col :span="12">
-        <description-item title="Phần trăm giảm giá" :content="data.discount_percent | percent" />
+        <description-item title="Percentage Discount" :content="data.discount_percent | percent" />
         <description-item title="Discount" :content="data.discount | currencyVN" />
       </a-col>
       <a-col :span="24">
         <description-item title="Total" :content="data.total_amount | currencyVN" />
-        <description-item title="Ghi chú" :content="data.note" />
+        <description-item title="Note" :content="data.note" />
       </a-col>
     </a-row>
   </a-drawer>
@@ -100,9 +100,10 @@
     data() {
       return {
         pStyle: {
-          fontSize: "16px",
-          color: "rgba(0,0,0,0.85)",
+          fontSize: "18px",
+          color: "#111111",
           lineHeight: "24px",
+          fontWeight: "500",
           display: "block",
           marginBottom: "16px"
         }

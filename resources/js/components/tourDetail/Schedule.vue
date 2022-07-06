@@ -2,12 +2,12 @@
   <a-card class="shadow-sm" title="Itinerary" :bordered="false" :bodyStyle="{ padding: '16px' }" style="margin:16px 0">
     <div v-html="description" />
     <div v-if="tour.note">
-      <a-divider>Ghi chú</a-divider>
+      <a-divider>Note</a-divider>
       <div v-if="tour.note">
         {{ tour.note }}
       </div>
       <div v-else>
-        <div style="text-align:center">Không có ghi chú</div>
+        <div style="text-align:center">No data</div>
       </div>
     </div>
   </a-card>
