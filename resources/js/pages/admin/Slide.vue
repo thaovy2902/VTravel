@@ -143,14 +143,14 @@
           {
             title: "Link",
             dataIndex: "link",
-            width: "30%",
+            width: "28%",
             scopedSlots: { customRender: "link" }
           },
           {
             title: "Hide/Show",
             key: "active",
             align: "center",
-            width: "7%",
+            width: "9%",
             scopedSlots: { customRender: "active" }
           },
           {

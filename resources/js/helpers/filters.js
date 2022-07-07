@@ -73,7 +73,7 @@ const upperCaseFilter = (value) => {
 
 const currencyVN = (value) => {
   const valueStr = value + "";
-  return `${valueStr.replace(/\B(?=(\d{3})+(?!\d))/g, ".")} $`;
+  return `${valueStr.replace(/\B(?=(\d{3})+(?!\d))/g, ",")} $`;
 };
 
 const departFilter = (value) => {

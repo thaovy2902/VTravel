@@ -70,7 +70,7 @@ const actions = {
         .then(({ data, status }) => {
           if (data && status === 200) {
             commit("setAuth", data);
-            vp.$message.success("Đăng ký thành công");
+            vp.$message.success("Register successfully");
             reslove(data);
           }
         })
