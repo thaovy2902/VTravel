@@ -10,7 +10,7 @@
     @ok="$emit('ok')"
   >
     <a-form layout="vertical" :form="form" hideRequiredMark>
-      <a-form-item label="Lý do hủy">
+      <a-form-item label="Cancellation reason">
         <a-input
           type="textarea"
           v-decorator="[
@@ -22,7 +22,7 @@
               ]
             }
           ]"
-          placeholder="Nhập lý do hủy"
+          placeholder="Input cancellation reason"
         />
       </a-form-item>
     </a-form>
