@@ -19,7 +19,7 @@
         </div>
         <div v-if="$route.query.vnp_ResponseCode" style="margin: 12px 0;">
           <div v-if="paymentOnlineStatus === '00'">
-            <a-alert message="Payment Successful!" type="success" showIcon closable />
+            <a-alert message="Payment successfully!" type="success" showIcon closable />
           </div>
           <div v-if="paymentOnlineStatus !== '00'">
             <a-alert message="Payment Failed" type="error" showIcon closable />
