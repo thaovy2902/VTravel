@@ -34,7 +34,7 @@
         <description-item title="Tour ID" :content="`#${data.tour.code}`" />
         <description-item title="Tour Name" :content="data.tour.name" />
         <description-item title="Origin" :content="data.tour.from_place_name" />
-        <description-item title="Time" :content="data.tour.number_days | numberDay" />
+        <description-item title="Time" :content="data.tour.number_days" />
         <description-item title="Transport" :content="data.tour.transport" />
         <description-item title="Children (2-12)" :content="data.tour.price_children | currencyVN" />
       </a-col>
@@ -42,7 +42,7 @@
         <description-item title="Category" :content="data.tour.category_name" />
         <description-item title="Departure" :content="data.tour.depart" />
         <description-item title="Destination" :content="data.tour.to_place_name" />
-        <description-item title="Participants" :content="data.tour.number_persons | numberPerson" />
+        <description-item title="Participants" :content="data.tour.number_persons" />
         <description-item title="Adults" :content="data.tour.price_default | currencyVN" />
         <description-item title="Infants (0-2)" :content="data.tour.price_baby | currencyVN" />
       </a-col>
@@ -55,12 +55,12 @@
       <a-col :span="12">
         <description-item title="Booking Date" :content="data.created_at | dateTime" />
         <description-item title="Departure Date" :content="data.date_depart | date" />
-        <description-item title="Infants (0-2)" :content="data.quantity_baby | numberPerson" />
+        <description-item title="Infants (0-2)" :content="data.quantity_baby " />
       </a-col>
       <a-col :span="12">
         <description-item title="Payment Method" :content="data.payment_method" />
-        <description-item title="Adults" :content="data.quantity_people | numberPerson" />
-        <description-item title="Children (2-12)" :content="data.quantity_children | numberPerson" />
+        <description-item title="Adults" :content="data.quantity_people" />
+        <description-item title="Children (2-12)" :content="data.quantity_children" />
       </a-col>
       <a-col :span="12">
         <description-item title="Discount Code" :content="data.discount_code" />
