@@ -53,7 +53,7 @@ const actions = {
       const { data, status } = await callerApi(`admin/users`, "POST", payload);
       if (data && status === 201) {
         commit("createUser", data);
-        vp.$notify.success("Success", "Thêm thành công");
+        vp.$notify.success("Success", "Add new successfully");
       }
     } catch ({ response }) {
       if (response && response.status === 422) {

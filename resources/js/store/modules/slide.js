@@ -52,7 +52,7 @@ const actions = {
       const { data, status } = await callerApi(`admin/slides`, "POST", payload);
       if (data && status === 201) {
         commit("createSlide", data);
-        vp.$notify.success("Success", "Thêm thành công");
+        vp.$notify.success("Success", "Add new successfully");
       }
     } catch ({ response }) {
       if (response && response.status === 422) {

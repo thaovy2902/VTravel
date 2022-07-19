@@ -17,8 +17,8 @@
             'reason_cancel',
             {
               rules: [
-                { required: true, message: 'Không được trống' },
-                { min: 10, message: 'Tối thiểu 10 ký tự' }
+                { required: true, message: 'This field is required' },
+                { min: 10, message: 'Must be at least 10 characters long' }
               ]
             }
           ]"

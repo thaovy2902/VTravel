@@ -71,7 +71,7 @@ const actions = {
       if (data && status === 201) {
         commit("createTour", data);
         dispatch("fetchTours");
-        vp.$notify.success("Success", "Thêm thành công");
+        vp.$notify.success("Success", "Add new successfully");
       }
     } catch ({ response }) {
       if (response && response.status === 422) {

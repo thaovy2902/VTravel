@@ -59,7 +59,7 @@
 
     <a-modal
       centered
-      title="Số khách hàng"
+      title="Number of users"
       okText="Send"
       cancelText="Close"
       :width="400"
@@ -67,8 +67,8 @@
       @cancel="onCancel"
       @ok="onOk"
     >
-      <a-form-item label="Số khách hàng">
-        <a-select placeholder="Chọn số khách hàng" style="width: 100%" v-model="numberUser">
+      <a-form-item label="Number of users">
+        <a-select placeholder="Choose Number of users" style="width: 100%" v-model="numberUser">
           <a-select-option value="5">5</a-select-option>
           <a-select-option value="10">10</a-select-option>
         </a-select>

@@ -52,7 +52,7 @@ const actions = {
       const { data, status } = await callerApi(`admin/ratings`, "POST", payload);
       if (data && status === 201) {
         commit("createRating", data);
-        vp.$notify.success("Success", "Thêm thành công");
+        vp.$notify.success("Success", "Add new successfully");
       }
     } catch ({ response }) {
       if (response && response.status === 422) {

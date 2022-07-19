@@ -33,7 +33,7 @@
                   'name',
                   {
                     rules: [
-                      { required: true, message: 'Không được trống' },
+                      { required: true, message: 'This field is required' },
                       { max: 255, message: 'Tối đa 255 ký tự' }
                     ]
                   }
@@ -58,7 +58,7 @@
                   'email',
                   {
                     rules: [
-                      { required: true, message: 'Không được trống' },
+                      { required: true, message: 'This field is required' },
                       { type: 'email', message: 'Không đúng định dạng email' }
                     ]
                   }
@@ -78,7 +78,7 @@
             v-decorator="[
               'content',
               { rules: [
-                { required: true, message: 'Không được trống' },
+                { required: true, message: 'This field is required' },
                 { min: 10, message: 'Ít nhất 10 ký tự' },
               ] }
             ]"
