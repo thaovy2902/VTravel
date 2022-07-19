@@ -105,7 +105,7 @@ const actions = {
     try {
       const { data, status } = await callerApi(`orders/${payload.id}`, "PUT", payload.values);
       if (data && status === 202) {
-        vp.$message.success("Hủy thành công");
+        vp.$message.success("Cancel successfully");
         dispatch("fetchOrders");
       }
     } catch (error) {
