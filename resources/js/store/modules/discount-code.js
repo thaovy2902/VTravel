@@ -47,7 +47,7 @@ const actions = {
   },
   async sendMailDiscountCode({ commit }, payload) {
     try {
-      vp.$message.loading("Đang gửi mail", 0);
+      vp.$message.loading("Sending", 0);
       const { data, status } = await callerApi("admin/send-mail-discount-code", "POST", payload);
       if (data && status === 200) {
         vp.$notify.success("Thành công", data.message);
